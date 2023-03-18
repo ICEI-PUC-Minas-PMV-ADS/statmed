@@ -88,20 +88,22 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |  RF-005 |  O Sistema deverá permitir a pesquisa do histórico de passagens do paciente no local |  ALTA |
 |  RF-006 | O Sistema deverá gerar atestado (comprovante de consulta)  | BAIXA  |
 |  RF-008 | O Sistema deverá permitir a Pesquisa de CID  |  MÉDIA |
-|RF-009| O Sistema deverá permitir gerar relatórios conforme o solicitado | ALTA |
+|  RF-009 | O Sistema deverá permitir gerar relatórios conforme o solicitado | ALTA |
 |  RF-0010 | O Sistema deverá permitir gerar receituário médico | MÉDIA  |
 |  RF-0011 | O Sistema deverá permitir  gerar formulário de referência e contrarreferência  | MÉDIA  |
 |  RF-0012 |  O Sistema deverá gerar gráficos das estatísticas de atendimento e doenças | BAIXA  |
 |  RF-0013 | O Sistema deverá permitir a impressão da ficha e histórico do paciente  |  MÉDIA|
 
 - [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+
+|  ID | Descrição do Requisito  |  Prioridade |
+|-------|-------------------------|----|
+|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
+|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-003| Usuários deverão ter níveis de acessos e permissões diferentes conforme o cargo |  ALTA | 
+|RNF-004| O sistema deve ser seguro, possuindo a guarda do  histórico médico sem acesso por terceiros, segundo a LGPD |  ALTA |
+|RNF-005| O sistema deve ser fácil de manter e atualizar, permitindo a correção de possíveis falhas ou problemas rapidamente |  MEDIA |
+|RNF-006| O sistema deve possibilitar o acesso simultâneo do quadro de funcionários responsáveis pelo atendimento direto ao paciente |  ALTA |
 
 ## Restrições
 
