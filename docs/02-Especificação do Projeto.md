@@ -74,6 +74,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-003| Usuários deverão ter níveis de acessos e permissões diferentes conforme o cargo |  ALTA | 
+|RNF-004| O sistema deve ser seguro, possuindo a guarda do  histórico médico sem acesso por terceiros, segundo a LGPD |  ALTA |
+|RNF-005| O sistema deve ser fácil de manter e atualizar, permitindo a correção de possíveis falhas ou problemas rapidamente |  MEDIA |
+|RNF-006| O sistema deve possibilitar o acesso simultâneo do quadro de funcionários responsáveis pelo atendimento direto ao paciente |  ALTA |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
