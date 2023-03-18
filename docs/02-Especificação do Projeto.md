@@ -13,7 +13,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 |`Igor Pereira
 Profissão: Médico
 Idade: 37
-Igor Pereira é um pediatra de 37 anos que trabalha no hospital público, tem uma rotina super corrida com a agenda de atendimentos sempre cheia e uma rotina na sua casa bastante acelerada. Recentemente vem enfrentando um problema em seu trabalho: devido a rotina acelerada a coleta e armazenamento de informações dos pacientes tem ficado complicadas e imprecisas.`| |`![image](https://user-images.githubusercontent.com/114541642/226078015-47d4bd50-8ddf-47e6-bb6b-231da15aa98d.png)`|               |
+Igor Pereira é um pediatra de 37 anos que trabalha no hospital público, tem uma rotina super corrida com a agenda de atendimentos sempre cheia e uma rotina na sua casa bastante acelerada. Recentemente vem enfrentando um problema em seu trabalho: devido a rotina acelerada a coleta e armazenamento de informações dos pacientes tem ficado complicadas e imprecisas.`| |`![image](https://user-images.githubusercontent.com/114541642/226078015-47d4bd50-8ddf-47e6-bb6b-231da15aa98d.png)`|               
 
 
          
