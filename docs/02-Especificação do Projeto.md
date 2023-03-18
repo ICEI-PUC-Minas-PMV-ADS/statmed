@@ -55,16 +55,20 @@ Trabalha no hospital público. Seu papel é supervisionar e controlar  todo o se
 
 
 
-## Histórias de Usuários
+### Histórias de Usuário
+A partir da compreensão do dia a dia das pessoas identificadas para o projeto, foram registradas as seguintes histórias de usuários.
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
-
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+|  EU COMO... PERSONA | QUERO/PRECISO... FUNCIONALIDADE| PARA.. MOTIVO/VALOR  |
+| ------------ | ------------ | ------------ |
+|  Médico (Igor) | Registrar os atendimentos  | Facilitar e documentar meus atendimentos  |
+| Médico (Igor)  |  consultar CID | Agilizar meus atendimentos, e o registro da conduta médica. |
+| Médico (Igor) |  Gerar formulários de referência e contrarreferência   | Agilizar e minimizar os erros no encaminhamento de pacientes para especialidades  |
+|  Recepcionista (André) | Que o CEP retorne endereço e cidade no cadastro  |  Diminuir o tempo que leva o cadastro dos pacientes |
+|  Recepcionista (André) |  Gerar ficha do paciente cadastrado com todos os dados dele | Para fazer a recepção do paciente e a partir dessa etapa encaminhar ele para a especialidade desejada    |
+| Supervisora administrativa (Elizabeth)  | Gerar relatórios de média de atendimentos   |  Controle e manutenção das atividades hospitalares |
+| Supervisora administrativa (Elizabeth)  | Gerar diagramas com a quantidade de casos de doenças epidemiológicas  |  Prestar devida assistência ao ministério da saúde no controle de epidemias |
+| Enfermeira (Rafaella)  | Consultar registros do paciente com suas observações médicas  | Diminuir a possibilidade de erros com medicação e cuidados   |
+| Enfermeira (Rafaella)  |  Consultar local do prontuário físico (Prontuário impresso) | Realizar prova de medicações junto a convênios durante a auditoria  |
 
 > **Links Úteis**:
 > - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
