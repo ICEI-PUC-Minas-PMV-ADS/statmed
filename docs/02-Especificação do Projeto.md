@@ -16,10 +16,43 @@ As personas levantadas durante o processo de entendimento do problema são apres
 ## Igor Pereira   
 
 ##### Profissão: Médico
-##### Idade: 37 
+##### Idade: 37 anos
 Pediatra de 37 anos que trabalha no hospital público, tem uma rotina super corrida com a agenda de atendimentos sempre cheia e uma rotina na sua casa bastante acelerada. Recentemente vem enfrentando um problema em seu trabalho: devido a rotina acelerada a coleta e armazenamento de informações dos pacientes tem ficado complicadas e imprecisas.
 #
-<img style="margin-top: 40px;" align="left" width="200px" src="https://user-images.githubusercontent.com/114541642/226080962-4f0b2bd6-b559-4b8d-97b3-6df440338619.png">
+
+<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/114541642/226080962-4f0b2bd6-b559-4b8d-97b3-6df440338619.png">
+
+## André Fernandes  
+
+##### Profissão: Recepcionista
+##### Idade: 25 anos
+Recepcionista no hospital público e universitário. Possui sua rotina focada no seu trabalho e principalmente na sua faculdade no período noturno, vem sofrendo frequentemente com a dificuldade no atendimento dos pacientes do hospital devido ao método utilizado pelo hospital, gerando assim correrias e muitas vezes tumultos no hospital.
+#
+
+<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/114541642/226110154-e99b6582-1512-4fba-9ff7-97c48ed278ba.png">
+
+## Elizabeth Couto
+
+##### Profissão: Supervisora Administrativa
+##### Idade: 40 anos
+Trabalha no hospital público. Seu papel é supervisionar e controlar  todo o setor administrativo. Em sua rotina ela enfrenta um problema em seu trabalho: devido ao fluxo de informações sobre a estatística de relatório de informações do paciente para repassar para a diretoria.
+#
+
+<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/114541642/226110554-e69a2900-d08c-45da-b324-07a5cb19cd88.png">
+
+## Rafaella Costa 
+
+##### Profissão: Enfermeira
+##### Idade: 28 anos
+ É responsável por cuidar de pacientes em estado grave e monitorar sua saúde em tempo integral. No entanto, ela enfrenta um problema constante em seu trabalho: a falta de recursos e informações precisas sobre os pacientes.
+#
+
+
+
+
+
+
+
 
 
 ## Histórias de Usuários
