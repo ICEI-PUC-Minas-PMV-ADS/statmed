@@ -10,10 +10,10 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 As personas levantadas durante o processo de entendimento do problema são apresentadas a seguir:
 
-![image](https://user-images.githubusercontent.com/114541642/226078015-47d4bd50-8ddf-47e6-bb6b-231da15aa98d.png)Igor Pereira
-Profissão: Médico
-Idade: 37
-Igor Pereira é um pediatra de 37 anos que trabalha no hospital público, tem uma rotina super corrida com a agenda de atendimentos sempre cheia e uma rotina na sua casa bastante acelerada. Recentemente vem enfrentando um problema em seu trabalho: devido a rotina acelerada a coleta e armazenamento de informações dos pacientes tem ficado complicadas e imprecisas.
+![image](https://user-images.githubusercontent.com/114541642/226078015-47d4bd50-8ddf-47e6-bb6b-231da15aa98d.png)         Igor Pereira
+                                                                                                                         Profissão: Médico
+                                                                                                                         Idade: 37
+                                                                                                                         Igor Pereira é um pediatra de 37 anos que                                                                                                                              trabalha no hospital público, tem uma rotina                                                                                                                            super corrida com a agenda de atendimentos                                                                                                                              sempre cheia e uma rotina na sua casa bastante                                                                                                                          acelerada. Recentemente vem enfrentando um                                                                                                                              problema em seu trabalho: devido a rotina                                                                                                                              acelerada a coleta e armazenamento de                                                                                                                                  informações dos pacientes tem ficado                                                                                                                                    complicadas e imprecisas.        
 
 
 Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
@@ -67,20 +67,9 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
 - [Requisitos Funcionais
- | ID | Descrição do Requisito  |  Prioridade |
-| RF-001 | O Sistema deverá permitir que o usuário cadastre pacientes  | ALTA  |
-| RF-002  | O Sistema deverá permitir que o usuário localize pacientes | ALTA |
-| RF-003  | O Sistema deverá permitir criar uma anamnese e adicionar informações a mesma  | ALTA  |
-| RF-004  |  O Sistema deverá indicar qual (Local ou prateleira) o prontuário físico do paciente está | BAIXA  |
-| RF-005  |   Sistema deverá permitir a pesquisa do histórico de passagens do paciente no local |  ALTA |
-| RF-006  |  O Sistema deverá gerar atestado (comprovante de consulta) | BAIXA  |
-|  RF-008 |  O Sistema deverá permitir a Pesquisa de CID | MÉDIA |
-|  RF-009 |  O Sistema deverá permitir gerar relatórios conforme o solicitado |  ALTA |
-| RF-0010  |  Sistema deverá permitir gerar receituário médico  | MÉDIA  |
-|   |   |   |
-|  RF-0012 | O Sistema deverá gerar gráficos das estatísticas de atendimento e doenças  |  BAIXA |
-|  RF-0013 | O Sistema deverá permitir a impressão da ficha e histórico do paciente  |  MÉDIA |
-
+ (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
+ correspondem a uma funcionalidade que deve estar presente na
+  plataforma (ex: cadastro de usuário).
 - [Requisitos Não Funcionais
   (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
   correspondem a uma característica técnica, seja de usabilidade,
