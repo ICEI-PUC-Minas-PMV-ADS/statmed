@@ -6,38 +6,21 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 
 Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
 
+
 ## Personas
 
 As personas levantadas durante o processo de entendimento do problema são apresentadas a seguir:
+#
+<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/114541642/226109557-bb6c56ce-7452-4be7-a9a4-7290f72e298c.png">
 
-![image](https://user-images.githubusercontent.com/114541642/226078015-47d4bd50-8ddf-47e6-bb6b-231da15aa98d.png) 
+## Igor Pereira   
 
-Igor Pereira
+##### Profissão: Médico
+##### Idade: 37 
+Pediatra de 37 anos que trabalha no hospital público, tem uma rotina super corrida com a agenda de atendimentos sempre cheia e uma rotina na sua casa bastante acelerada. Recentemente vem enfrentando um problema em seu trabalho: devido a rotina acelerada a coleta e armazenamento de informações dos pacientes tem ficado complicadas e imprecisas.
+#
+<img style="margin-top: 40px;" align="left" width="200px" src="https://user-images.githubusercontent.com/114541642/226080962-4f0b2bd6-b559-4b8d-97b3-6df440338619.png">
 
-Profissão: Médico
-
-Idade: 37
-
-Igor Pereira é um pediatra de 37 anos que trabalha no hospital público, tem uma rotina super corrida com a agenda de atendimentos sempre cheia e uma rotina na sua casa bastante acelerada. Recentemente vem enfrentando um problema em seu trabalho: devido a rotina acelerada a coleta e armazenamento de informações dos pacientes tem ficado complicadas e imprecisas. 
-
-
-       
-
-
-         
-
-
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
 
 ## Histórias de Usuários
 
@@ -74,10 +57,6 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-|RNF-003| Usuários deverão ter níveis de acessos e permissões diferentes conforme o cargo |  ALTA | 
-|RNF-004| O sistema deve ser seguro, possuindo a guarda do  histórico médico sem acesso por terceiros, segundo a LGPD |  ALTA |
-|RNF-005| O sistema deve ser fácil de manter e atualizar, permitindo a correção de possíveis falhas ou problemas rapidamente |  MEDIA |
-|RNF-006| O sistema deve possibilitar o acesso simultâneo do quadro de funcionários responsáveis pelo atendimento direto ao paciente |  ALTA |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
