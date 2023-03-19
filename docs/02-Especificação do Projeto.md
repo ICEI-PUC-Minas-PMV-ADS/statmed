@@ -2,16 +2,14 @@
 
 <span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
-
+A definição exata do problema e os pontos mais relevantes a serem tratados neste projeto foi consolidada com a participação dos usuários em um trabalho de imersão feita pelos membros da equipe a partir da observação dos usuários em seu local natural e por meio de entrevistas. Os detalhes levantados nesse processo foram consolidados na forma de personas e histórias de usuários.
 
 ## Personas
 
 As personas levantadas durante o processo de entendimento do problema são apresentadas a seguir:
-#
-<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/114541642/226109557-bb6c56ce-7452-4be7-a9a4-7290f72e298c.png">
+
+
+<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/98277143/226173926-27e3a00b-83ca-4a12-86fc-1011fdeccead.png">
 
 ## Igor Pereira   
 
@@ -20,7 +18,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 Pediatra de 37 anos que trabalha no hospital público, tem uma rotina super corrida com a agenda de atendimentos sempre cheia e uma rotina na sua casa bastante acelerada. Recentemente vem enfrentando um problema em seu trabalho: devido a rotina acelerada a coleta e armazenamento de informações dos pacientes tem ficado complicadas e imprecisas.
 #
 
-<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/114541642/226080962-4f0b2bd6-b559-4b8d-97b3-6df440338619.png">
+<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/98277143/226173982-ea43126c-4f02-42e7-bb60-07e432637880.png">
 
 ## André Fernandes  
 
@@ -29,7 +27,8 @@ Pediatra de 37 anos que trabalha no hospital público, tem uma rotina super corr
 Recepcionista no hospital público e universitário. Possui sua rotina focada no seu trabalho e principalmente na sua faculdade no período noturno, vem sofrendo frequentemente com a dificuldade no atendimento dos pacientes do hospital devido ao método utilizado pelo hospital, gerando assim correrias e muitas vezes tumultos no hospital.
 #
 
-<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/114541642/226110154-e99b6582-1512-4fba-9ff7-97c48ed278ba.png">
+<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/98277143/226174012-236d216e-1a71-4521-a500-9b9b9baef653.png">
+
 
 ## Elizabeth Couto
 
@@ -38,24 +37,20 @@ Recepcionista no hospital público e universitário. Possui sua rotina focada no
 Trabalha no hospital público. Seu papel é supervisionar e controlar  todo o setor administrativo. Em sua rotina ela enfrenta um problema em seu trabalho: devido ao fluxo de informações sobre a estatística de relatório de informações do paciente para repassar para a diretoria.
 #
 
-<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/114541642/226110554-e69a2900-d08c-45da-b324-07a5cb19cd88.png">
+
+
+
+
+<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/98277143/226174080-458dbd32-6f7e-46e0-bca7-ac06b970bfcd.png">
 
 ## Rafaella Costa 
 
 ##### Profissão: Enfermeira
 ##### Idade: 28 anos
- É responsável por cuidar de pacientes em estado grave e monitorar sua saúde em tempo integral. No entanto, ela enfrenta um problema constante em seu trabalho: a falta de recursos e informações precisas sobre os pacientes.
+É responsável por cuidar de pacientes em estado grave e monitorar sua saúde em tempo integral. No entanto, ela enfrenta um problema constante em seu trabalho: a falta de recursos e informações precisas sobre os pacientes.
 #
 
-
-
-
-
-
-
-
-
-### Histórias de Usuário
+## Histórias de Usuário
 A partir da compreensão do dia a dia das pessoas identificadas para o projeto, foram registradas as seguintes histórias de usuários.
 
 |  EU COMO... PERSONA | QUERO/PRECISO... FUNCIONALIDADE| PARA.. MOTIVO/VALOR  |
@@ -70,18 +65,11 @@ A partir da compreensão do dia a dia das pessoas identificadas para o projeto, 
 | Enfermeira (Rafaella)  | Consultar registros do paciente com suas observações médicas  | Diminuir a possibilidade de erros com medicação e cuidados   |
 | Enfermeira (Rafaella)  |  Consultar local do prontuário físico (Prontuário impresso) | Realizar prova de medicações junto a convênios durante a auditoria  |
 
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
-
 ## Requisitos
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
 
-- Requisitos Funcionais
+#### Requisitos Funcionais
 
 |  ID | Descrição do Requisito  |  Prioridade |
 | ------------ | ------------ | ------------ |
@@ -98,7 +86,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |  RF-0012 |  O Sistema deverá gerar gráficos das estatísticas de atendimento e doenças | BAIXA  |
 |  RF-0013 | O Sistema deverá permitir a impressão da ficha e histórico do paciente  |  MÉDIA|
 
-- [Requisitos Não Funcionais
+#### Requisitos Não Funcionais
 
 |  ID | Descrição do Requisito  |  Prioridade |
 |-------|-------------------------|----|
@@ -116,14 +104,6 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
 
