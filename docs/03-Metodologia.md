@@ -35,21 +35,21 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
 
 ### Divisão de Papéis
 
--A equipe se dividiu seguindo o formato proposto pela metodologia scrum.
+- A equipe se dividiu seguindo o formato proposto pela metodologia scrum.
 
--Scrum Master: Diego Gomes
+- Scrum Master: Diego Gomes
  
--Product Owner: Felipe Coelho
+- Product Owner: Felipe Coelho
  
--Equipe de desenvolvimento:
+- Equipe de desenvolvimento:
  
--Lizane Rodrigues
+- Lizane Rodrigues
   
--Guilherme Cruz
+- Guilherme Cruz
   
--Gabrielly Andrade
+- Gabrielly Andrade
   
--Jardel Maldonado
+- Jardel Maldonado
 
 ### Processo
 
