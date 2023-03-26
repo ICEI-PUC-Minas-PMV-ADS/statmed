@@ -53,7 +53,7 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
 
 O planejamento foi feito utilizando o Github Projects, com o sistema automatizado Kanban. Nele temos o direcionamento de tarefas já integrado ao issues do github e quando criados são automaticamente adicionados a coluna `Não Iniciado` que é reservado para tarefas não discutidas ou backlog, ao iniciarmos desenvolvimento da tarefa ele é direcionado a coluna `Em progresso` e quando fechados são automaticamente direcionados a coluna `Completado` que por sua vez são arquivados àpos 2 semanas.
 Em cada issue é adicionado os responsáveis pela tarefa, além de comentários sobre o desenvolvimento para o grupo discutir durante as reuniões entre os períodos de desenvolvimento.
-![](![image](https://user-images.githubusercontent.com/98277143/227801637-16c85540-db57-438b-b463-0552de86fa75.png))
+![](https://user-images.githubusercontent.com/98277143/227801637-16c85540-db57-438b-b463-0552de86fa75.png)
 
 Separamos também cada etapa do nosso projeto pelas milestones, permitindo maior organização, senso de urgência e entrega além da localização de tarefas passadas (issues) que se encontram arquivadas para melhor gerenciamento de possíveis correções futuras.
 ![](https://user-images.githubusercontent.com/98277143/227742210-82fe7ac3-5bbd-43a0-8b0e-7de05e644d01.png)
