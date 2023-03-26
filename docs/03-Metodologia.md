@@ -35,7 +35,7 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
 
 ### Divisão de Papéis
 
-- A equipe se dividiu seguindo o formato proposto pela metodologia scrum.
+####A equipe se dividiu seguindo o formato proposto pela metodologia scrum.
 
 - Scrum Master: Diego Gomes
  
