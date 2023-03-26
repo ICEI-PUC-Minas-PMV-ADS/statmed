@@ -46,6 +46,12 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
   - Guilherme Cruz
   - Gabrielly Andrade
   - Jardel Maldonado
+  - Felipe Coelho
+  - Diego Gomes
+
+- Equipe de Design:
+  - Gabrielly Andrade
+  - Guilherme Cruz
 
 ### Processo
 
