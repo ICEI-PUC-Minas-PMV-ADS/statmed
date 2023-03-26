@@ -55,11 +55,11 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
 
 ### Processo
 
-O planejamento foi feito utilizando o Github Projects, com o sistema automatizado kanban conjugado a metodologia scrum. Nele temos o direcionamento de tarefas já integrado ao issues do github e quando criados são automaticamente adicionados a coluna `Não Iniciado` que é reservado a tarefas não discutidas ou backlog, ao iniciarmos desenvolvimento da tarefa ele é direcionado a coluna `Em progresso` e quando fechados são automaticamente direcionados a coluna `Completado` que por sua vez são arquivados àpos 2 semanas.
-Em cada issue é adicionado os responsáveis pela tarefa, além de comentários sobre o desenvolvimento da mesma.
+O planejamento foi feito utilizando o Github Projects, com o sistema automatizado kanban conjugado a metodologia scrum. Nele temos o direcionamento de tarefas já integrado ao issues do github e quando criados são automaticamente adicionados a coluna `Não Iniciado` que é reservado para tarefas não discutidas ou backlog, ao iniciarmos desenvolvimento da tarefa ele é direcionado a coluna `Em progresso` e quando fechados são automaticamente direcionados a coluna `Completado` que por sua vez são arquivados àpos 2 semanas.
+Em cada issue é adicionado os responsáveis pela tarefa, além de comentários sobre o desenvolvimento para o grupo discutir durante as reuniões.
 ![](https://user-images.githubusercontent.com/98277143/227742071-f2bcf85c-f559-44b3-834e-c295153d85a9.png)
 
-Separamos também cada etapa de nosso projeto pelas milestones, permitindo maior organização, senso de urgência e entrega além de localização de tarefas passadas (issues) que se encontram arquivadas para melhor gerenciamento de possíveis correções futuras.
+Separamos também cada etapa do nosso projeto pelas milestones, permitindo maior organização, senso de urgência e entrega além da localização de tarefas passadas (issues) que se encontram arquivadas para melhor gerenciamento de possíveis correções futuras.
 ![](https://user-images.githubusercontent.com/98277143/227742210-82fe7ac3-5bbd-43a0-8b0e-7de05e644d01.png)
 
 ### Ferramentas
@@ -74,7 +74,7 @@ As ferramentas empregadas no projeto são:
 | [Discord](https://discord.com/ "Discord")  | Reuniões, planejamento do grupo |
 | [Figma](https://www.figma.com/ "Figma") | Desenho de tela (Wireframing) e Diagramas |
 
-O **Visual Studio Code **foi escolhido porque ele possui integração com o **Github Desktop**, permitindo visualizar rapidamente branchs e commits e carregar os arquivos para edição no mesmo.
+O **Visual Studio Code** foi escolhido porque ele possui integração com o **Github Desktop** permitindo visualizar e intercalar o desenvolvimento rapidamente entre os branchs e visualizar commits relevantes.
 O **Github Projects** foi escolhido como gerenciamento de projeto devido a integração dos issues direto no repositório.
-**Discord** foi escolhido como o canal de comunicação devido a sua facilidade para reunião, compartilhamento de tela e arquivamento de conversas e canais com nossos brainstorming.
+**Discord** foi escolhido como o canal de comunicação devido a sua facilidade para reunião, compartilhamento de tela e arquivamento de conversas e canais com nosso  brainstorming.
 **Figma** foi escolhido como ferramenta única para criação de wireframes e diagramas, devido a sua facilidade de trabalho em conjunto e acervo de ferramentas e plugins.
