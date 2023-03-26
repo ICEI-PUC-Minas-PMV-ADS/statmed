@@ -41,15 +41,11 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
  
 - Product Owner: Felipe Coelho
  
-- Equipe de desenvolvimento:
- 
-- Lizane Rodrigues
-  
-- Guilherme Cruz
-  
-- Gabrielly Andrade
-  
-- Jardel Maldonado
+- Equipe de desenvolvimento: 
+  - Lizane Rodrigues
+  - Guilherme Cruz
+  - Gabrielly Andrade
+  - Jardel Maldonado
 
 ### Processo
 
