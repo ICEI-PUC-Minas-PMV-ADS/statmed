@@ -3,7 +3,10 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+Nessa seção, serão apresentadas as ferramentas utilizadas para o desenvolvimento do projeto, tanto para o gerenciamento dos códigos e artefatos produzidos no decorrer de seu desenvolvimento, quanto na organização da equipe em cada uma das tarefas propostas em reunião.
+
+O grupo se organizará a partir da metodologia ágil chamada scrum, priorizando sempre a abordagem do desenvolvimento dos artefatos do projeto de modo colaborativo.
+
 
 ## Controle de Versão
 
@@ -32,12 +35,14 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
 
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
-
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+-A equipe se dividiu seguindo o formato proposto pela metodologia scrum.
+  -Scrum Master: Diego Gomes
+  -Product Owner: Felipe Coelho
+  -Equipe de desenvolvimento:
+    -Lizane Rodrigues
+    -Guilherme Cruz
+    -Gabrielly Andrade
+    -Jardel Maldonado
 
 ### Processo
 
