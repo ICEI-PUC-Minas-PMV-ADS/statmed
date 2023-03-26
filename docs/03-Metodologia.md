@@ -5,8 +5,7 @@
 
 Nessa seção, serão apresentadas as ferramentas utilizadas para o desenvolvimento do projeto, tanto para o gerenciamento dos códigos e artefatos produzidos no decorrer de seu desenvolvimento, quanto na organização da equipe em cada uma das tarefas propostas em reunião.
 
-O grupo se organizará a partir da metodologia ágil chamada scrum, priorizando sempre a abordagem do desenvolvimento dos artefatos do projeto de modo colaborativo.
-
+O grupo se organizará a partir da metodologia ágil Kanban, que permite a melhor gestão de tarefas e conduz cada atividade por meio de um fluxo de trabalho estabelecido, de maneira visual ideal para nossa equipe com menos colaboradores.
 
 ## Controle de Versão
 
@@ -35,19 +34,16 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
 
 ### Divisão de Papéis
 
-#### A equipe se dividiu seguindo o formato proposto pela metodologia scrum.
+#### A equipe se dividiu seguindo o formato proposto pela metodologia Kanban.
 
-- Scrum Master: Diego Gomes
- 
-- Product Owner: Felipe Coelho
- 
+- Flow Master: Diego Gomes
+
 - Equipe de desenvolvimento: 
   - Lizane Rodrigues
   - Guilherme Cruz
   - Gabrielly Andrade
   - Jardel Maldonado
   - Felipe Coelho
-  - Diego Gomes
 
 - Equipe de Design:
   - Gabrielly Andrade
@@ -55,8 +51,8 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
 
 ### Processo
 
-O planejamento foi feito utilizando o Github Projects, com o sistema automatizado kanban conjugado a metodologia scrum. Nele temos o direcionamento de tarefas já integrado ao issues do github e quando criados são automaticamente adicionados a coluna `Não Iniciado` que é reservado para tarefas não discutidas ou backlog, ao iniciarmos desenvolvimento da tarefa ele é direcionado a coluna `Em progresso` e quando fechados são automaticamente direcionados a coluna `Completado` que por sua vez são arquivados àpos 2 semanas.
-Em cada issue é adicionado os responsáveis pela tarefa, além de comentários sobre o desenvolvimento para o grupo discutir durante as reuniões.
+O planejamento foi feito utilizando o Github Projects, com o sistema automatizado Kanban. Nele temos o direcionamento de tarefas já integrado ao issues do github e quando criados são automaticamente adicionados a coluna `Não Iniciado` que é reservado para tarefas não discutidas ou backlog, ao iniciarmos desenvolvimento da tarefa ele é direcionado a coluna `Em progresso` e quando fechados são automaticamente direcionados a coluna `Completado` que por sua vez são arquivados àpos 2 semanas.
+Em cada issue é adicionado os responsáveis pela tarefa, além de comentários sobre o desenvolvimento para o grupo discutir durante as reuniões entre os períodos de desenvolvimento.
 ![](https://user-images.githubusercontent.com/98277143/227742071-f2bcf85c-f559-44b3-834e-c295153d85a9.png)
 
 Separamos também cada etapa do nosso projeto pelas milestones, permitindo maior organização, senso de urgência e entrega além da localização de tarefas passadas (issues) que se encontram arquivadas para melhor gerenciamento de possíveis correções futuras.
