@@ -38,4 +38,34 @@
 | Objetivo do Teste 	| Criar uma anamnese para o atendimento do paciente com as informações da consulta. |
 | Passos 	| - Acessar o sistema <br> - Introduzir o usuário e senha<br> - Clicar no botão "Entrar" <br> Clicar em "Anamnese”<br> - Informar o nome do paciente no campo "Nome" ou o número único de identificação no campo "SAME" ou o número único de atendimento no campo "Atendimento"<br> - Clicar em "Pesquisa" <br> - Clicar no último atendimento gerado caso a pesquisa tenha sido feita por "Nome" ou "SAME" ou clicar no atendimento com o mesmo número pesquisado caso tenha sido feita pelo campo "Atendimento"<br> - Clicar em "Nova" <br> - Preencher os dados da consulta no campo "Conteúdo" <br> - Clicar em "Salvar" para guardar os dados da anamnese do paciente |
 |Critério de Êxito | - É salvo junto ao número de atendimento e número de identificação único do paciente os dados da anamnese. |
+||
+|**Caso de Teste**| **CT-07 – Localizar Paciente**|
+|Requisito Associado | RF-002	- O Sistema deverá permitir que o usuário localize pacientes. |
+| Objetivo do Teste 	| Verificar se o usuario obterá êxito em localizar a ficha de cadastro do paciente pelo nome. |
+| Passos 	| - Acessar o sistema <br> - Introduzir o usuário e senha<br> - Clicar no botão "Entrar" <br> Clicar em "Historico Hospitalar”<br> Clicar em "Localizar Pacientes- Colocar  "Nome do Paciente" na barra de pesquisa <br> - Clicar em "Pesquisar".| 
+|Critério de Êxito | -É retornado na mesma tela o nome do paciente e sua ficha. |
+||
+|**Caso de Teste**| **CT-08 – Localizar onde o prontuário físico do paciente está**|
+|Requisito Associado | RF-004	- O Sistema deverá indicar qual (Local ou prateleira) o prontuário físico do paciente está. |
+| Objetivo do Teste 	| Verificar se o usuario obterá êxito em localizar prontuário fisico do paciente. |
+| Passos 	| - Acessar o sistema <br> - Introduzir o usuário e senha<br> - Clicar no botão "Entrar" <br> Clicar em "Historico Hospitalar”<br> - Clicar em "Prontuário Físico" <br> - Clicar em "Localizar" <br> - Colocar "Nome do paciente na barra de pesquisa".<br>- Clicar em "Pesquisa" <br>   |
+|Critério de Êxito | -É retornado na mesma tela a localização do prontuário. |
+||
+|**Caso de Teste**| **CT-09– Gerar atestado médico**|
+|Requisito Associado | RF-006 - O Sistema deverá gerar atestado (comprovante de consulta). |
+| Objetivo do Teste 	| Verificar se o usuario obterá êxito em gerar atestado médico. |
+| Passos 	| - Acessar o sistema <br> - Introduzir o usuário e senha<br> - Clicar no botão "Entrar" <br> Clicar em "Atestado Médico” <br> - Clicar em "Gerar Atestado <br>  |
+|Critério de Êxito | -É retornado em uma nova tela o atestado gerado. |
+||
+|**Caso de Teste**| **CT-10 – Gerar receituário médico**|
+|Requisito Associado | RF-004	- O Sistema deverá permitir gerar receituário médico. |
+| Objetivo do Teste 	| Verificar se o usuario obterá êxito em gerar receituário médico. |
+| Passos 	| - Acessar o sistema <br> - Introduzir o usuário e senha<br> - Clicar no botão "Entrar" <br> Clicar em "Historico Hospitalar”<br> - Clicar em "Receituário Médico" <br> - Clicar em "Gerar"  <br>   |
+|Critério de Êxito | -É retornado em uma nova tela o receituário médico gerado. |
+||
+|**Caso de Teste**| **CT-11– Gerar relatorio de referência e contrarreferência**|
+|Requisito Associado | RF-0011	- O Sistema deverá permitir  gerar formulário de referência e contrarreferência. |
+| Objetivo do Teste 	| Verificar se o usuario obterá êxito em gerar relatorio de referência e contrarreferência. |
+| Passos 	| - Acessar o sistema <br> - Introduzir o usuário e senha<br> - Clicar no botão "Entrar" <br> Clicar em "Historico Hospitalar”<br> - Clicar em "Formulário" <br> - Clicar em "Referência ou Contrarreferência" <br> - Clicar em "Gerar" <br>   |
+|Critério de Êxito | -É retornado na mesma tela o formulário solicitado. |
 
