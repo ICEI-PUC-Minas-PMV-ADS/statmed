@@ -13,15 +13,22 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ## Wireframes
 
-![Exemplo de Wireframe](img/wireframe-example.png)
+### Tela de Login
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+![Tela de Login](https://user-images.githubusercontent.com/70419372/230523035-419263ab-fe52-4648-ad1f-ea78d089e814.PNG)
+
+### Home Page
+
+![Home Page](https://user-images.githubusercontent.com/70419372/230523083-35518132-b69e-4072-a90e-1c113b3c7be2.PNG)
+
+### Tela de ajuda
+
+![Tela de ajuda ](https://user-images.githubusercontent.com/70419372/230523135-06277b1e-4b68-4741-9836-76fca294d038.PNG)
+
+### Tela de cadastro de pacientes
+
+![Tela de cadastro de pacientes](https://user-images.githubusercontent.com/70419372/230523176-625a4f6d-1b5a-4982-b2e2-ca2c94a5371c.PNG)
+
+### Tela de manutenção de pacientes
+
+![Tela de manutencao de pacientes](https://user-images.githubusercontent.com/70419372/230523252-4103538e-f4f0-48bd-baaf-0eb22cafbb19.PNG)
