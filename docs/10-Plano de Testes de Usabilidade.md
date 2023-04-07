@@ -13,7 +13,7 @@ Selecionaremos 3 pessoas anônimas trabalhadoras da área da saúde, em seguida 
 |  Profissão |  Enfermeira |
 |  Objetivo |  Acessar as informações dos pacientes e registrar o atendimento de maneira eficiente |
 ||
-| **Usuário 3 ** |  **Anônimo** |
+| **Usuário 3** |  **Anônimo** |
 | Idade  | 30 anos   |
 |  Profissão |  Recepcionista |
 |  Objetivo |  Encontrar rapidamente o local da prateleira com prontuário fisico do paciente |
