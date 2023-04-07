@@ -14,13 +14,7 @@ O diagrama de classes ilustra graficamente como será a estrutura do software, e
 
 ## Modelo ER (Projeto Conceitual)
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.
-
-Sugestão de ferramentas para geração deste artefato: LucidChart e Draw.io.
-
-A referência abaixo irá auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
+![image](https://user-images.githubusercontent.com/98277143/230527029-7f20e933-b713-4e17-8c37-9cd559938a4b.png)
 
 ## Projeto da Base de Dados
 
@@ -36,6 +30,7 @@ A base de dados foi feita utilizando MySQL.
 Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
 
 Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+Decidimos por utilizar a stack PHP & MySQL, de serviço web o Heroku e Visual Studio Code como IDE.
 
 ## Hospedagem
 
