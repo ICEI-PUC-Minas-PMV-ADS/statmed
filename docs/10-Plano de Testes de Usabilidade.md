@@ -30,6 +30,17 @@ Eles terão as seguintes tarefas:
 |  T004 |  Gerar um relatório de atendimentos por dia/semana/mês |
 |  T005 | Adicionar uma nova informação médica ao prontuário  |
 |  T006 | Atualizar as informações de um atendimento existente  |
-| T007 | Criar uma Anamnese  |
+|  T007 | Criar uma Anamnese  |
 
+Em seguida irão responder as seguintes questões:
 
+|  Pergunta  | Descrição  |
+| ------------ | ------------ |
+|  P001 | Qual foi o tempo de resposta do sistema ápos clicar para registrar o paciente? |
+|  P002 | Em sua opinião, os passos para realizar esse processo foi intuitivo? |
+|  P003 | O sistema foi responsivo em seu dispostivo? |
+|  P004 | De um modo geral, cite um ponto positivo e negativo do software utilizado |
+|  P005 | Em sua opinião, você conseguiu entender a função proposta do software? |
+|  P006 | Ocorreu alguma dificuldade ao utilizar o software? Se sim, qual? |
+|  P007 | Você encontrou algum erro inesperado em suas tarefas? |
+|  P008 | Em sua opinião, o sistema facilitaria alguma atividade na sua rotina de trabalho? |
