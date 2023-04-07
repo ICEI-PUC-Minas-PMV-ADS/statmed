@@ -27,18 +27,8 @@ A base de dados foi feita utilizando MySQL.
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
-Decidimos por utilizar a stack PHP & MySQL, de serviço web o Heroku e Visual Studio Code como IDE.
+Decidimos por utilizar a stack PHP & MySQL com a framework PHP Laravel devido a sua ajuda com autenticação de usuário, gerenciamento de seção, e cache. Para serviço web o Heroku e Visual Studio Code como IDE devido ao seu suporte junto ao GitHub.
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
-
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+Devido a seu suporte para nossas tecnologias optamos em utilizar o Heroku App como hospedagem.
