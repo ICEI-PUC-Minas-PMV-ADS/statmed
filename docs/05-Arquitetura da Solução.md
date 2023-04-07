@@ -25,8 +25,11 @@ A referência abaixo irá auxiliá-lo na geração do artefato “Modelo ER”.
 ## Projeto da Base de Dados
 
 O projeto da base de dados corresponde à representação das entidades e relacionamentos identificadas no Modelo ER, no formato de tabelas, com colunas e chaves primárias/estrangeiras necessárias para representar corretamente as restrições de integridade.
+
+A base de dados foi feita utilizando MySQL.
  
-Para mais informações, consulte o microfundamento "Modelagem de Dados".
+![image](https://user-images.githubusercontent.com/97044440/230523249-242171ac-d2f6-485b-bf42-1e4e80d3a372.png)
+
 
 ## Tecnologias Utilizadas
 
