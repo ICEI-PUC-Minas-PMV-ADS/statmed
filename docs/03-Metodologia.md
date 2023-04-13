@@ -51,11 +51,12 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
 
 ### Processo
 
-O planejamento foi feito utilizando o Github Projects, com o sistema automatizado Kanban. Nele temos o direcionamento de tarefas já integrado ao issues do github e quando criados são automaticamente adicionados a coluna `Não Iniciado` que é reservado para tarefas não discutidas ou backlog, ao iniciarmos desenvolvimento da tarefa ele é direcionado a coluna `Em progresso` e quando fechados são automaticamente direcionados a coluna `Completado` que por sua vez são arquivados àpos 2 semanas.
+O planejamento foi feito utilizando o Github Projects, com o sistema automatizado Kanban. Nele temos o direcionamento de tarefas já integrado ao issues do github e quando criados são automaticamente adicionados a coluna `Backlog` e somente ápos a análise inicial de nosso flow master são transferidos a coluna `Não Iniciado` que por sua vez é reservada para tarefas que já estão em nosso conhecimento porém sem um plano de começar iniciado. Ao iniciarmos o desenvolvimento da tarefa ela é direcionada a coluna `Em progresso`, se for caso que necessite teste ápos completa ela é transferida a coluna `Em Teste`, e quando concluidos são automaticamente direcionados a coluna `Completado` que por sua vez são arquivados àpos 2 semanas.
 Em cada issue é adicionado os responsáveis pela tarefa, além de comentários sobre o desenvolvimento para o grupo discutir durante as reuniões entre os períodos de desenvolvimento.
-![](https://user-images.githubusercontent.com/98277143/227801637-16c85540-db57-438b-b463-0552de86fa75.png)
+![image](https://user-images.githubusercontent.com/98277143/231900780-8bdf73c6-a44f-4463-a12c-287f7494c039.png)
 
 Separamos também cada etapa do nosso projeto pelas milestones, permitindo maior organização, senso de urgência e entrega além da localização de tarefas passadas (issues) que se encontram arquivadas para melhor gerenciamento de possíveis correções futuras.
+
 ![](https://user-images.githubusercontent.com/98277143/227742210-82fe7ac3-5bbd-43a0-8b0e-7de05e644d01.png)
 
 ### Ferramentas
@@ -64,7 +65,7 @@ As ferramentas empregadas no projeto são:
 
 | Ferramenta  | Finalidade |
 | ------------ | ------------ |
-|  [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code") | Editor de código |
+| [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code") | Editor de código |
 | [Github Desktop](https://desktop.github.com/ "Github Desktop")  | Controle de branchs, merges e commit com integração ao Visual Studio Code   |
 | [Github Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects "Github Projects")  | Utilizado para a gestão do projeto e tarefas no modelo Kanban |
 | [Discord](https://discord.com/ "Discord")  | Reuniões, planejamento do grupo |
