@@ -1,15 +1,46 @@
 # Plano de Testes de Usabilidade
 
-Os testes de usabilidade permitem avaliar a qualidade da interface com o usuário da aplicação interativa.
+Os testes de usabilidade tem como objetivo avaliar a qualidade da interface, responsabilidade do sistema com o usuário do sistema.
 
-Um plano de teste de usabilidade deverá conter: o detalhamento dos objetivos (em função dos requisitos levantados/implementados), dos critérios que serão utilizados para a seleção dos participantes, dos procedimentos a serem adotados pelos condutores de teste (por exemplo: os testes serão presenciais ou remotos? o método será observação direta, medição ou avaliação?), das tarefas a serem executadas, dos dados a serem coletados (quantidade de cliques, número de erros, tempo etc.), a ordem de execução das tarefas e das etapas da sessão de teste, recursos demandados, métricas coletadas etc.
+Selecionaremos 3 pessoas anônimas trabalhadoras da área da saúde, em seguida disponibilzaremos o link para nossa aplicação junto com um formulário de avaliação e uma lista de tarefas.
 
-Para cada voluntário do teste, é fundamental coletar e apresentar todos os dados/métricas previamente definidos, mas não se esqueça: atendendo à LGPD (Lei Geral de Proteção de Dados), nenhum dado sensível, que permita identificar o voluntário, deverá ser apresentado).
+| **Usuário 1**  | **Anônimo**  |
+| ------------ | ------------ |
+| Idade  | 45 anos   |
+|  Profissão |  Médico generalista |
+|  Objetivo |  Registrar as informações de seus pacientes de maneira simples e rápida |
+||
+| **Usuário 2**  | **Anônimo**  |
+| Idade  | 35 anos   |
+|  Profissão |  Enfermeira |
+|  Objetivo |  Acessar as informações dos pacientes e registrar o atendimento de maneira eficiente |
+||
+| **Usuário 3** |  **Anônimo** |
+| Idade  | 30 anos   |
+|  Profissão |  Recepcionista |
+|  Objetivo |  Encontrar rapidamente o local da prateleira com prontuário fisico do paciente |
 
-As referências abaixo irão auxiliá-lo na geração do artefato "Plano de Testes de Usabilidade".
+Eles terão as seguintes tarefas:
 
-> **Links Úteis**:
-> - [Teste De Usabilidade: O Que É e Como Fazer Passo a Passo (neilpatel.com)](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber! | by Jon Vieira | Aela.io | Medium](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer | iMasters](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+|  Tarefa  | Descrição  |
+| ------------ | ------------ |
+|  T001 | Registrar um novo paciente  |
+|  T002 | Acessar o prontuário de um paciente específico  |
+|  T003 | Visualizar as informações médicas de um paciente  |
+|  T004 |  Gerar um relatório de atendimentos por dia/semana/mês |
+|  T005 | Adicionar uma nova informação médica ao prontuário  |
+|  T006 | Atualizar as informações de um atendimento existente  |
+|  T007 | Criar uma Anamnese  |
+
+Em seguida irão responder as seguintes questões:
+
+|  Pergunta  | Descrição  |
+| ------------ | ------------ |
+|  P001 | Qual foi o tempo de resposta do sistema ápos clicar para registrar o paciente? |
+|  P002 | Em sua opinião, os passos para realizar esse processo foi intuitivo? |
+|  P003 | O sistema foi responsivo em seu dispostivo? |
+|  P004 | De um modo geral, cite um ponto positivo e negativo do software utilizado |
+|  P005 | Em sua opinião, você conseguiu entender a função proposta do software? |
+|  P006 | Ocorreu alguma dificuldade ao utilizar o software? Se sim, qual? |
+|  P007 | Você encontrou algum erro inesperado em suas tarefas? |
+|  P008 | Em sua opinião, o sistema facilitaria alguma atividade na sua rotina de trabalho? |

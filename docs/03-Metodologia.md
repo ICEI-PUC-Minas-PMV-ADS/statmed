@@ -3,7 +3,9 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+Nessa seção, serão apresentadas as ferramentas utilizadas para o desenvolvimento do projeto, tanto para o gerenciamento dos códigos e artefatos produzidos no decorrer de seu desenvolvimento, quanto na organização da equipe em cada uma das tarefas propostas em reunião.
+
+O grupo se organizará a partir da metodologia ágil Kanban, que permite a melhor gestão de tarefas e conduz cada atividade por meio de um fluxo de trabalho estabelecido, de maneira visual ideal para nossa equipe com menos colaboradores.
 
 ## Controle de Versão
 
@@ -32,20 +34,29 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
 
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
+#### A equipe se dividiu seguindo o formato proposto pela metodologia Kanban.
 
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+- Flow Master: Diego Gomes
+
+- Equipe de desenvolvimento: 
+  - Lizane Rodrigues
+  - Guilherme Cruz
+  - Gabrielly Andrade
+  - Jardel Maldonado
+  - Felipe Coelho
+
+- Equipe de Design:
+  - Gabrielly Andrade
+  - Guilherme Cruz
 
 ### Processo
 
-O planejamento foi feito utilizando o Github Projects, com o sistema automatizado kanban conjugado a metodologia scrum. Nele temos o direcionamento de tarefas já integrado ao issues do github e quando criados são automaticamente adicionados a coluna `Não Iniciado` que é reservado a tarefas não discutidas ou backlog, ao iniciarmos desenvolvimento da tarefa ele é direcionado a coluna `Em progresso` e quando fechados são automaticamente direcionados a coluna `Completado` que por sua vez são arquivados àpos 2 semanas.
-Em cada issue é adicionado os responsáveis pela tarefa, além de comentários sobre o desenvolvimento da mesma.
-![](https://user-images.githubusercontent.com/98277143/227742071-f2bcf85c-f559-44b3-834e-c295153d85a9.png)
+O planejamento foi feito utilizando o Github Projects, com o sistema automatizado Kanban. Nele temos o direcionamento de tarefas já integrado ao issues do github e quando criados são automaticamente adicionados a coluna `Backlog` e somente ápos a análise inicial de nosso flow master são transferidos a coluna `Não Iniciado` que por sua vez é reservada para tarefas que já estão em nosso conhecimento porém sem um plano de começar iniciado. Ao iniciarmos o desenvolvimento da tarefa ela é direcionada a coluna `Em progresso`, se for caso que necessite teste ápos completa ela é transferida a coluna `Em Teste`, e quando concluidos são automaticamente direcionados a coluna `Completado` que por sua vez são arquivados àpos 2 semanas.
+Em cada issue é adicionado os responsáveis pela tarefa, além de comentários sobre o desenvolvimento para o grupo discutir durante as reuniões entre os períodos de desenvolvimento.
+![image](https://user-images.githubusercontent.com/98277143/231900780-8bdf73c6-a44f-4463-a12c-287f7494c039.png)
 
-Separamos também cada etapa de nosso projeto pelas milestones, permitindo maior organização, senso de urgência e entrega além de localização de tarefas passadas (issues) que se encontram arquivadas para melhor gerenciamento de possíveis correções futuras.
+Separamos também cada etapa do nosso projeto pelas milestones, permitindo maior organização, senso de urgência e entrega além da localização de tarefas passadas (issues) que se encontram arquivadas para melhor gerenciamento de possíveis correções futuras.
+
 ![](https://user-images.githubusercontent.com/98277143/227742210-82fe7ac3-5bbd-43a0-8b0e-7de05e644d01.png)
 
 ### Ferramentas
@@ -54,13 +65,13 @@ As ferramentas empregadas no projeto são:
 
 | Ferramenta  | Finalidade |
 | ------------ | ------------ |
-|  [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code") | Editor de código |
+| [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code") | Editor de código |
 | [Github Desktop](https://desktop.github.com/ "Github Desktop")  | Controle de branchs, merges e commit com integração ao Visual Studio Code   |
 | [Github Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects "Github Projects")  | Utilizado para a gestão do projeto e tarefas no modelo Kanban |
 | [Discord](https://discord.com/ "Discord")  | Reuniões, planejamento do grupo |
 | [Figma](https://www.figma.com/ "Figma") | Desenho de tela (Wireframing) e Diagramas |
 
-O **Visual Studio Code **foi escolhido porque ele possui integração com o **Github Desktop**, permitindo visualizar rapidamente branchs e commits e carregar os arquivos para edição no mesmo.
+O **Visual Studio Code** foi escolhido porque ele possui integração com o **Github Desktop** permitindo visualizar e intercalar o desenvolvimento rapidamente entre os branchs e visualizar commits relevantes.
 O **Github Projects** foi escolhido como gerenciamento de projeto devido a integração dos issues direto no repositório.
-**Discord** foi escolhido como o canal de comunicação devido a sua facilidade para reunião, compartilhamento de tela e arquivamento de conversas e canais com nossos brainstorming.
+**Discord** foi escolhido como o canal de comunicação devido a sua facilidade para reunião, compartilhamento de tela e arquivamento de conversas e canais com nosso  brainstorming.
 **Figma** foi escolhido como ferramenta única para criação de wireframes e diagramas, devido a sua facilidade de trabalho em conjunto e acervo de ferramentas e plugins.
