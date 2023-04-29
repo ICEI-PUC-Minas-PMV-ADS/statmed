@@ -14,6 +14,7 @@ namespace Statmed.Controllers
     public class PacienteController : ControllerBase
     {
         private static Paciente Nome = new Paciente();
+        [HttpGet]
         public IActionResult Get()
         {
             return Ok(Nome);
