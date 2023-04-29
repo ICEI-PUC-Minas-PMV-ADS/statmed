@@ -13,7 +13,6 @@ namespace Statmed.Data
         {
 
         }
-
-        // public DbSet<Paciente> Paciente { get; set; }
+        public DbSet<Paciente> Paciente { get; set; }
     }
 }
