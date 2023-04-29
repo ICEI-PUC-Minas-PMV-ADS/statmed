@@ -9,10 +9,12 @@ namespace Statmed.Data
 
     public class MySqlDatabaseContext : DbContext
     {
+        internal object paciente;
+
         public MySqlDatabaseContext(DbContextOptions<MySqlDatabaseContext> context) : base(context)
         {
 
         }
-        public DbSet<Paciente> Paciente { get; set; }
+        public DbSet<Paciente> Pacientes { get; set; }
     }
 }

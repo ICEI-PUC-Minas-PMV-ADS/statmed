@@ -5,7 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
+using Statmed.Data;
+using MySql.Data.EntityFrameworkCore.Extensions;
 
 namespace Statmed.Controllers
 {
@@ -13,13 +14,18 @@ namespace Statmed.Controllers
     [Route("api/[controller]")]
     public class PacienteController : ControllerBase
     {
-        private static Paciente Nome = new Paciente();
-        [HttpGet]
-        public IActionResult Get()
+        private readonly MySqlDatabaseContext _mySqlDatabaseContext;
+
+        public PacienteController(MySqlDatabaseContext mySqlDatabaseContext)
         {
-            return Ok(Nome);
+            _mySqlDatabaseContext = mySqlDatabaseContext;
         }
-
-
+        [HttpGet]
+        public async Task<IActionResult> GetAsync()
+        {
+            var pacientes = await _mySqlDatabaseContext.Pacientes.ToListAsync();
+            return Ok(pacientes);
+        }
     }
+
 }
