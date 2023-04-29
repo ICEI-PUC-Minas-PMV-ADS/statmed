@@ -6,28 +6,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
+
 namespace Statmed.Controllers
 {
-    [Route("[controller]")]
-    public class PacienteController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class PacienteController : ControllerBase
     {
-        private readonly ILogger<PacienteController> _logger;
-
-        public PacienteController(ILogger<PacienteController> logger)
+        private static Paciente Nome = new Paciente();
+        public IActionResult Get()
         {
-            _logger = logger;
+            return Ok(Nome);
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
-        }
-    
     }
 }
