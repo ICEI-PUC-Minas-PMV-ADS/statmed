@@ -1,4 +1,6 @@
 global using Statmed.Models;
+using Statmed.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -24,3 +26,9 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+builder.Services.AddDbContext<MySqlDatabaseContext>(options =>
+    {
+        options.UseSqlServer(builder.Configuration.GetConnectionString("MySqlDatabaseConnection"));
+    });
