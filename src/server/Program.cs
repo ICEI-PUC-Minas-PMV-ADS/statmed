@@ -1,6 +1,6 @@
-global using Statmed.Models;
 global using Microsoft.EntityFrameworkCore;
-using Statmed.Data;
+global using Statmed.Data;
+global using Statmed.Data.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
