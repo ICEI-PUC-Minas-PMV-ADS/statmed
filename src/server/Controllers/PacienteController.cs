@@ -45,7 +45,7 @@ namespace Statmed.Controllers
 
             return body;
         }
-
+        //consulta
         [HttpGet]
         [Route("Consultar")]
         public async Task<ActionResult<List<Paciente>>> BuscaPaciente([FromServices] StatmedDbContext context)
@@ -54,6 +54,7 @@ namespace Statmed.Controllers
             return pacientes;
         }
 
+        //consulta pelo IdSame 
         [HttpGet]
         [Route("BuscaIdSame")]
         public async Task<ActionResult<Paciente>> BuscaIdSame(int IdSame)
@@ -77,11 +78,13 @@ namespace Statmed.Controllers
             }).FirstOrDefaultAsync(s => s.IdSame == IdSame);
             if (User == null)
             {
-                return NotFound(); 
+                return NotFound();
 
-            } else{
+            }
+            else
+            {
 
-                return User; 
+                return User;
             }
         }
 
