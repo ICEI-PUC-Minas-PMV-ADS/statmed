@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MySql.Data.EntityFrameworkCore.Extensions;
+using Statmed.Data;
+using Statmed.Data.Entities;
+using Statmed.DTO;
 
 namespace Statmed.Controllers
 {
@@ -13,79 +16,125 @@ namespace Statmed.Controllers
     [Route("api/[controller]")]
     public class PacienteController : ControllerBase
     {
-        private readonly MySqlDatabaseContext _mySqlDatabaseContext;
+        private readonly StatmedDbContext StatmedDbContext;
 
-        public PacienteController(MySqlDatabaseContext mySqlDatabaseContext)
+        public PacienteController(StatmedDbContext StatmedDbContext)
         {
-            _mySqlDatabaseContext = mySqlDatabaseContext;
+            this.StatmedDbContext = StatmedDbContext;
         }
         // Pega TODOS registros na database de pacientes
-        [HttpGet]
-        public async Task<IActionResult> GetAsync()
+        [HttpGet("Busca")]
+        public async Task<ActionResult<List<PacienteDTO>>> BuscarPaciente()
         {
-            var pacientes = await _mySqlDatabaseContext.Pacientes.ToListAsync();
-            return Ok(pacientes);
-        }
-        // Pega o Paciente pelo número único same
-        [HttpGet("{idSame}")]
-        public async Task<IActionResult> GetByIdAsync(int idSame)
-        {
-            var paciente = await _mySqlDatabaseContext.Pacientes.FindAsync(idSame);
-
-            if (paciente == null)
+            var List = await StatmedDbContext.Paciente.Select(
+                s => new PacienteDTO
+                {
+                    IdSame = s.IdSame,
+                    Nome = s.Nome,
+                    NomeSocial = s.NomeSocial,
+                    Email = s.Email,
+                    Cpf = s.Cpf,
+                    Telefone = s.Telefone,
+                    DataNasc = s.DataNasc,
+                    Cep = s.Cep,
+                    Uf = s.Uf,
+                    Rua = s.Rua,
+                    Bairro = s.Bairro,
+                    Numero = s.Numero,
+                    Prateleira = s.Prateleira
+                }
+            ).ToListAsync();
+            if (List.Count < 0)
             {
                 return NotFound();
             }
-
-            return Ok(paciente);
-        }
-        // Cria um novo registro no banco de dados
-        [HttpPost]
-        public async Task<IActionResult> CreateAsync(Paciente paciente)
-        {
-            if (paciente == null)
+            else
             {
-                return BadRequest();
+                return List;
             }
-
-            await _mySqlDatabaseContext.Pacientes.AddAsync(paciente);
-            await _mySqlDatabaseContext.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetByIdAsync), new { idSame = paciente.IdSame }, paciente);
         }
-        // Atualiza o Paciente
-        [HttpPut("{idSame}")]
-        public async Task<IActionResult> UpdateAsync(int idSame, Paciente paciente)
+        [HttpGet("BuscaIdSame")]
+        public async Task<ActionResult<PacienteDTO>> BuscarPacienteId(int IdSame)
         {
-            if (paciente == null || paciente.IdSame != idSame)
+            PacienteDTO User = await StatmedDbContext.Paciente.Select(s => new PacienteDTO
             {
-                return BadRequest();
-            }
-
-            var existingPaciente = await _mySqlDatabaseContext.Pacientes.FindAsync(idSame);
-
-            if (existingPaciente == null)
+                IdSame = s.IdSame,
+                Nome = s.Nome,
+                NomeSocial = s.NomeSocial,
+                Email = s.Email,
+                Cpf = s.Cpf,
+                Telefone = s.Telefone,
+                DataNasc = s.DataNasc,
+                Cep = s.Cep,
+                Uf = s.Uf,
+                Rua = s.Rua,
+                Bairro = s.Bairro,
+                Numero = s.Numero,
+                Prateleira = s.Prateleira
+            }).FirstOrDefaultAsync(s => s.IdSame == IdSame);
+            if (User == null)
             {
                 return NotFound();
             }
-
-            existingPaciente.Nome = paciente.Nome;
-            existingPaciente.NomeSocial = paciente.NomeSocial;
-            existingPaciente.Email = paciente.Email;
-            existingPaciente.Cpf = paciente.Cpf;
-            existingPaciente.Telefone = paciente.Telefone;
-            existingPaciente.DataNasc = paciente.DataNasc;
-            existingPaciente.Cep = paciente.Cep;
-            existingPaciente.Uf = paciente.Uf;
-            existingPaciente.Rua = paciente.Rua;
-            existingPaciente.Bairro = paciente.Bairro;
-            existingPaciente.Numero = paciente.Numero;
-            existingPaciente.Prateleira = paciente.Prateleira;
-
-            _mySqlDatabaseContext.Pacientes.Update(existingPaciente);
-            await _mySqlDatabaseContext.SaveChangesAsync();
-
-            return NoContent();
+            else
+            {
+                return User;
+            }
+        }
+        [HttpPost("Cadastro")]
+        public async Task<HttpStatusCode> CadastrarPaciente(PacienteDTO Paciente)
+        {
+            var entidade = new Paciente()
+            {
+                IdSame = Paciente.IdSame,
+                Nome = Paciente.Nome,
+                NomeSocial = Paciente.NomeSocial,
+                Email = Paciente.Email,
+                Cpf = Paciente.Cpf,
+                Telefone = Paciente.Telefone,
+                DataNasc = Paciente.DataNasc,
+                Cep = Paciente.Cep,
+                Uf = Paciente.Uf,
+                Rua = Paciente.Rua,
+                Bairro = Paciente.Bairro,
+                Numero = Paciente.Numero,
+                Prateleira = Paciente.Prateleira
+            };
+            StatmedDbContext.Paciente.Add(entidade);
+            await StatmedDbContext.SaveChangesAsync();
+            return HttpStatusCode.Created;
+        }
+        [HttpPut("Atualiza")]
+        public async Task<HttpStatusCode> AtualizarPaciente(PacienteDTO Paciente)
+        {
+            var entidade = await StatmedDbContext.Paciente.FirstOrDefaultAsync(s => s.IdSame == Paciente.IdSame);
+                entidade.IdSame = Paciente.IdSame;
+                entidade.Nome = Paciente.Nome;
+                entidade.NomeSocial = Paciente.NomeSocial;
+                entidade.Email = Paciente.Email;
+                entidade.Cpf = Paciente.Cpf;
+                entidade.Telefone = Paciente.Telefone;
+                entidade.DataNasc = Paciente.DataNasc;
+                entidade.Cep = Paciente.Cep;
+                entidade.Uf = Paciente.Uf;
+                entidade.Rua = Paciente.Rua;
+                entidade.Bairro = Paciente.Bairro;
+                entidade.Numero = Paciente.Numero;
+                entidade.Prateleira = Paciente.Prateleira;
+            await StatmedDbContext.SaveChangesAsync();
+            return HttpStatusCode.OK;
+        }
+        [HttpDelete("Apagar/{IdSame}")]
+        public async Task<HttpStatusCode> ApagarPaciente(int IdSame)
+        {
+            var entidade = new Paciente()
+            {
+                IdSame = IdSame
+            };
+            StatmedDbContext.Paciente.Attach(entidade);
+            StatmedDbContext.Paciente.Remove(entidade);
+            await StatmedDbContext.SaveChangesAsync();
+            return HttpStatusCode.OK;
         }
     }
 }
