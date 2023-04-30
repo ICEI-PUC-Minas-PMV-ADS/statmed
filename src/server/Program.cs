@@ -3,6 +3,15 @@ global using Statmed.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Permite injetar na database de certos endereços
+builder.Services.AddCors( options => {
+    options.AddPolicy("AllowLocalHost", policy => {
+        policy.WithOrigins("http://localhost:5500","http://127.0.0.1:5500")
+        .SetIsOriginAllowed(isOriginAllowed: _=> true)
+        .AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 // Add services to the container.
 string mySqlConnection = builder.Configuration.GetConnectionString("StatmedDb");
 builder.Services.AddDbContextPool<StatmedDbContext>(options =>
@@ -26,6 +35,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowLocalHost");
 
 app.UseAuthorization();
 

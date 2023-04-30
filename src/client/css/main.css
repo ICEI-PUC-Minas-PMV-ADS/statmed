@@ -1,0 +1,88 @@
+@import url('/css/padroes.css');
+
+.login {
+    min-height: 100vh;
+}
+
+.logo-login {
+    width: 100% !important;
+    margin-bottom: 20px;
+}
+
+.imagem-bg-esquerda {
+    background-image: url('/img/login.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex: 0 0 auto;
+    width: 50%;
+
+}
+
+.login-heading {
+    font-weight: 300;
+    color: white;
+}
+
+.form-floating {
+    color: var(--darkmode1);
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--principal) !important;
+    border-color: var(--principal) !important;
+}
+
+.btn-login:hover {
+    background-color: var(--principal-hover) !important;
+    border-color: var(--principal) !important;
+    color: var(--darkmode1) !important;
+}
+
+.invalid {
+    border-color: red !important;
+}
+
+.form-check-label {
+    color: white;
+}
+
+.ajuda {
+    color: white;
+    text-decoration: none;
+}
+
+.viewpass{
+    float: right;
+    margin-left: -25px;
+    margin-top: -26px;
+    position: relative;
+    font-size: large;
+    z-index: 2;
+}
+
+.form-check-input:checked {
+      border-color: var(--principal);
+  background-color: var(--principal-hover);
+}
+
+/* Editar o sweet alerts */
+
+.swal2-styled.swal2-confirm {
+    background-color: var(--principal) !important;
+}
+
+.swal2-popup {
+    background-color: var(--darkmode2) !important;
+}
+
+.busca-paciente-container{
+    width: 100%;
+}
+
+.btn-bscpac {
+    width: 100% !important;
+}
