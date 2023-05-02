@@ -1,5 +1,6 @@
 global using Microsoft.EntityFrameworkCore;
 global using Statmed.Data;
+using Statmed.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +24,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+ builder.Services.AddScoped(typeof(EnfermagemRepository));
+ builder.Services.AddScoped(typeof(MedicoRepository));
+ builder.Services.AddScoped(typeof(SupervisoraAdmRepository));
+ builder.Services.AddScoped(typeof(RecepcionistaRepository));
 
 var app = builder.Build();
 
