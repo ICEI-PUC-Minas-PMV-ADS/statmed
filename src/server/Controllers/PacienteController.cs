@@ -1,3 +1,4 @@
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Statmed.Models;
 
@@ -14,9 +15,9 @@ namespace Statmed.Controllers
         {
             _statmedDbContext = statmedDbContext;
         }
+
         // Cadastro
-        [HttpPost]
-        [Route("Cadastrar")]
+        [HttpPost("Cadastrar")]
         public async Task<ActionResult<Paciente>> CadastrarPaciente([FromServices] StatmedDbContext context, [FromBody] Paciente body)
         {
             if (!ModelState.IsValid)
@@ -45,9 +46,9 @@ namespace Statmed.Controllers
 
             return body;
         }
+
         //consulta
-        [HttpGet]
-        [Route("Consultar")]
+        [HttpGet("Consultar")]
         public async Task<ActionResult<List<Paciente>>> BuscaPaciente([FromServices] StatmedDbContext context)
         {
             var pacientes = await context.Paciente.ToListAsync();
@@ -55,8 +56,7 @@ namespace Statmed.Controllers
         }
 
         //consulta pelo IdSame 
-        [HttpGet]
-        [Route("BuscaIdSame")]
+        [HttpGet("BuscaIdSame")]
         public async Task<ActionResult<Paciente>> BuscaIdSame(int IdSame)
         {
             Paciente User = await _statmedDbContext.Paciente.Select(s => new Paciente
@@ -86,6 +86,44 @@ namespace Statmed.Controllers
 
                 return User;
             }
+
+        }
+
+        //Atuliza o cadastro do paciente!!!
+        [HttpPut("AtualizarPaciente")]
+        public async Task<HttpStatusCode> AtualizarPaciente(Paciente Paciente)
+        {
+            var attPac = await _statmedDbContext.Paciente.FirstOrDefaultAsync(s => s.IdSame == Paciente.IdSame);
+
+            attPac.Nome = Paciente.Nome;
+            attPac.NomeSocial = Paciente.NomeSocial;
+            attPac.Email = Paciente.Email;
+            attPac.Cpf = Paciente.Cpf;
+            attPac.Telefone = Paciente.Telefone;
+            attPac.DataNasc = Paciente.DataNasc;
+            attPac.Cep = Paciente.Cep;
+            attPac.Rua = Paciente.Rua;
+            attPac.Numero = Paciente.Numero;
+            attPac.Bairro = Paciente.Bairro;
+            attPac.Cidade = Paciente.Cidade;
+            attPac.Uf = Paciente.Uf;
+
+            await _statmedDbContext.SaveChangesAsync();
+            return HttpStatusCode.OK;
+
+        }
+
+
+        //Atuliza o cadastro do paciente!!!
+        [HttpDelete("DeletarPaciente")]
+        public async Task<HttpStatusCode> DeletarPaciente(int IdSame)
+        {
+            var delPac = new Paciente() { IdSame = IdSame };
+            _statmedDbContext.Paciente.Attach(delPac);
+            _statmedDbContext.Paciente.Remove(delPac);
+            await _statmedDbContext.SaveChangesAsync();
+            return HttpStatusCode.OK;
+
         }
 
     }
