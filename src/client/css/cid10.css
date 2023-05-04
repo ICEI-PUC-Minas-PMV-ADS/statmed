@@ -1,4 +1,4 @@
-.paginate_button     {
+.paginate_button {
     --bs-pagination-active-bg: var(--principal-hover) !important;
     --bs-pagination-active-border-color: var(--principal) !important;
     --bs-pagination-disabled-border-color: var(--principal) !important;

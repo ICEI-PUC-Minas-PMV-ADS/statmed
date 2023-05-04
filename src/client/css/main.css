@@ -1,4 +1,4 @@
-@import url('/css/padroes.css');
+@import url('padroes.css');
 
 .login {
     min-height: 100vh;
@@ -10,7 +10,7 @@
 }
 
 .imagem-bg-esquerda {
-    background-image: url('/img/login.png');
+    background-image: url('../img/login.png');
     background-size: cover;
     background-position: center;
     display: flex;
