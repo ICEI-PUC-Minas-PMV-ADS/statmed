@@ -15,7 +15,7 @@ $(document).ready(function () {
             },
         ajax: {
             // Trocar a URL pela API que será criada com o CID
-            url: 'http://localhost:5145/api/Paciente/Consultar',
+            url: 'http://localhost:5145/api/Cid10/Consultar',
             type: 'GET',
             datatype: 'json',
             dataSrc: ''
@@ -24,11 +24,8 @@ $(document).ready(function () {
             width: "05%", targets: 0 },
           ],
         columns: [
-            { data: "idSame", title: "IdSame"},
-            { data: "nome", title: "Nome"},
-            // Remover as duas acima e colocar as colunas CID abaixo
-            //{ data: "idCid", title: "CID"},
-            //{ data: "Desc", title: "Descrição"},
+            { data: "idCid", title: "CID"},
+            { data: "desc", title: 'Descrição'},
         ],
     });
 });

@@ -13,3 +13,22 @@
     font-size: 1rem !important;
     border-radius: var(--bs-border-radius) !important;
 }
+
+.pagination {
+    --bs-pagination-color: var(--darkmode1);
+    --bs-pagination-focus-color: var(--principal-hover) !important;
+    --bs-pagination-focus-box-shadow: 0 0 0 0 rgba(63, 255, 15, 0.027);
+}
+
+.page-link {
+    border: transparent !important;
+    background-color: var(--darkmode2);
+    color: var(--lightmode1);
+}
+
+.page-link:hover {
+    border: transparent;
+    background-color: var(--principal-hover);
+    color: var(--darkmode1);
+}
+
