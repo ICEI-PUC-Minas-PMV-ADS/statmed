@@ -1,0 +1,15 @@
+.paginate_button     {
+    --bs-pagination-active-bg: var(--principal-hover) !important;
+    --bs-pagination-active-border-color: var(--principal) !important;
+    --bs-pagination-disabled-border-color: var(--principal) !important;
+    --bs-pagination-active-color: var(--darkmode1) !important;
+    --bs-pagination-disabled-color: var(--lightmode1) !important;
+    --bs-pagination-focus-bg: var(--darkmode2) !important;
+    --bs-pagination-disabled-bg: var(--darkmode2) !important;
+}
+
+.form-select-sm, .form-control-sm {
+    padding: .375rem 2.25rem .375rem .75rem !important;
+    font-size: 1rem !important;
+    border-radius: var(--bs-border-radius) !important;
+}
