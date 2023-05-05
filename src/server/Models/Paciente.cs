@@ -9,6 +9,7 @@ namespace Statmed.Models
         public int IdSame { get; set; }
         public string Nome { get; set; }
         public string NomeSocial { get; set; }
+        public string Genero { get; set; }
         public string Email { get; set; }
         public string Cpf { get; set; }
         public string Telefone { get; set; }
