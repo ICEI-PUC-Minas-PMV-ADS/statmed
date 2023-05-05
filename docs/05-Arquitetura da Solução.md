@@ -8,7 +8,8 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
 
-![diagrama de classes att](https://user-images.githubusercontent.com/70419372/228539989-e3ae2967-a0c1-4ab0-9e16-b9f387870fe8.PNG)
+![Diagrama de Classes ATT](https://user-images.githubusercontent.com/70419372/236355313-989495a3-0e84-452c-8f9f-0ece7fd694bd.PNG)
+
 
 
 
@@ -27,8 +28,8 @@ A base de dados foi feita utilizando MySQL.
 
 ## Tecnologias Utilizadas
 
-Decidimos por utilizar a stack PHP & MySQL com a framework PHP Laravel devido a sua ajuda com autenticação de usuário, gerenciamento de seção, e cache. Para serviço web o Heroku e Visual Studio Code como IDE devido ao seu suporte junto ao GitHub.
+Decidimos por utilizar a .NET e MySQL com Entity Framework. Para serviço web o Heroku e Visual Studio Code como IDE devido ao seu suporte junto ao GitHub.
 
 ## Hospedagem
 
-Devido a seu suporte para nossas tecnologias optamos em utilizar o Heroku App como hospedagem.
+Devido a seu suporte para nossas tecnologias optamos em utilizar o Heroku App como hospedagem junto ao AWS como banco de dados.
