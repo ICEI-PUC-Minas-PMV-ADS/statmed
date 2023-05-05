@@ -2,7 +2,9 @@
 
 ## Instalação do Site
 
-O site em HTML/CSS/JS é um projeto estático, logo pode ser utilizado tanto em servidores...
+O site em HTML/CSS/JS é um projeto estático, logo pode ser utilizado com a extensão Live Server do VsCode para visualizar as páginas de front end;
+
+Para ativar as funcionalidades do backend é necessário instalar a framework .net mais atualizada, entrar no diretorio server e usar o comando "dotnet watch run" para testes.
 
 ## Histórico de versões
 
