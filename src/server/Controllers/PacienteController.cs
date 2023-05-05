@@ -29,6 +29,7 @@ namespace Statmed.Controllers
             {
                 Nome = body.Nome,
                 NomeSocial = body.NomeSocial,
+                Genero = body.Genero,
                 Email = body.Email,
                 Cpf = body.Cpf,
                 Telefone = body.Telefone,
@@ -64,6 +65,7 @@ namespace Statmed.Controllers
                 IdSame = s.IdSame,
                 Nome = s.Nome,
                 NomeSocial = s.NomeSocial,
+                Genero = s.Genero,
                 Email = s.Email,
                 Cpf = s.Cpf,
                 Telefone = s.Telefone,
@@ -89,7 +91,7 @@ namespace Statmed.Controllers
 
         }
 
-        //Atuliza o cadastro do paciente!!!
+        //Atualiza o cadastro do paciente!!!
         [HttpPut("AtualizarPaciente")]
         public async Task<HttpStatusCode> AtualizarPaciente(Paciente Paciente)
         {
@@ -114,7 +116,7 @@ namespace Statmed.Controllers
         }
 
 
-        //Atuliza o cadastro do paciente!!!
+        //Atualiza o cadastro do paciente!!!
         [HttpDelete("DeletarPaciente")]
         public async Task<HttpStatusCode> DeletarPaciente(int IdSame)
         {

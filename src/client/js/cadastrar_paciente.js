@@ -1,8 +1,9 @@
 //Cadastro de Paciente
-function CadastrarPaciente(nome, nomeSocial, email, cpf, telefone, dataNasc, cep, rua, numero, bairro, cidade, uf) {
+function CadastrarPaciente(nome, nomeSocial, genero, email, cpf, telefone, dataNasc, cep, rua, numero, bairro, cidade, uf) {
     const data = {
         nome: nome,
         nomeSocial: nomeSocial,
+        genero: genero,
         email: email,
         cpf: cpf,
         telefone: telefone,
@@ -43,6 +44,7 @@ function CadastrarPaciente(nome, nomeSocial, email, cpf, telefone, dataNasc, cep
 function salvar() {
     let nome = document.getElementById("nome").value;
     let nomeSocial = document.getElementById("nomeSocial").value;
+    let genero = document.getElementById("genero").value;
     let email = document.getElementById("email").value;
     let cpf = document.getElementById("cpf").value;
     let telefone = document.getElementById("telefone").value;
@@ -65,7 +67,7 @@ function salvar() {
 
     // Verifica se a lista de erros ta vazia e retorna a mensagem de sucesso depois da call de cadastrar
     if (erros.length === 0) {
-        CadastrarPaciente(nome, nomeSocial, email, cpf, telefone, dataNasc, cep, rua, numero, bairro, cidade, uf)
+        CadastrarPaciente(nome, nomeSocial, genero, email, cpf, telefone, dataNasc, cep, rua, numero, bairro, cidade, uf)
     } else {
         Swal.fire({
             icon: 'error',
