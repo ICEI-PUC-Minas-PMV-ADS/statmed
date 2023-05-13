@@ -13,7 +13,7 @@ namespace Statmed.Models
         public string Coren { get; set; } = string.Empty;
         public string DataNasc { get; set; } = string.Empty;
         public string Crm { get; set; } = string.Empty;
-        public byte[] SenhaHash { get; set; }
-        public byte[] SenhaSalt { get; set; }
+        public string SenhaHash { get; set; }
+        public string SenhaSalt { get; set; }
     }
 }
