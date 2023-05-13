@@ -6,13 +6,14 @@ namespace Statmed.Models
     {
         [Key]
         public int IdFunc { get; set; }
-        public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public string Telefone { get; set; }
-        public string DataNasc { get; set; }     
-        public string Senha { get; set; }
-        public string Sexo {get; set; }
-
-    
+        public string Nome { get; set; } = string.Empty;
+        public string Login { get; set; } = string.Empty;
+        public string IdCargo { get; set; } = string.Empty;
+        public string Cpf { get; set; } = string.Empty;
+        public string Coren { get; set; } = string.Empty;
+        public string DataNasc { get; set; } = string.Empty;
+        public string Crm { get; set; } = string.Empty;
+        public byte[] SenhaHash { get; set; }
+        public byte[] SenhaSalt { get; set; }
     }
 }
