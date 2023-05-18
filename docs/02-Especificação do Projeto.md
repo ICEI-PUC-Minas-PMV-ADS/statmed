@@ -81,16 +81,18 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |  RF-006 | O Sistema deverá gerar atestado (comprovante de consulta)  | BAIXA  |
 |  RF-008 | O Sistema deverá permitir a Pesquisa de CID  |  MÉDIA |
 |  RF-009 | O Sistema deverá permitir gerar relatórios conforme o solicitado | ALTA |
-|  RF-0010 | O Sistema deverá permitir gerar receituário médico | MÉDIA  |
-|  RF-0011 | O Sistema deverá permitir  gerar formulário de referência e contrarreferência  | MÉDIA  |
-|  RF-0012 |  O Sistema deverá gerar gráficos das estatísticas de atendimento e doenças | BAIXA  |
-|  RF-0013 | O Sistema deverá permitir a impressão da ficha e histórico do paciente  |  MÉDIA|
+|  RF-010 | O Sistema deverá permitir gerar receituário médico | MÉDIA  |
+|  RF-011 | O Sistema deverá permitir  gerar formulário de referência e contrarreferência  | MÉDIA  |
+|  RF-012 |  O Sistema deverá gerar gráficos das estatísticas de atendimento e doenças | BAIXA  |
+|  RF-013 | O Sistema deverá permitir a impressão da ficha e histórico do paciente  |  MÉDIA |
+|  RF-014 | O Sistema deverá auxiliar o usuário contatar o responsável pelo sistema em caso de erro de login  |  BAIXA |
+
 
 #### Requisitos Não Funcionais
 
 |  ID | Descrição do Requisito  |  Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
+|RNF-001| O sistema deve ter layout responsivo | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
 |RNF-003| Usuários deverão ter níveis de acessos e permissões diferentes conforme o cargo |  ALTA | 
 |RNF-004| O sistema deve ser seguro, possuindo a guarda do  histórico médico sem acesso por terceiros, segundo a LGPD |  ALTA |
