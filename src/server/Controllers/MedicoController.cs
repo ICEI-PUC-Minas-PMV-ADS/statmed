@@ -4,9 +4,9 @@ using Statmed.Models;
 
 namespace Statmed.Controllers
 {
-  [ApiController]
-  [Route("api/[controller]")]
-  public class MedicoController : ControllerBase
+    [ApiController]
+    [Route("api/[controller]")]
+    public class MedicoController : ControllerBase
 
     {
         public readonly MedicoRepository medicoRepository;
@@ -25,6 +25,36 @@ namespace Statmed.Controllers
 
             }
             return BadRequest(ModelState);
+        }
+
+        [HttpPut]
+        [Route("Atualizar")]
+        public ActionResult<Medico> Atualizar([FromBody] Medico body)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return this.medicoRepository.Atualizar(body);
+        }
+        [HttpGet]
+        [Route("Listar")]
+        public ActionResult<List<Medico>> Listar()
+        {
+            return this.medicoRepository.Listar();
+        }
+
+        [HttpGet]
+        [Route("BuscarId")]
+        public ActionResult<Medico> BuscarId(int id)
+        => this.medicoRepository.BuscarPorId(id);
+
+        [HttpDelete]
+        [Route("DeletarPorId")]
+        public void DeletarPorId(int id)
+        {
+            this.medicoRepository.DeletarPorId(id);
         }
 
     }

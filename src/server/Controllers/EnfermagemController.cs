@@ -24,10 +24,10 @@ namespace Statmed.Controllers
                 return BadRequest(ModelState);
             }
 
-          return this.enfermagemRepository.Adicionar(body);            
+            return this.enfermagemRepository.Adicionar(body);
         }
 
-         [HttpPut]
+        [HttpPut]
         [Route("Atualizar")]
         public ActionResult<Enfermagem> Atualizar([FromBody] Enfermagem body)
         {
@@ -36,28 +36,25 @@ namespace Statmed.Controllers
                 return BadRequest(ModelState);
             }
 
-          return this.enfermagemRepository.Atualizar(body);            
+            return this.enfermagemRepository.Atualizar(body);
         }
 
         [HttpGet]
         [Route("Listar")]
         public ActionResult<List<Enfermagem>> Listar()
         {
-          return this.enfermagemRepository.Listar();            
+            return this.enfermagemRepository.Listar();
         }
 
-         [HttpGet]
+        [HttpGet]
         [Route("BuscarId")]
-        public ActionResult<Enfermagem>BuscarId(int id)
-        {
-          return this.enfermagemRepository.BuscarPorId(id);            
-        }
+        public ActionResult<Enfermagem> BuscarId(int id) => this.enfermagemRepository.BuscarPorId(id);
 
-          [HttpDelete]
+        [HttpDelete]
         [Route("DeletarPorId")]
         public void DeletarPorId(int id)
         {
-          this.enfermagemRepository.DeletarPorId(id);            
+            this.enfermagemRepository.DeletarPorId(id);
         }
     }
 }
