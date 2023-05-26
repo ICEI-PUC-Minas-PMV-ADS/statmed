@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
     
 
 
 export default function Atendimento() {
+    useEffect(() => {
+        document.title = 'Statmed - Registrar Paciente';
+      }, []);
 
     // Data Atual no Input
     var curr = new Date();
@@ -22,7 +26,7 @@ export default function Atendimento() {
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-10">
                             <input type="text" className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" />
-                            <label htmlFor="floatingInput">ID Same</label>
+                            <label htmlFor="floatingInput">ID Same       <ManageSearchRoundedIcon/></label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-25">
                             <input type="name" className="form-control w-100" id="idFunc_recepcionista" placeholder="Example input" disabled />

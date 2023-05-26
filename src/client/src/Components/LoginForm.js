@@ -5,6 +5,9 @@ import axios from '../Api/axios';
 const LOGIN_URL = '/auth';
 
 function LoginForm() {
+    useEffect(() => {
+        document.title = 'Statmed - Login';
+      }, []);
 
     const { setAuth } = useContext(AuthContext);
     const usuaRef = useRef();

@@ -4,6 +4,10 @@ import Swal from 'sweetalert2';
 
 
 function AjudaForm() {
+  useEffect(() => {
+    document.title = 'Statmed - Ajuda';
+  }, []);
+
   const nomeRef = useRef();
   const form = useRef();
 

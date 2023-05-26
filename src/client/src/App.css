@@ -108,3 +108,8 @@ body {
 .form-control:disabled {
     background-color: rgba(211, 211, 211, 0.979) !important;
 }
+
+/* Sidebar */
+.ps-submenu-root {
+    background-color: #fff !important;
+}

@@ -6,6 +6,7 @@
     "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.2",
     "@popperjs/core": "^2.11.7",
     "@react-spring/web": "^9.7.2",

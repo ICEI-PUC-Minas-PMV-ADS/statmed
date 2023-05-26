@@ -6,15 +6,16 @@ import LoginPage from './Pages/Login/Login';
 import Layout from './Layout';
 import Atendimento from './Pages/Atendimento/Atendimento';
 import Anamnese from './Pages/Anamnese/Anamnese';
-
+import AttPaciente from './Pages/AtualizarPaciente/AtualizarPaciente';
 
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="/cad" element={<CadPaciente />} />
+        <Route path="/cad" element={<CadPaciente />}/>
         <Route path="/atend" element={<Atendimento />} />
+        <Route path="/atpac" element={<AttPaciente />} />
         <Route path="/anamenese" element={<Anamnese />} />
       </Route>
       <Route path="/login" element={<LoginPage />} />

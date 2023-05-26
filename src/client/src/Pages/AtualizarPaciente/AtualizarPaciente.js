@@ -1,12 +1,12 @@
 import Axios from 'axios';
 import React, { useRef, useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
+import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
 
 
-
-export default function CadPaciente() {
+export default function AttPaciente() {
     useEffect(() => {
-        document.title = 'Statmed - Cadastro de Paciente';
+        document.title = 'Statmed - Atualizar Cadastro de Paciente';
       }, []);
 
     // Formata o telefone
@@ -164,12 +164,50 @@ export default function CadPaciente() {
         setData(newData)
     }
 
+    function buscaSame() {
+        let idSame = document.getElementById('idSame').value;
+        if (idSame !== "") {
+            let url = "http://localhost:5145/api/Paciente/BuscaIdSame?IdSame=" + idSame;
+
+            let req = new XMLHttpRequest();
+            req.open("Get", url);
+            req.send();
+
+            req.onload = function () {
+                if (req.status === 200) {
+                    let puxapaciente = JSON.parse(req.response);
+                    document.getElementById('nome').value = puxapaciente.nome;
+                    document.getElementById("rua").value = puxapaciente.rua;
+                }
+                else if (req.status === 404) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Paciente não encontrado!'
+                    })
+                }
+                else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Aconteceu algo errado... Contate seu administrador'
+                    })
+                }
+            }
+        }
+    }
 
     return (
         <div className="container-fluid">
-            <h3 className="text-uppercase fw-normal  mt-3 mb-3">Cadastro de Paciente</h3>
+            <h3 className="text-uppercase fw-normal  mt-3 mb-3">Atualizar Cadastro de Paciente</h3>
             <div className="">
                 <form onSubmit={(e) => submit(e)}>
+                    <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
+                    <div className="form-floating mb-3 me-3 w-10">
+                            <input onBlur={buscaSame} type="number" className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" />
+                            <label htmlFor="floatingInput">ID Same       <ManageSearchRoundedIcon/></label>
+                        </div>
+                    </div>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-50 flex-fill">
                             <input onChange={(e) => handle(e)} value={data.nome} type="text" className="form-control w-100" id="nome" autoComplete='off' ref={nomeRef} placeholder="Example input" required />
