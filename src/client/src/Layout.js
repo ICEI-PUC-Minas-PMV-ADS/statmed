@@ -23,9 +23,10 @@ export default function Layout(){
     <div style={{ display: "flex", height: "100vh" }}>
       <Sidebar 
       backgroundColor="rgb(0, 201, 117)"
+      width="350px"
       rootStyles={{
         color: '#23272A',
-        borderColor: 'rgb(0, 201, 117)'
+        borderColor: 'rgb(0, 201, 117)',
         }}>
         <HospitalLogo className="mb-3 ms-3 me-3 mt-3"/>
         <Divider/>

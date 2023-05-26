@@ -203,7 +203,7 @@ export default function AttPaciente() {
             <div className="">
                 <form onSubmit={(e) => submit(e)}>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
-                    <div className="form-floating mb-3 me-3 w-10">
+                    <div className="form-floating mb-3 me-3 w-25">
                             <input onBlur={buscaSame} type="number" className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" />
                             <label htmlFor="floatingInput">ID Same       <ManageSearchRoundedIcon/></label>
                         </div>
