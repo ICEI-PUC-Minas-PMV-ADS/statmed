@@ -50,8 +50,6 @@ A partir da compreensão do dia a dia das pessoas identificadas para o projeto, 
 |  Recepcionista (André) |  Gerar ficha do paciente cadastrado com todos os dados dele | Para fazer a recepção do paciente e a partir dessa etapa encaminhar ele para a especialidade desejada    |
 | Supervisora administrativa (Elizabeth)  | Gerar relatórios de média de atendimentos   |  Controle e manutenção das atividades hospitalares |
 | Supervisora administrativa (Elizabeth)  | Gerar diagramas com a quantidade de casos de doenças epidemiológicas  |  Prestar devida assistência ao ministério da saúde no controle de epidemias |
-| Enfermeira (Rafaella)  | Consultar registros do paciente com suas observações médicas  | Diminuir a possibilidade de erros com medicação e cuidados   |
-| Enfermeira (Rafaella)  |  Consultar local do prontuário físico (Prontuário impresso) | Realizar prova de medicações junto a convênios durante a auditoria  |
 
 ## Requisitos
 
