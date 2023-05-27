@@ -17,18 +17,21 @@ import QueueRoundedIcon from '@mui/icons-material/QueueRounded';
 import DescriptionRoundedIcon from '@mui/icons-material/DescriptionRounded';
 import SummarizeRoundedIcon from '@mui/icons-material/SummarizeRounded';
 import SwapHorizontalCircleRoundedIcon from '@mui/icons-material/SwapHorizontalCircleRounded';
+import Inventory2RoundedIcon from '@mui/icons-material/Inventory2Rounded';
+import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded';
 
 export default function Layout(){
     return (
-    <div style={{ display: "flex", height: "100vh" }}>
+    <div className="main-conteudo">
       <Sidebar 
       backgroundColor="rgb(0, 201, 117)"
       width="350px"
-      rootStyles={{
+        rootStyles={{
         color: '#23272A',
         borderColor: 'rgb(0, 201, 117)',
+        background: 'rgb(0, 201, 117)'
         }}>
-        <HospitalLogo className="mb-3 ms-3 me-3 mt-3"/>
+        <Link to="/inicio"><HospitalLogo className="mb-3 ms-3 me-3 mt-3"/></Link>
         <Divider/>
         <Menu menuItemStyles={{
             button: {
@@ -41,25 +44,28 @@ export default function Layout(){
             },
         }}>
           <SubMenu icon={<SupervisedUserCircleRoundedIcon/>}  label="Paciente">
-            <MenuItem icon={<PersonAddRoundedIcon/>} component={<Link to="/cad" />} > Novo Cadastro </MenuItem>
-            <MenuItem icon={<ManageAccountsRoundedIcon/>} component={<Link to="/atpac"/>} > Atualizar Cadastro</MenuItem>
+            <MenuItem icon={<PersonAddRoundedIcon/>} component={<Link to="/cad" />} >Novo Cadastro </MenuItem>
+            <MenuItem icon={<ManageAccountsRoundedIcon/>} component={<Link to="/atpac"/>} >Atualizar Cadastro</MenuItem>
+            <MenuItem icon={<InventoryRoundedIcon/>} component={<Link to="/"/>} >Histórico Hospitalar</MenuItem>
           </SubMenu>
           <Divider/>
           <SubMenu icon={<PortraitRoundedIcon/>} label="Atendimento">
             <MenuItem icon={<QueueRoundedIcon/>} component={<Link to="/atend" />} >Nova Consulta</MenuItem>
+            <MenuItem icon={<QueueRoundedIcon/>} component={<Link to="/anamnese" />} >Registrar Anamnese</MenuItem>
             <MenuItem icon={<DescriptionRoundedIcon/>}>Relatório Médico</MenuItem>
-            <MenuItem icon={<SummarizeRoundedIcon/>}>Encaminhamento</MenuItem>
-            <MenuItem icon={<SwapHorizontalCircleRoundedIcon/>}>Atestado</MenuItem>
+            <MenuItem icon={<SwapHorizontalCircleRoundedIcon/>}>Encaminhamento</MenuItem>
+            <MenuItem icon={<SummarizeRoundedIcon/>}>Atestado</MenuItem>
           </SubMenu>
           <Divider/>
           <SubMenu icon={<TableChartRoundedIcon/>} label="Administrativo">
             <MenuItem icon={<AddchartRoundedIcon/>}>Relatórios</MenuItem>
             <MenuItem icon={<InsightsRoundedIcon/>}>Estatísticas</MenuItem>
+            <MenuItem icon={<Inventory2RoundedIcon/>}>Arquivo SAME</MenuItem>
           </SubMenu>
           <Divider/>
-          <MenuItem icon={<HealthAndSafetyRoundedIcon/>}>Busca CID </MenuItem>
+          <MenuItem icon={<HealthAndSafetyRoundedIcon/>}>Busca CID</MenuItem>
           <Divider/>
-          <MenuItem icon={<LogoutRoundedIcon/>}>Logout </MenuItem>
+          <MenuItem icon={<LogoutRoundedIcon/>}>Logout</MenuItem>
         </Menu>
       </Sidebar>
       <Outlet/>

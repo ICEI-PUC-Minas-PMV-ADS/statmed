@@ -46,15 +46,15 @@ function LoginForm() {
         } catch (err) {
             // Mudar depois de configurar o webAPI
             if (!err?.response) {
-                setErrMsg('Sem resposta do servidor');
+                setErrMsg('Erro inesperado, contate seu administrador!');
             } else if (err.response?.status === 400) {
                 setErrMsg('Falta usuário ou senha');
             } else if (err.response?.status === 404) {
-                setErrMsg('Sem resposta do servidor');
+                setErrMsg('Erro inesperado, contate seu administrador!');
             } else if (err.response?.status === 401) {
-                setErrMsg('Senha ou usuário incorreto');
+                setErrMsg('Usuário bloqueado!');
             } else {
-                setErrMsg('Senha ou usuário incorreto');
+                setErrMsg('Erro inesperado, contate seu administrador!');
             }
             errRef.current.focus();
         }

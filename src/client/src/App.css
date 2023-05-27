@@ -19,11 +19,15 @@ body {
     color: var(--lightmode1);
 }
 
-
 * {
     font-family: 'Inter', sans-serif;
 }
 
+.main-conteudo {
+    display: flex;
+    min-height: 100vh;
+    height: 100%;
+}
 /* Bootstrap & Padrões */
 .btn-padrao {
     font-size: 0.9rem !important;
@@ -39,8 +43,22 @@ body {
     color: var(--darkmode1) !important;
 }
 
+.btn-padrao:hover {
+    background-color: var(--principal-hover) !important;
+    border-color: var(--principal) !important;
+    color: var(--darkmode1) !important;
+}
+
+.btn-pequeno {
+    height: calc(3.5rem + 2px) !important;
+}
+
 .form-check-label {
     color: white !important;
+}
+
+.form-control {
+    border: 0px !important;
 }
 
 .form-floating {
@@ -64,8 +82,6 @@ body {
 .swal2-title, .swal2-html-container {
     color: white !important;
 }
-
-
 
 /**/
 .busca-paciente-container {
@@ -105,11 +121,49 @@ body {
     border-color: red !important;
 }
 
-.form-control:disabled {
-    background-color: rgba(211, 211, 211, 0.979) !important;
+.form-control:disabled  {
+    background-color: #a3a3a3 !important;
+    border: 0px;
 }
 
-/* Sidebar */
-.ps-submenu-root {
-    background-color: #fff !important;
+.form-select:disabled {
+    background-color: #a3a3a3 !important;
+    border: 0px;
+}
+
+/* Anamnese */
+.anamnese-texto-area {
+    height: 50vh !important;
+}
+
+/* Ajuda */
+.ajuda-input-adicional {
+    height: 100px !important;
+}
+
+/* Dashboard */
+.border-left-primary {
+    border-bottom: 0.25rem solid var(--principal) !important;
+  }
+
+  .border-left-primary:hover {
+    border-bottom: 0.25rem solid var(--principal-hover) !important;
+  }
+
+.card {
+    --bs-card-bg: var(--darkmode2) !important;
+}
+
+.card-dashboard {
+    height: 150px !important;
+    width: 250px !important;
+}
+
+.text-card {
+    color: var(--principal) !important;
+}
+
+.btn-card {
+    height: 40px !important;
+    width: 40px !important;
 }

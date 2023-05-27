@@ -68,7 +68,7 @@ function AjudaForm() {
           <label htmlFor="floatingInput">Preciso de ajuda com</label>
         </div>
         <div className="form-floating mb-3">
-          <textarea className="form-control" name="mensagem" rows="3"></textarea>
+          <textarea className="form-control ajuda-input-adicional" name="mensagem" rows="15"></textarea>
           <label htmlFor="mensagem">Mensagem adicional</label>
         </div>
         <div className="d-grid">

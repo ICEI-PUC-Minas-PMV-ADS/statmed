@@ -74,18 +74,17 @@ namespace Statmed.Controllers
                 Rua = s.Rua,
                 Numero = s.Numero,
                 Bairro = s.Bairro,
+                Complemento = s.Complemento,
                 Cidade = s.Cidade,
-                Uf = s.Uf,
+                Uf = s.Uf,  
                 Prateleira = s.Prateleira
             }).FirstOrDefaultAsync(s => s.IdSame == IdSame);
             if (IdPaciente == null)
             {
                 return NotFound();
-
             }
             else
             {
-
                 return IdPaciente;
             }
 
