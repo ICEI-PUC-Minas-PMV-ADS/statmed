@@ -23,7 +23,9 @@ O projeto da base de dados corresponde à representação das entidades e relaci
 
 A base de dados foi feita utilizando MySQL.
  
-![image](https://user-images.githubusercontent.com/97044440/230523249-242171ac-d2f6-485b-bf42-1e4e80d3a372.png)
+
+![Banco de dados](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/70419372/e81e5492-3460-4777-9481-db0ced625c82)
+
 
 
 ## Tecnologias Utilizadas
