@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
 :root {
     /* principal - cor de relevo do nosso logo, hover - cor utiliza para elementos com hover effect */
     --principal: #00C975;
@@ -9,7 +10,7 @@
     --darkmode2: #2c2f33;
     /* Cores lightmode */
     --lightmode1: #DCDCDC;
-    --lightmode2: #fff;    
+    --lightmode2: #fff;
 }
 
 body {
@@ -28,6 +29,7 @@ body {
     min-height: 100vh;
     height: 100%;
 }
+
 /* Bootstrap & Padrões */
 .btn-padrao {
     font-size: 0.9rem !important;
@@ -79,7 +81,9 @@ body {
     background-color: var(--darkmode2) !important;
 
 }
-.swal2-title, .swal2-html-container {
+
+.swal2-title,
+.swal2-html-container {
     color: white !important;
 }
 
@@ -121,7 +125,7 @@ body {
     border-color: red !important;
 }
 
-.form-control:disabled  {
+.form-control:disabled {
     background-color: #a3a3a3 !important;
     border: 0px;
 }
@@ -144,11 +148,11 @@ body {
 /* Dashboard */
 .border-left-primary {
     border-bottom: 0.25rem solid var(--principal) !important;
-  }
+}
 
-  .border-left-primary:hover {
+.border-left-primary:hover {
     border-bottom: 0.25rem solid var(--principal-hover) !important;
-  }
+}
 
 .card {
     --bs-card-bg: var(--darkmode2) !important;
@@ -166,4 +170,30 @@ body {
 .btn-card {
     height: 40px !important;
     width: 40px !important;
+}
+
+.btn-close {
+    height: 25px !important;
+    width: 25px !important;
+}
+
+/* Modal CID */
+.modal-overlay {
+    background: rgba(44, 47, 51, 0.26);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--darkmode1);
+    padding: 10px;
+    border-radius: 10px;
 }

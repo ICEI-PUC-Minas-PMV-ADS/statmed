@@ -1,7 +1,9 @@
-import {Link, Outlet} from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, Outlet } from "react-router-dom";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { ReactComponent as HospitalLogo } from './Assets/img/svg/hospital_exemplo.svg';
 import { Divider } from "@mui/material";
+import Modal from "react-modal";
 
 // Import dos icones do menu
 import SupervisedUserCircleRoundedIcon from '@mui/icons-material/SupervisedUserCircleRounded';
@@ -19,8 +21,21 @@ import SummarizeRoundedIcon from '@mui/icons-material/SummarizeRounded';
 import SwapHorizontalCircleRoundedIcon from '@mui/icons-material/SwapHorizontalCircleRounded';
 import Inventory2RoundedIcon from '@mui/icons-material/Inventory2Rounded';
 import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded';
+import ModalCid from './Components/ModalCid';
 
+Modal.setAppElement("#root")
 export default function Layout(){
+
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+    function openModal() {
+      setIsOpen(true);
+    }
+    
+    function closeModal() {
+      setIsOpen(false);
+    }
+
     return (
     <div className="main-conteudo">
       <Sidebar 
@@ -63,7 +78,15 @@ export default function Layout(){
             <MenuItem icon={<Inventory2RoundedIcon/>}>Arquivo SAME</MenuItem>
           </SubMenu>
           <Divider/>
-          <MenuItem icon={<HealthAndSafetyRoundedIcon/>}>Busca CID</MenuItem>
+          <MenuItem icon={<HealthAndSafetyRoundedIcon/>} onClick={openModal}>Busca CID</MenuItem>
+          <Modal 
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            contentLabel="Example Modal"
+            overlayClassName="modal-overlay"
+            className="modal-content">
+              <ModalCid closeModal={closeModal}/>
+            </Modal>
           <Divider/>
           <MenuItem icon={<LogoutRoundedIcon/>}>Logout</MenuItem>
         </Menu>
