@@ -15,8 +15,7 @@ O diagrama de classes ilustra graficamente como será a estrutura do software, e
 
 ## Modelo ER (Projeto Conceitual)
 
-![Banco de dados](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/70419372/93ec9eea-dec7-4b78-97e7-3d68e8994680)
-
+![image](https://user-images.githubusercontent.com/98277143/230527029-7f20e933-b713-4e17-8c37-9cd559938a4b.png)
 
 ## Projeto da Base de Dados
 
