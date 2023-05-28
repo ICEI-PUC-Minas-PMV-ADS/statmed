@@ -22,5 +22,6 @@ namespace Statmed.Models
         public string Complemento { get; set; }
         public int Numero { get; set; }
         public string Prateleira { get; set; }
+        public ICollection<Atendimento> Atendimento { get; set; }    
     }
 }

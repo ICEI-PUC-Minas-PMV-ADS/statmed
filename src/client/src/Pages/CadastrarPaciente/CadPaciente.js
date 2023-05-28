@@ -100,7 +100,7 @@ export default function CadPaciente() {
                 }
             }
         }
-    }   
+    }
 
     // Começo do POST
     const [data, setData] = useState({
@@ -114,7 +114,7 @@ export default function CadPaciente() {
         cep: "",
         numero: "",
         complemento: ""
-    }) 
+    })
 
     // Gambiarra pro useState do setData não ficar limpando o return da funcao de buscaCEP
     const ruaRef = useRef(undefined);
@@ -152,7 +152,7 @@ export default function CadPaciente() {
                     bairro: bairroPega,
                     cidade: cidadePega,
                     uf: ufPega
-                 }),
+                }),
                 {
                     headers: { 'Content-Type': 'application/json' },
                 }
@@ -174,42 +174,42 @@ export default function CadPaciente() {
                 telefone: "",
                 cep: "",
                 numero: "",
-                complemento: ""    
+                complemento: ""
             });
             e.target.reset();
-            } catch (err) {
-                if (!err?.response) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Erro',
-                        text: 'Falha de comunicação com servidor, Contate seu Administrator.'
-                    })
-                } else if (err.response?.status === 401) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Erro',
-                        text: 'Falha de permissão.'
-                    })
-                } else if (err.response?.status === 404) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Erro',
-                        text: 'Falha de comunicação com servidor, Contate seu Administrator.'
-                    })
-                } else if (err.response?.status === 500) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Erro',
-                        text: 'CPF já cadastrado, confirme no busca cadastro os dados!'
-                    })
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Erro',
-                        text: 'Falha de comunicação com servidor, Contate seu Administrator.'
-                    })
-                }
+        } catch (err) {
+            if (!err?.response) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de comunicação com servidor, Contate seu Administrator.'
+                })
+            } else if (err.response?.status === 401) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de permissão.'
+                })
+            } else if (err.response?.status === 404) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de comunicação com servidor, Contate seu Administrator.'
+                })
+            } else if (err.response?.status === 500) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'CPF já cadastrado, confirme no busca cadastro os dados!'
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de comunicação com servidor, Contate seu Administrator.'
+                })
             }
+        }
     }
     return (
         <div className="container-fluid ms-3">
@@ -265,7 +265,7 @@ export default function CadPaciente() {
                             <label htmlFor="floatingInput">CEP</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-75">
-                            <input readOnly ref={ruaRef} type="text" className="form-control" id="rua" placeholder="Example input" required/>
+                            <input readOnly ref={ruaRef} type="text" className="form-control" id="rua" placeholder="Example input" required />
                             <label htmlFor="floatingInput">Rua</label>
                         </div>
                         <div className="form-floating mb-3 flex-fill">
@@ -281,15 +281,15 @@ export default function CadPaciente() {
                             <label htmlFor="floatingInput">Complemento </label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-20">
-                            <input readOnly ref={bairroRef} type="text" className="form-control" id="bairro" placeholder="Example input" required/>
+                            <input readOnly ref={bairroRef} type="text" className="form-control" id="bairro" placeholder="Example input" required />
                             <label htmlFor="floatingInput">Bairro</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-40">
-                            <input readOnly ref={cidadeRef} type="text" className="form-control" id="cidade" placeholder="Example input" required/>
+                            <input readOnly ref={cidadeRef} type="text" className="form-control" id="cidade" placeholder="Example input" required />
                             <label htmlFor="floatingInput">Cidade</label>
                         </div>
                         <div className="form-floating mb-3 w-20">
-                            <input readOnly ref={ufRef} type="text" className="form-control" id="uf" placeholder="Example input" required/>
+                            <input readOnly ref={ufRef} type="text" className="form-control" id="uf" placeholder="Example input" required />
                             <label htmlFor="floatingInput">Estado</label>
                         </div>
                     </div>

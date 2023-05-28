@@ -8,7 +8,7 @@ import Atendimento from './Pages/Atendimento/Atendimento';
 import Anamnese from './Pages/Anamnese/Anamnese';
 import AttPaciente from './Pages/AtualizarPaciente/AtualizarPaciente';
 import Dashboard from './Pages/Dashboard/Dashboard';
-
+import AnamnesePrint from './Components/AnamnesePrint/AnamnesePrint';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
         <Route path="/anamnese" element={<Anamnese />} />
       </Route>
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/printTest" element={<AnamnesePrint />} />
     </Routes>
   );
 }

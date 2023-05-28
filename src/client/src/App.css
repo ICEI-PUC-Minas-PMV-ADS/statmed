@@ -138,6 +138,7 @@ body {
 /* Anamnese */
 .anamnese-texto-area {
     height: 50vh !important;
+    resize: none;
 }
 
 /* Ajuda */
@@ -188,6 +189,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 99999999;
 }
 
 .modal-content {
@@ -196,4 +198,11 @@ body {
     background-color: var(--darkmode1);
     padding: 10px;
     border-radius: 10px;
+}
+
+.modal-content-print {
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--darkmode1);
+    padding: 0px;
 }

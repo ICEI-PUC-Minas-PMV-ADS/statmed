@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
 import Swal from 'sweetalert2';
+import { Axios } from 'axios';
 
 
 
@@ -13,10 +14,6 @@ export default function Atendimento() {
     var curr = new Date();
     curr.setDate(curr.getDate() + 3);
     var date = curr.toISOString().substring(0, 10);
-
-    const handlePacienteAtend = (e) => {
-        e.preventDefault();
-    }
 
     function buscaSame() {
         let idSame = document.getElementById('idSame').value;
@@ -67,27 +64,95 @@ export default function Atendimento() {
         return age;
     }
 
+    // Gambiarra
+    const idSameRef = useRef(undefined);
+    const atendenteRef = useRef(undefined);
+    const dataRef = useRef(undefined);
+    const epidemiaRef = useRef(undefined);
+    const url = 'http://localhost:5145/api/Atendimento/Cadastrar'
+
+    const submit = async (e) => {
+        e.preventDefault();
+        // Continuação da gambiarra
+        const idSamePega = idSameRef.current.value;
+        const atendentePega = atendenteRef.current.value;
+        const dataPega = dataRef.current.value;
+        const epidemiaPega = epidemiaRef.current.value;
+        try {
+            await Axios.post(url,
+                JSON.stringify({
+                    usuario_idFunc: atendentePega,
+                    data: dataPega,
+                    epidemia: epidemiaPega,
+                    paciente_idSame: idSamePega
+                }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                }
+            );
+            Swal.fire({
+                icon: 'success',
+                title: 'Paciente Cadastrado',
+                showConfirmButton: false,
+                timer: 2500
+            });
+            e.target.reset();
+        } catch (err) {
+            if (!err?.response) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de comunicação com servidor, Contate seu Administrator.'
+                })
+            } else if (err.response?.status === 401) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de permissão.'
+                })
+            } else if (err.response?.status === 404) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de comunicação com servidor, Contate seu Administrator.'
+                })
+            } else if (err.response?.status === 500) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'CPF já cadastrado, confirme no busca cadastro os dados!'
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de comunicação com servidor, Contate seu Administrator.'
+                })
+            }
+        }
+    }
+
     return (
         <div className="container-fluid ms-3">
             <h3 className="text-uppercase fw-normal mt-3 mb-3">Criar Atendimento</h3>
             <div className="">
-                <form onSubmit={handlePacienteAtend}>
+                <form onSubmit={submit}>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input autoFocus onBlur={buscaSame} type="number" className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" />
+                            <input autoFocus onBlur={buscaSame} ref={idSameRef} type="number" className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" />
                             <label htmlFor="floatingInput">ID Same       <ManageSearchRoundedIcon/></label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-25">
-                            <input type="name" className="form-control w-100" id="idFunc_recepcionista" placeholder="Example input" disabled />
+                            <input ref={atendenteRef} type="name" className="form-control w-100" id="idFunc_recepcionista" placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">Atendente</label>
                         </div>
 
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input defaultValue={date} type="date" className="form-control w-100" id="dataAtend" placeholder="Example input" disabled/>
+                            <input ref={dataRef} defaultValue={date} type="date" className="form-control w-100" id="dataAtend" placeholder="Example input" disabled/>
                             <label htmlFor="floatingInput">Data do atendimento</label>
                         </div>
                         <div className="form-check mb-3">
-                            <input className="form-check-input" type="checkbox" value="" id="epidemia" />
+                            <input ref={epidemiaRef} className="form-check-input" type="checkbox" value="" id="epidemia" />
                             <label className="form-check-label" htmlFor="epidemia">
                                 Epidemia?
                             </label>
@@ -115,7 +180,7 @@ export default function Atendimento() {
                             <label htmlFor="floatingInput">Genêro</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-25">
-                            <input onBlur={pegaIdade} type="text" className="form-control" id="dataNasc" placeholder="Example input" disabled />
+                            <input onChange={pegaIdade} type="text" className="form-control" id="dataNasc" placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">Idade</label>
                         </div>
                         <div className="form-floating mb-3 w-25">
@@ -135,9 +200,6 @@ export default function Atendimento() {
                             <label htmlFor="floatingInput">Telefone</label>
                         </div>
                     </div>
-
-
-                    
                     <button className="btn btn-bscpac btn-lg btn-primary btn-padrao text-uppercase mb-2">Criar Atendimento</button>
                 </form>
             </div>

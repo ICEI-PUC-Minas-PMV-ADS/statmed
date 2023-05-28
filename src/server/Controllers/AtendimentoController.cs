@@ -6,10 +6,12 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Statmed.Models;
+using System.Text.Json;
+using System.Web;
 
 namespace Statmed.Controllers
 {
-     [ApiController]
+    [ApiController]
     [Route("api/[controller]")]
     public class AtendimentoController : Controller
     {
@@ -29,16 +31,20 @@ namespace Statmed.Controllers
 
             var atendimento = new Atendimento()
             {
-             IdFunc_recepcionista = body.IdFunc_recepcionista,
-             IdSame_paciente = body.IdSame_paciente,
-             Data = body.Data,
-             Epidemia = body.Epidemia
-                
+                Usuario_idFunc = body.Usuario_idFunc,
+                PacienteIdSame = body.PacienteIdSame,
+                Usuario_crm = body.Usuario_crm,
+                Data = body.Data,
+                Epidemia = body.Epidemia,
+                Cid = body.Cid,
+                Atestado = body.Atestado,
+                Anamnese = body.Anamnese,
+                Relatorio = body.Relatorio,
+                Encaminhamento = body.Encaminhamento
             };
 
             _statmedDbContext.Atendimento.Add(atendimento);
             await _statmedDbContext.SaveChangesAsync();
-
             return body;
         }
         [HttpGet("BuscaIdAtenimento")]
@@ -47,9 +53,6 @@ namespace Statmed.Controllers
             Atendimento IdPaciente = await _statmedDbContext.Atendimento.Select(s => new Atendimento
             {
                 IdAtendimento = s.IdAtendimento,
-                IdFunc_recepcionista = s.IdFunc_recepcionista,
-                IdSame_paciente = s.IdSame_paciente,
-                IdFunc_medico = s.IdFunc_medico,
                 Data = s.Data,
                 Cid = s.Cid,
                 Epidemia = s.Epidemia,
@@ -72,31 +75,31 @@ namespace Statmed.Controllers
             }
 
         }
-[HttpPut("AtualizarAtendimento")]
-public async Task<HttpStatusCode> RegistrarAnamnese(Atendimento Atendimento)
-{
-    var attPac = await _statmedDbContext.Atendimento.FirstOrDefaultAsync(s => s.IdAtendimento == Atendimento.IdAtendimento);
+        [HttpPut("AtualizarAtendimento")]
+        public async Task<HttpStatusCode> RegistrarAnamnese(Atendimento Atendimento)
+        {
+            var attPac = await _statmedDbContext.Atendimento.FirstOrDefaultAsync(s => s.IdAtendimento == Atendimento.IdAtendimento);
 
-    // Escapar os caracteres inválidos no campo Anamnese
-    string anamneseEscaped = RemoveInvalidCharacters(Atendimento.Anamnese);
+            // Escapar os caracteres inválidos no campo Anamnese
+            string anamneseEscaped = RemoveInvalidCharacters(Atendimento.Anamnese);
 
-    attPac.Cid = Atendimento.Cid;
-    attPac.Atestado = Atendimento.Atestado;
-    attPac.Anamnese = anamneseEscaped; // Usar a string escapada
-    attPac.Relatorio = Atendimento.Relatorio;
-    attPac.Encaminhamento = Atendimento.Encaminhamento;
+            attPac.Cid = Atendimento.Cid;
+            attPac.Atestado = Atendimento.Atestado;
+            attPac.Anamnese = anamneseEscaped; // Usar a string escapada
+            attPac.Relatorio = Atendimento.Relatorio;
+            attPac.Encaminhamento = Atendimento.Encaminhamento;
 
-    await _statmedDbContext.SaveChangesAsync();
-    return HttpStatusCode.OK;
-}
+            await _statmedDbContext.SaveChangesAsync();
+            return HttpStatusCode.OK;
+        }
 
-private string RemoveInvalidCharacters(string input)
-{
-    // Expressão regular para remover caracteres inválidos (\x00-\x08, \x0B-\x0C, \x0E-\x1F)
-    string pattern = @"[\x00-\x08\x0B-\x0C\x0E-\x1F]";
-    string formatted = Regex.Replace(input, pattern, string.Empty);
+        private string RemoveInvalidCharacters(string input)
+        {
+            // Expressão regular para remover caracteres inválidos (\x00-\x08, \x0B-\x0C, \x0E-\x1F)
+            string pattern = @"[\x00-\x08\x0B-\x0C\x0E-\x1F]";
+            string formatted = Regex.Replace(input, pattern, string.Empty);
 
-    return formatted;
-}
+            return formatted;
+        }
     }
 }

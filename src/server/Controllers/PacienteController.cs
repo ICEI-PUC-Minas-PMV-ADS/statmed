@@ -39,11 +39,14 @@ namespace Statmed.Controllers
                 Numero = body.Numero,
                 Bairro = body.Bairro,
                 Cidade = body.Cidade,
+                Complemento = body.Complemento,
                 Uf = body.Uf
             };
+                        string json = System.Text.Json.JsonSerializer.Serialize(paciente);
 
             _statmedDbContext.Paciente.Add(paciente);
             await _statmedDbContext.SaveChangesAsync();
+
 
             return body;
         }

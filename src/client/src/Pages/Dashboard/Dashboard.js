@@ -25,54 +25,54 @@ export default function Dashboard() {
                 <div className="me-3">
                     <div className="w-100 d-inline-flex flex-row justify-content-center align-items-center">
 
-                        <div class="card border-left-primary card-dashboard shadow h-100 py-2 me-5 mt-3 mb-3 ">
-                            <div class="card-body">
-                                <div class="row align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-3 text-card">
+                        <div className="card border-left-primary card-dashboard shadow h-100 py-2 me-5 mt-3 mb-3 ">
+                            <div className="card-body">
+                                <div className="row align-items-center">
+                                    <div className="col mr-2">
+                                        <div className="text-xs font-weight-bold text-primary text-uppercase mb-3 text-card">
                                             Médicos ativos
                                         </div>
-                                        <div class="h1 mb-0 font-weight-bold">
+                                        <div className="h1 mb-0 font-weight-bold">
                                             {medicosPlantao}
                                         </div>
                                     </div>
-                                    <div class="col-auto">
+                                    <div className="col-auto">
                                         <MasksRoundedIcon/>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card border-left-primary card-dashboard shadow h-100 py-2 me-5 mt-4 mb-3 ">
-                            <div class="card-body">
-                                <div class="row align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-3 text-card">
+                        <div className="card border-left-primary card-dashboard shadow h-100 py-2 me-5 mt-4 mb-3 ">
+                            <div className="card-body">
+                                <div className="row align-items-center">
+                                    <div className="col mr-2">
+                                        <div className="text-xs font-weight-bold text-primary text-uppercase mb-3 text-card">
                                             Novos Pacientes
                                         </div>
-                                        <div class="h1 mb-0 font-weight-bold">
+                                        <div className="h1 mb-0 font-weight-bold">
                                             {novosPacientes}
                                         </div>
                                     </div>
-                                    <div class="col-auto">
+                                    <div className="col-auto">
                                         <InsertEmoticonRoundedIcon/>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card border-left-primary card-dashboard shadow h-100 py-2 mt-3 mb-3 ">
-                            <div class="card-body">
-                                <div class="row align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-3 text-card">
+                        <div className="card border-left-primary card-dashboard shadow h-100 py-2 mt-3 mb-3 ">
+                            <div className="card-body">
+                                <div className="row align-items-center">
+                                    <div className="col mr-2">
+                                        <div className="text-xs font-weight-bold text-primary text-uppercase mb-3 text-card">
                                             Consultas Hoje
                                         </div>
-                                        <div class="h1 mb-0 font-weight-bold">
+                                        <div className="h1 mb-0 font-weight-bold">
                                             {consultasHoje}
                                         </div>
                                     </div>
-                                    <div class="col-auto">
+                                    <div className="col-auto">
                                         <AssignmentRoundedIcon/>
                                     </div>
                                 </div>
@@ -83,14 +83,14 @@ export default function Dashboard() {
             </div>
 
             <div className="w-100 d-inline-flex justify-content-center align-items-center">
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3 d-inline-flex flex-row justify-content-start align-items-start">
-                        <h3 class="m-0 mt-2 font-weight-b    text-primary text-card">Informativo </h3>
+                <div className="card shadow mb-4">
+                    <div className="card-header py-3 d-inline-flex flex-row justify-content-start align-items-start">
+                        <h3 className="m-0 mt-2 font-weight-b    text-primary text-card">Informativo </h3>
                         <div className="d-flex justify-content-end flex-fill">
                             <WarningRoundedIcon className="btn-card"/>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div className="card-body">
                         <div className="d-flex justify-content-center flex-fill">
                             <AvisoMascara/>
                         </div>
