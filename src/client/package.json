@@ -2,7 +2,7 @@
   "name": "statmed",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://icei-puc-minas-pmv-ads.github.io/statmed/src/client",
+  "homepage": "https://icei-puc-minas-pmv-ads.github.io/statmed/",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.11.0",

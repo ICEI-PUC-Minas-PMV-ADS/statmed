@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/statmed/src/client/static/css/main.cce14ac7.css",
-    "main.js": "/statmed/src/client/static/js/main.8786c507.js",
-    "static/media/login_imgesq.png": "/statmed/src/client/static/media/login_imgesq.ed113fbc302f8a258c45.png",
-    "static/media/login_ajuda.jpg": "/statmed/src/client/static/media/login_ajuda.4743ff6fc8972981a2cb.jpg",
-    "static/media/aviso_mascara.svg": "/statmed/src/client/static/media/aviso_mascara.e85b2bd78392214a849dbc44ab89b8eb.svg",
-    "static/media/hospital_exemplo.svg": "/statmed/src/client/static/media/hospital_exemplo.1aae06145f0c3150848acda2c611b3ce.svg",
-    "static/media/hospital_exemplo_anm.svg": "/statmed/src/client/static/media/hospital_exemplo_anm.ec115ea45af0e5625c637bf18dde8d78.svg",
-    "static/media/logo.svg": "/statmed/src/client/static/media/logo.2152583d87f529766a927356843638e4.svg",
-    "index.html": "/statmed/src/client/index.html",
-    "main.cce14ac7.css.map": "/statmed/src/client/static/css/main.cce14ac7.css.map",
-    "main.8786c507.js.map": "/statmed/src/client/static/js/main.8786c507.js.map"
+    "main.css": "/statmed/static/css/main.6c4c4f46.css",
+    "main.js": "/statmed/static/js/main.dfe0fe4e.js",
+    "static/media/login_imgesq.png": "/statmed/static/media/login_imgesq.ed113fbc302f8a258c45.png",
+    "static/media/login_ajuda.jpg": "/statmed/static/media/login_ajuda.4743ff6fc8972981a2cb.jpg",
+    "static/media/aviso_mascara.svg": "/statmed/static/media/aviso_mascara.e85b2bd78392214a849dbc44ab89b8eb.svg",
+    "static/media/hospital_exemplo.svg": "/statmed/static/media/hospital_exemplo.1aae06145f0c3150848acda2c611b3ce.svg",
+    "static/media/hospital_exemplo_anm.svg": "/statmed/static/media/hospital_exemplo_anm.ec115ea45af0e5625c637bf18dde8d78.svg",
+    "static/media/logo.svg": "/statmed/static/media/logo.2152583d87f529766a927356843638e4.svg",
+    "index.html": "/statmed/index.html",
+    "main.6c4c4f46.css.map": "/statmed/static/css/main.6c4c4f46.css.map",
+    "main.dfe0fe4e.js.map": "/statmed/static/js/main.dfe0fe4e.js.map"
   },
   "entrypoints": [
-    "static/css/main.cce14ac7.css",
-    "static/js/main.8786c507.js"
+    "static/css/main.6c4c4f46.css",
+    "static/js/main.dfe0fe4e.js"
   ]
 }

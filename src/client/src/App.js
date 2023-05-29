@@ -12,14 +12,14 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/inicio" element={<Dashboard />}/>
-        <Route path="/cad" element={<CadPaciente />}/>
-        <Route path="/atend" element={<Atendimento />} />
-        <Route path="/atpac" element={<AttPaciente />} />
-        <Route path="/anamnese" element={<Anamnese />} />
+      <Route path="/statmed/" element={<Layout />}>
+        <Route path="/statmed/inicio" element={<Dashboard />}/>
+        <Route path="/statmed/cad" element={<CadPaciente />}/>
+        <Route path="/statmed/atend" element={<Atendimento />} />
+        <Route path="/statmed/atpac" element={<AttPaciente />} />
+        <Route path="/statmed/anamnese" element={<Anamnese />} />
       </Route>
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/statmed/login" element={<LoginPage />} />
     </Routes>
   );
 }

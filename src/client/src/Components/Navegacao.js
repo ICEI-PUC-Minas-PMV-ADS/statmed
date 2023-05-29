@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { ReactComponent as HospitalLogo } from '../Assets/img/svg/hospital_exemplo.svg';
-import { Divider } from "@mui/material";
+import { Divider, IconButton } from "@mui/material";
 import Modal from "react-modal";
 import ModalCid from './ModalCid';
 
@@ -22,11 +22,14 @@ import SummarizeRoundedIcon from '@mui/icons-material/SummarizeRounded';
 import SwapHorizontalCircleRoundedIcon from '@mui/icons-material/SwapHorizontalCircleRounded';
 import Inventory2RoundedIcon from '@mui/icons-material/Inventory2Rounded';
 import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded';
+import SpaceDashboardRoundedIcon from '@mui/icons-material/SpaceDashboardRounded';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 Modal.setAppElement("#root")
 
 export default function Navegacao() {
     const [modalIsOpen, setIsOpen] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
 
     function openModal() {
       setIsOpen(true);
@@ -37,7 +40,12 @@ export default function Navegacao() {
     }
 
     return (
-        <Sidebar 
+      <>
+
+        <Sidebar
+        collapsed={collapsed}
+        transitionDuration={500}
+        collapsedWidth="75px"
         backgroundColor="rgb(0, 201, 117)"
         width="350px"
           rootStyles={{
@@ -45,8 +53,9 @@ export default function Navegacao() {
           borderColor: 'rgb(0, 201, 117)',
           background: 'rgb(0, 201, 117)'
           }}>
-          <Link to="/inicio"><HospitalLogo className="mb-3 ms-3 me-3 mt-3"/></Link>
-          <Divider/>
+        <IconButton className={collapsed ? 'bt-main-hide' : 'bt-main'} onClick={() => setCollapsed(!collapsed)} aria-label="fingerprint">
+          <MenuRoundedIcon className="seta-menu" fontSize="large"/>
+        </IconButton>
           <Menu menuItemStyles={{
               button: {
                   backgroundColor: 'rgb(0, 201, 117)',
@@ -57,15 +66,19 @@ export default function Navegacao() {
                   
               },
           }}>
+            <HospitalLogo className={collapsed ? 'sumir' : 'mb-3 ms-3 me-3 mt-3'} />
+            <Divider/>
+            <MenuItem icon={<SpaceDashboardRoundedIcon/>} component={<Link to="/statmed/inicio"/>}>Início</MenuItem>
+            <Divider/>
             <SubMenu icon={<SupervisedUserCircleRoundedIcon/>}  label="Paciente">
-              <MenuItem icon={<PersonAddRoundedIcon/>} component={<Link to="/cad" />} >Novo Cadastro </MenuItem>
-              <MenuItem icon={<ManageAccountsRoundedIcon/>} component={<Link to="/atpac"/>} >Atualizar Cadastro</MenuItem>
-              <MenuItem icon={<InventoryRoundedIcon/>} component={<Link to="/"/>} >Histórico Hospitalar</MenuItem>
+              <MenuItem icon={<PersonAddRoundedIcon/>} component={<Link to="/statmed/cad" />} >Novo Cadastro </MenuItem>
+              <MenuItem icon={<ManageAccountsRoundedIcon/>} component={<Link to="/statmed/atpac"/>} >Atualizar Cadastro</MenuItem>
+              <MenuItem icon={<InventoryRoundedIcon/>} component={<Link to="/statmed/"/>} >Histórico Hospitalar</MenuItem>
             </SubMenu>
             <Divider/>
             <SubMenu icon={<PortraitRoundedIcon/>} label="Atendimento">
-              <MenuItem icon={<QueueRoundedIcon/>} component={<Link to="/atend" />} >Nova Consulta</MenuItem>
-              <MenuItem icon={<QueueRoundedIcon/>} component={<Link to="/anamnese" />} >Registrar Anamnese</MenuItem>
+              <MenuItem icon={<QueueRoundedIcon/>} component={<Link to="/statmed/atend" />} >Nova Consulta</MenuItem>
+              <MenuItem icon={<QueueRoundedIcon/>} component={<Link to="/statmed/anamnese" />} >Registrar Anamnese</MenuItem>
               <MenuItem icon={<DescriptionRoundedIcon/>}>Relatório Médico</MenuItem>
               <MenuItem icon={<SwapHorizontalCircleRoundedIcon/>}>Encaminhamento</MenuItem>
               <MenuItem icon={<SummarizeRoundedIcon/>}>Atestado</MenuItem>
@@ -87,8 +100,9 @@ export default function Navegacao() {
                 <ModalCid closeModal={closeModal}/>
               </Modal>
             <Divider/>
-            <MenuItem icon={<LogoutRoundedIcon/>}>Logout</MenuItem>
+            <MenuItem icon={<LogoutRoundedIcon/>} component={<Link to="/statmed/login" />}>Logout</MenuItem>
           </Menu>
         </Sidebar>
+        </>
     )
   }

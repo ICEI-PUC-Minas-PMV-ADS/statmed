@@ -206,3 +206,41 @@ body {
     background-color: var(--darkmode1);
     padding: 0px;
 }
+/* Navbar fechar */
+.bt-main {
+    display: inline-block !important;
+    position: absolute !important;
+    top: 10px !important;
+    left: 0;
+    margin-left: 295px !important;
+    z-index: 99999998;
+    background-repeat: no-repeat;
+    border: none !important;
+    color: var(--darkmode1) !important;
+    transform: rotate(-180deg);
+    transition: 500ms ease-in-out;
+}
+
+.seta-menu:hover {
+    color: white !important;
+    transition: 500ms;
+}
+
+.bt-main-hide {
+    display: inline-block !important;
+    position: absolute !important;
+    top: 10px !important;
+    left: 0;
+    margin-left: 13px !important;
+    z-index: 99999998;
+    background-color: var(--principal) !important;
+    background-repeat: no-repeat;
+    border: none !important;
+    color: var(--darkmode1) !important;
+    transform: rotate(360deg);
+    transition: 500ms ease-in-out;
+}
+
+.sumir {
+    visibility: hidden;
+}
