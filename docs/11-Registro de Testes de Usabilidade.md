@@ -2,7 +2,25 @@
 
 Após realizar os testes de usabilidade, obtém-se um relatório a partir das análises realizadas. O Registro de Testes de Usabilidade é um relatório que contém as evidências dos testes e relatos dos usuários participantes, baseado no Plano de Testes de Usabilidade desenvolvido para os casos de uso desta etapa.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Registro de Testes de Usabilidade”.
+|  Tarefa  | Descrição  | Testador|
+| ------------ | ------------ | ------------ |
+|  T001 | Registrar um novo paciente  | Usuário 2 |
 
-> **Links Úteis**:
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+|  Pergunta  | Descrição  |
+| ------------ | ------------ |
+|  P001 | Qual foi o tempo de resposta do sistema ápos clicar para registrar o paciente? |
+|**Resposta**| **85ms**
+|  P002 | Em sua opinião, os passos para realizar esse processo foi intuitivo? |
+|**Resposta**| **Sim, o passo foi bem tranquilo de seguir**|
+|  P003 | O sistema foi responsivo em seu dispostivo? |
+|**Resposta**| **Sim, quando a gente deixa a tela pequena ele responde bem!**
+|  P004 | De um modo geral, cite um ponto positivo e negativo do software utilizado |
+|**Resposta**| **Positivo: funciona de forma tranquila e é bem otimizado; Negativo: O sistema ainda está em desenvolvimento portanto apresenta algumas leves falhas**
+|  P005 | Em sua opinião, você conseguiu entender a função proposta do software? |
+|**Resposta**| **Sim**
+|  P006 | Ocorreu alguma dificuldade ao utilizar o software? Se sim, qual? |
+|**Resposta**| **Não encontrei grandes dificuldades ao experimentar o software**
+|  P007 | Você encontrou algum erro inesperado em suas tarefas? |
+|**Resposta**| **Felizmente não**
+|  P008 | Em sua opinião, o sistema facilitaria alguma atividade na sua rotina de trabalho? |
+|**Resposta**| **Sim, otimizaria não só o meu tempo mas de todos os colegas de trabalho**
