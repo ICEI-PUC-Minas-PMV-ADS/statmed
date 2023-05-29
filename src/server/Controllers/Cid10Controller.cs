@@ -8,17 +8,18 @@ namespace Statmed.Controllers
     [Route("api/[controller]")]
     public class Cid10Controller : ControllerBase
     {
-        private readonly StatmedDbContext _cidstatmedDbContext;
+        private readonly StatmedDbContext _statmedDbContext;
 
-        public Cid10Controller(StatmedDbContext cidstatmedDbContext)
+        public Cid10Controller(StatmedDbContext context)
         {
-            _cidstatmedDbContext = cidstatmedDbContext;
+            _statmedDbContext = context;
         }
+
         [HttpGet("Consultar")]
-        public async Task<ActionResult<List<Cid10>>> PegaCid10([FromServices] StatmedDbContext cidstatmedDbContext)
+        public async Task<IActionResult> PegaCid102()
         {
-            var cid10 = await cidstatmedDbContext.CID10.ToListAsync(CancellationToken.None);
-            return cid10;
+            var cid10 = await _statmedDbContext.CID10.ToListAsync();
+            return Ok(cid10);
         }
     }
 }

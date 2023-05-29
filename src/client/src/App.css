@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+    /* principal - cor de relevo do nosso logo, hover - cor utiliza para elementos com hover effect */
+    --principal: #00C975;
+    --principal-hover: #00DE81;
+    /* Cores darkmode */
+    --darkmode1: #23272A;
+    --darkmode2: #2c2f33;
+    /* Cores lightmode */
+    --lightmode1: #DCDCDC;
+    --lightmode2: #fff;
+}
+
+body {
+    background-color: var(--darkmode1) !important;
+    margin: 0;
+    padding: 0;
+    color: var(--lightmode1);
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.main-conteudo {
+    display: flex;
+    min-height: 100vh;
+    height: 100%;
+}
+
+/* Bootstrap & Padrões */
+.btn-padrao {
+    font-size: 0.9rem !important;
+    letter-spacing: 0.05rem !important;
+    padding: 0.75rem 1rem !important;
+    background-color: var(--principal) !important;
+    border-color: var(--principal) !important;
+}
+
+.btn-login:hover {
+    background-color: var(--principal-hover) !important;
+    border-color: var(--principal) !important;
+    color: var(--darkmode1) !important;
+}
+
+.btn-padrao:hover {
+    background-color: var(--principal-hover) !important;
+    border-color: var(--principal) !important;
+    color: var(--darkmode1) !important;
+}
+
+.btn-pequeno {
+    height: calc(3.5rem + 2px) !important;
+}
+
+.form-check-label {
+    color: white !important;
+}
+
+.form-control {
+    border: 0px !important;
+}
+
+.form-floating {
+    color: var(--darkmode1);
+}
+
+.form-check-input:checked {
+    border-color: var(--principal) !important;
+    background-color: var(--principal-hover) !important;
+}
+
+/* Sweet Alerts edita */
+.swal2-styled.swal2-confirm {
+    background-color: var(--principal) !important;
+}
+
+.swal2-popup {
+    background-color: var(--darkmode2) !important;
+
+}
+
+.swal2-title,
+.swal2-html-container {
+    color: white !important;
+}
+
+/**/
+.busca-paciente-container {
+    width: 100%;
+}
+
+.btn-bscpac {
+    width: 100% !important;
+}
+
+.form-select {
+    -moz-padding-start: .725rem !important;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.w-20 {
+    width: 20%
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-5 {
+    width: 5%;
+}
+
+.errmsg {
+    color: red !important;
+    border-color: red !important;
+}
+
+.form-control:disabled {
+    background-color: #a3a3a3 !important;
+    border: 0px;
+}
+
+.form-select:disabled {
+    background-color: #a3a3a3 !important;
+    border: 0px;
+}
+
+/* Anamnese */
+.anamnese-texto-area {
+    height: 50vh !important;
+    resize: none;
+}
+
+/* Ajuda */
+.ajuda-input-adicional {
+    height: 100px !important;
+}
+
+/* Dashboard */
+.border-left-primary {
+    border-bottom: 0.25rem solid var(--principal) !important;
+}
+
+.border-left-primary:hover {
+    border-bottom: 0.25rem solid var(--principal-hover) !important;
+}
+
+.card {
+    --bs-card-bg: var(--darkmode2) !important;
+}
+
+.card-dashboard {
+    height: 150px !important;
+    width: 250px !important;
+}
+
+.text-card {
+    color: var(--principal) !important;
+}
+
+.btn-card {
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.btn-close {
+    height: 25px !important;
+    width: 25px !important;
+}
+
+/* Modal CID */
+.modal-overlay {
+    background: rgba(44, 47, 51, 0.26);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999999;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--darkmode1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.modal-content-print {
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--darkmode1);
+    padding: 0px;
+}

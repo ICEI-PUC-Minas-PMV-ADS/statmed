@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b132951e.css",
+    "main.js": "/static/js/main.148718aa.js",
+    "static/media/login_imgesq.png": "/static/media/login_imgesq.ed113fbc302f8a258c45.png",
+    "static/media/login_ajuda.jpg": "/static/media/login_ajuda.4743ff6fc8972981a2cb.jpg",
+    "static/media/hospital_exemplo.svg": "/static/media/hospital_exemplo.a19ad1a5f0b50537c394f37c4eea0bb0.svg",
+    "static/media/logo.svg": "/static/media/logo.8c9e6c63a5645dc4ce6a987b9561dbed.svg",
+    "index.html": "/index.html",
+    "main.b132951e.css.map": "/static/css/main.b132951e.css.map",
+    "main.148718aa.js.map": "/static/js/main.148718aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b132951e.css",
+    "static/js/main.148718aa.js"
+  ]
+}

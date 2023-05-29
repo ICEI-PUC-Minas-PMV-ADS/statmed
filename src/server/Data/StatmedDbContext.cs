@@ -14,10 +14,12 @@ namespace Statmed.Data
         }
 
         public DbSet<Paciente> Paciente { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Cid10> CID10 { get; set; }
         public DbSet<Medico> Medico { get; set; }
         public DbSet<Enfermagem> Enfermagem { get; set; }
         public DbSet<Recepcionista> Recepcionista { get; set; }
         public DbSet<SupervisoraAdm> SupervisoraAdm { get; set; }
+         public DbSet<Atendimento> Atendimento { get; set; }
     }
 }

@@ -11,14 +11,14 @@ namespace Statmed.Controllers
         // Evitar Sql Injection
         private readonly StatmedDbContext _statmedDbContext;
 
-        public PacienteController(StatmedDbContext statmedDbContext)
+        public PacienteController(StatmedDbContext context)
         {
-            _statmedDbContext = statmedDbContext;
+            _statmedDbContext = context;
         }
 
         // Cadastro
         [HttpPost("Cadastrar")]
-        public async Task<ActionResult<Paciente>> CadastrarPaciente([FromServices] StatmedDbContext context, [FromBody] Paciente body)
+        public async Task<ActionResult<Paciente>> CadastrarPaciente([FromServices] StatmedDbContext _statmedDbContext, [FromBody] Paciente body)
         {
             if (!ModelState.IsValid)
             {
@@ -39,28 +39,31 @@ namespace Statmed.Controllers
                 Numero = body.Numero,
                 Bairro = body.Bairro,
                 Cidade = body.Cidade,
+                Complemento = body.Complemento,
                 Uf = body.Uf
             };
+                        string json = System.Text.Json.JsonSerializer.Serialize(paciente);
 
-            context.Paciente.Add(paciente);
-            await context.SaveChangesAsync();
+            _statmedDbContext.Paciente.Add(paciente);
+            await _statmedDbContext.SaveChangesAsync();
+
 
             return body;
         }
 
-        //consulta
+        // Consulta
         [HttpGet("Consultar")]
-        public async Task<ActionResult<List<Paciente>>> BuscaPaciente([FromServices] StatmedDbContext context)
+        public async Task<IActionResult> BuscaPaciente()
         {
-            var pacientes = await context.Paciente.ToListAsync();
-            return pacientes;
+            var pacientes = await _statmedDbContext.Paciente.ToListAsync();
+            return Ok(pacientes);
         }
 
-        //consulta pelo IdSame 
+        // Consulta Pelo IdSame
         [HttpGet("BuscaIdSame")]
         public async Task<ActionResult<Paciente>> BuscaIdSame(int IdSame)
         {
-            Paciente User = await _statmedDbContext.Paciente.Select(s => new Paciente
+            Paciente IdPaciente = await _statmedDbContext.Paciente.Select(s => new Paciente
             {
                 IdSame = s.IdSame,
                 Nome = s.Nome,
@@ -74,24 +77,23 @@ namespace Statmed.Controllers
                 Rua = s.Rua,
                 Numero = s.Numero,
                 Bairro = s.Bairro,
+                Complemento = s.Complemento,
                 Cidade = s.Cidade,
-                Uf = s.Uf,
+                Uf = s.Uf,  
                 Prateleira = s.Prateleira
             }).FirstOrDefaultAsync(s => s.IdSame == IdSame);
-            if (User == null)
+            if (IdPaciente == null)
             {
                 return NotFound();
-
             }
             else
             {
-
-                return User;
+                return IdPaciente;
             }
 
         }
 
-        //Atualiza o cadastro do paciente!!!
+        // Atualiza o cadastro do paciente
         [HttpPut("AtualizarPaciente")]
         public async Task<HttpStatusCode> AtualizarPaciente(Paciente Paciente)
         {
@@ -112,11 +114,9 @@ namespace Statmed.Controllers
 
             await _statmedDbContext.SaveChangesAsync();
             return HttpStatusCode.OK;
-
         }
 
-
-        //Atualiza o cadastro do paciente!!!
+        // Deleta o paciente pelo Id
         [HttpDelete("DeletarPaciente")]
         public async Task<HttpStatusCode> DeletarPaciente(int IdSame)
         {
@@ -125,7 +125,6 @@ namespace Statmed.Controllers
             _statmedDbContext.Paciente.Remove(delPac);
             await _statmedDbContext.SaveChangesAsync();
             return HttpStatusCode.OK;
-
         }
 
     }
