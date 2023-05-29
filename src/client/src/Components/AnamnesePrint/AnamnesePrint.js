@@ -4,8 +4,9 @@ import { ReactComponent as HospitalLogo } from '../../Assets/img/svg/hospital_ex
 
 export default class AnamnesePrint extends Component {
     render() { 
-    // Variaveis fixas para teste
-    const idAtendimento = this.props.idAtendimento;
+        
+    // Variaveis de valor
+    const idAtendimento = this.props.atendimentoPrint;
     const pacienteIdSame = 80;
     const pacienteIdade = 49;
     const pacienteGenero = "Masculino";
@@ -31,18 +32,18 @@ export default class AnamnesePrint extends Component {
             <div className="w-100 d-inline-flex justify-content-start align-items-start border-1 borda-preta">
                     <div className="p-1 w-50 borda-right d-inline-flex ">
                         <div className="me-1">
-                        <p className="ft-arial">Atendimento: </p>
+                        <p className="ft-arial">Atendimento:</p>
                         </div>
                         <div className="fw-bolder">
-                        <p className="ft-arial" > {idAtendimento}</p>
+                        <p className="ft-arial" >{idAtendimento}</p>
                         </div>
                     </div>
                     <div className="p-1 w-50 d-inline-flex ">
                         <div className="me-1">
-                        <p className="ft-arial">SAME: </p>
+                        <p className="ft-arial">SAME:</p>
                         </div>
                         <div className="fw-bolder">
-                        <p className="ft-arial "> {pacienteIdSame}</p>
+                        <p className="ft-arial ">{pacienteIdSame}</p>
                         </div>
                     </div>
                 </div>
@@ -85,7 +86,7 @@ export default class AnamnesePrint extends Component {
             <h6 className="text-uppercase m-1">Anamnese</h6>
         </div>
 
-        <div className="">
+        <div className="anamnese-container">
             <div className="m-1 ms-3">
             <p>{anamnese}</p>
             </div>

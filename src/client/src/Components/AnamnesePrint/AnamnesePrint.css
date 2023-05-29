@@ -17,7 +17,7 @@
 .container-mae p, h6, p2 {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 !important;
-    white-space: pre;
+
 }
 
 .borda-preta {
@@ -48,4 +48,8 @@
     .ps-sidebar-root {
         display: none !important;
     }
+}
+
+.anamnese-container {
+    white-space: pre;
 }
