@@ -5,13 +5,22 @@
     /* principal - cor de relevo do nosso logo, hover - cor utiliza para elementos com hover effect */
     --principal: #00C975;
     --principal-hover: #00DE81;
-    /* Cores darkmode */
-    --darkmode1: #23272A;
-    --darkmode2: #2c2f33;
+    --darkmode1: #2c2f33;
+    --darkmode2: #23272A;
     /* Cores lightmode */
     --lightmode1: #DCDCDC;
     --lightmode2: #fff;
 }
+
+/*:root {
+    --principal: #00C975;
+    --principal-hover: #00DE81;
+    --darkmode1: #2c2f33;
+    --darkmode2: #23272A;
+    --lightmode1: #DCDCDC;
+    --lightmode2: #fff;
+}*/
+
 
 body {
     background-color: var(--darkmode1) !important;
@@ -56,7 +65,7 @@ body {
 }
 
 .form-check-label {
-    color: white !important;
+    color: var(--lightmode2) !important;
 }
 
 .form-control {
@@ -84,7 +93,7 @@ body {
 
 .swal2-title,
 .swal2-html-container {
-    color: white !important;
+    color: var(--lightmode2) !important;
 }
 
 /**/
@@ -222,7 +231,7 @@ body {
 }
 
 .seta-menu:hover {
-    color: white !important;
+    color: var(--lightmode2) !important;
     transition: 500ms;
 }
 
@@ -243,4 +252,10 @@ body {
 
 .sumir {
     visibility: hidden;
+}
+
+/* Table Cid */
+
+.table-dark {
+    --bs-table-bg: var(--darkmode2) !important;
 }

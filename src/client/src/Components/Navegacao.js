@@ -40,28 +40,26 @@ export default function Navegacao() {
     }
 
     return (
-      <>
-
         <Sidebar
         collapsed={collapsed}
         transitionDuration={500}
         collapsedWidth="75px"
-        backgroundColor="rgb(0, 201, 117)"
+        backgroundColor="var(--principal)"
         width="350px"
           rootStyles={{
-          color: '#23272A',
-          borderColor: 'rgb(0, 201, 117)',
-          background: 'rgb(0, 201, 117)'
+          color: 'var(--darkmode2)',
+          borderColor: 'var(--principal-hover)',
+          background: 'var(--principal)'
           }}>
         <IconButton className={collapsed ? 'bt-main-hide' : 'bt-main'} onClick={() => setCollapsed(!collapsed)} aria-label="fingerprint">
           <MenuRoundedIcon className="seta-menu" fontSize="large"/>
         </IconButton>
           <Menu menuItemStyles={{
               button: {
-                  backgroundColor: 'rgb(0, 201, 117)',
+                  backgroundColor: 'var(--principal)',
                   '&:hover': {
-                      backgroundColor: 'rgb(0, 222, 129)',
-                      color: '#fff'
+                      backgroundColor: 'var(--principal-hover)',
+                      color: 'var(--light-mode2)'
                   },
                   
               },
@@ -99,10 +97,23 @@ export default function Navegacao() {
               className="modal-content">
                 <ModalCid closeModal={closeModal}/>
               </Modal>
+          </Menu>
+          <Menu>  
+            <div></div>
+          </Menu>
+          <Menu menuItemStyles={{
+              button: {
+                  backgroundColor: 'var(--principal)',
+                  '&:hover': {
+                      backgroundColor: 'var(--principal-hover)',
+                      color: 'var(--light-mode2)'
+                  },
+                  
+              },
+          }}>
             <Divider/>
             <MenuItem icon={<LogoutRoundedIcon/>} component={<Link to="/statmed/login" />}>Logout</MenuItem>
           </Menu>
         </Sidebar>
-        </>
     )
   }
