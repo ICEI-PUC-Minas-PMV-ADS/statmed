@@ -31,6 +31,7 @@ body {
 
 * {
     font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: red !important; 
 }
 
 .main-conteudo {
@@ -254,8 +255,108 @@ body {
     visibility: hidden;
 }
 
-/* Table Cid */
-
-.table-dark {
-    --bs-table-bg: var(--darkmode2) !important;
+/* Tabela */
+.p-datatable-thead, th {
+    background: var(--darkmode1) !important;
 }
+
+.p-datatable, tr {
+    background: var(--darkmode1) !important;
+}
+
+.p-paginator {
+    background: var(--darkmode1) !important;
+
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: var(--principal) !important;
+    border-color: var(--principal-hover) !important;
+    color: var(--darkmode2) !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+    border-color: var(--principal-hover) !important;
+}
+
+.p-paginator {
+    color: var(--principal) !important;
+    border-color: var(--principal-hover) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+    border-color: var(--darkmode2) !important;
+}
+
+.p-paginator .p-paginator-first, .p-paginator .p-paginator-prev, .p-paginator .p-paginator-next, .p-paginator .p-paginator-last {
+    border-color: var(--principal-hover) !important;
+
+}
+.p-paginator-page, .p-paginator-element {
+    color: var(--principal-hover) !important;
+}
+
+.p-paginator-first {
+    border-radius: 20% 0 0 20% !important;
+}
+
+.p-paginator-last {
+    border-radius: 0 20% 20% 0 !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+    border-top: none !important;
+    border-color: var(--principal-hover) !important;
+}
+
+.p-datatable .p-sortable-column.p-highlight:not(.p-sortable-disabled):hover {
+    color: var(--principal-hover) !important;
+
+}
+.p-datatable .p-sortable-column.p-highlight:not(.p-sortable-disabled) {
+    color: var(--principal-hover) !important;
+
+}
+.p-sortable-column p-highlight {
+    border-color: none;
+}    
+ 
+
+.p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
+    color: var(--principal-hover) !important;
+
+}
+/* Esconders as setas dos inputs */
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+::-moz-selection {
+    color: var(--darkmode1) !important;
+    background: var(--principal) !important;
+}
+  
+  ::selection {
+    color: var(--darkmode1) !important;
+    background: var(--principal) !important;
+}
+  .form-control-plaintext:focus {
+    color: var(--darkmode1) !important;
+    background: var(--principal) !important;
+}
+
+/* Mensagem de sucesso ápos criar atendimento/same */
+.mensagem-sucesso {
+    color: var(--principal) !important;
+    font-size: 1.5rem;
+    font-weight: bold !important;
+}
+

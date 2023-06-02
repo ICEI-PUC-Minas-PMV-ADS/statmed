@@ -8,6 +8,7 @@ import Atendimento from './Pages/Atendimento/Atendimento';
 import Anamnese from './Pages/Anamnese/Anamnese';
 import AttPaciente from './Pages/AtualizarPaciente/AtualizarPaciente';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import HistoricoHospitalar from './Pages/HistoricoHospitalar/HistoricoHospitalar';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/statmed/" element={<Layout />}>
         <Route path="/statmed/inicio" element={<Dashboard />}/>
         <Route path="/statmed/cad" element={<CadPaciente />}/>
+        <Route path="/statmed/historicoPac" element={<HistoricoHospitalar />}/>
         <Route path="/statmed/atend" element={<Atendimento />} />
         <Route path="/statmed/atpac" element={<AttPaciente />} />
         <Route path="/statmed/anamnese" element={<Anamnese />} />

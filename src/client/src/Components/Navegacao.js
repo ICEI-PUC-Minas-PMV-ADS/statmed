@@ -71,7 +71,7 @@ export default function Navegacao() {
             <SubMenu icon={<SupervisedUserCircleRoundedIcon/>}  label="Paciente">
               <MenuItem icon={<PersonAddRoundedIcon/>} component={<Link to="/statmed/cad" />} >Novo Cadastro </MenuItem>
               <MenuItem icon={<ManageAccountsRoundedIcon/>} component={<Link to="/statmed/atpac"/>} >Atualizar Cadastro</MenuItem>
-              <MenuItem icon={<InventoryRoundedIcon/>} component={<Link to="/statmed/"/>} >Histórico Hospitalar</MenuItem>
+              <MenuItem icon={<InventoryRoundedIcon/>} component={<Link to="/statmed/historicoPac"/>} >Histórico Hospitalar</MenuItem>
             </SubMenu>
             <Divider/>
             <SubMenu icon={<PortraitRoundedIcon/>} label="Atendimento">

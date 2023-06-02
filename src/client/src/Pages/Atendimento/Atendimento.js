@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
 import Swal from 'sweetalert2';
-import { Axios } from 'axios';
+import axios from 'axios';
 
 
 
@@ -11,10 +11,13 @@ export default function Atendimento() {
       }, []);
 
     // Data Atual no Input
-    var curr = new Date();
-    curr.setDate(curr.getDate() + 3);
-    var date = curr.toISOString().substring(0, 10);
+    const date = new Date();
+    let currentDay= String(date.getDate()).padStart(2, '0');
+    let currentMonth = String(date.getMonth()+1).padStart(2,"0");
+    let currentYear = date.getFullYear();
+    let currentDate = `${currentDay}-${currentMonth}-${currentYear}`;
 
+    // Pega os dados do paciente pelo idSame
     function buscaSame() {
         let idSame = document.getElementById('idSame').value;
         if (idSame !== "") {
@@ -69,7 +72,7 @@ export default function Atendimento() {
     const atendenteRef = useRef(undefined);
     const dataRef = useRef(undefined);
     const epidemiaRef = useRef(undefined);
-    const url = 'http://localhost:5145/api/Atendimento/Cadastrar'
+    const url = process.env.REACT_APP_API_ATDCAD;
 
     const submit = async (e) => {
         e.preventDefault();
@@ -79,12 +82,12 @@ export default function Atendimento() {
         const dataPega = dataRef.current.value;
         const epidemiaPega = epidemiaRef.current.value;
         try {
-            await Axios.post(url,
+            await axios.post(url,
                 JSON.stringify({
                     usuario_idFunc: atendentePega,
                     data: dataPega,
                     epidemia: epidemiaPega,
-                    paciente_idSame: idSamePega
+                    pacienteidSame: idSamePega
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -143,16 +146,16 @@ export default function Atendimento() {
                             <label htmlFor="floatingInput">ID Same       <ManageSearchRoundedIcon/></label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-25">
-                            <input ref={atendenteRef} type="name" className="form-control w-100" id="idFunc_recepcionista" placeholder="Example input" disabled />
+                            <input ref={atendenteRef} type="name" value={"André Fernandes"} className="form-control w-100" id="idFunc_Usuario" placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">Atendente</label>
                         </div>
 
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input ref={dataRef} defaultValue={date} type="date" className="form-control w-100" id="dataAtend" placeholder="Example input" disabled/>
-                            <label htmlFor="floatingInput">Data do atendimento</label>
+                            <input ref={dataRef} value={currentDate} type="normal" className="form-control w-100" id="dataAtend" placeholder="Example input" disabled/>
+                            <label htmlFor="floatingInput">Data Atendimento</label>
                         </div>
                         <div className="form-check mb-3">
-                            <input ref={epidemiaRef} className="form-check-input" type="checkbox" value="" id="epidemia" />
+                            <input ref={epidemiaRef} className="form-check-input" type="checkbox" value="epidemia" id="epidemia" />
                             <label className="form-check-label" htmlFor="epidemia">
                                 Epidemia?
                             </label>

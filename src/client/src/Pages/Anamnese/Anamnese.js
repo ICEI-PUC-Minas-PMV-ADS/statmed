@@ -16,7 +16,6 @@ export default function Anamnese() {
 
     function openModal() {
         setIsOpen(true);
-
     }
 
     function closeModal() {
@@ -31,45 +30,43 @@ export default function Anamnese() {
         window.print();
     }
 
-    function buscaSame() {
-        let idAtendimento = document.getElementById('idAtendimento').value;
-        if (idAtendimento !== "") {
-            let url = process.env.REACT_APP_API_PEGAIDSAME + "=" + idAtendimento;
+    // function buscaSame() {
+    //     let idAtendimento = document.getElementById('idAtendimento').value;
+    //     if (idAtendimento !== "") {
+    //         let url = process.env.REACT_APP_API_PEGAIDATT + "=" + idAtendimento;
 
-            let req = new XMLHttpRequest();
-            req.open("Get", url);
-            req.send();
+    //         let req = new XMLHttpRequest();
+    //         req.open("Get", url);
+    //         req.send();
 
-            req.onload = function () {
-                if (req.status === 200) {
-                    let puxapaciente = JSON.parse(req.response);
-                    document.getElementById('nome').value = puxapaciente.nome;
-                    document.getElementById('nomeSocial').value = puxapaciente.nomeSocial;
-                    document.getElementById('dataNasc').value = puxapaciente.dataNasc;
-                    document.getElementById('genero').value = puxapaciente.genero;
-                    document.getElementById('cpf').value = puxapaciente.cpf;
-                    document.getElementById('email').value = puxapaciente.email;
-                    document.getElementById('telefone').value = puxapaciente.telefone;
-                }
-                else if (req.status === 404) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Erro',
-                        text: 'Paciente não encontrado, confira o ID!'
-                    })
-                }
-                else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Erro',
-                        text: 'Erro de comunicação com servidor... Contate seu administrador'
-                    })
-                }
-            }
-        }
-    }
-
-    
+    //         req.onload = function () {
+    //             if (req.status === 200) {
+    //                 let puxapaciente = JSON.parse(req.response);
+    //                 document.getElementById('nome').value = puxapaciente.nome;
+    //                 document.getElementById('nomeSocial').value = puxapaciente.nomeSocial;
+    //                 document.getElementById('dataNasc').value = puxapaciente.dataNasc;
+    //                 document.getElementById('genero').value = puxapaciente.genero;
+    //                 document.getElementById('cpf').value = puxapaciente.cpf;
+    //                 document.getElementById('email').value = puxapaciente.email;
+    //                 document.getElementById('telefone').value = puxapaciente.telefone;
+    //             }
+    //             else if (req.status === 404) {
+    //                 Swal.fire({
+    //                     icon: 'error',
+    //                     title: 'Erro',
+    //                     text: 'Paciente não encontrado, confira o ID!'
+    //                 })
+    //             }
+    //             else {
+    //                 Swal.fire({
+    //                     icon: 'error',
+    //                     title: 'Erro',
+    //                     text: 'Erro de comunicação com servidor... Contate seu administrador'
+    //                 })
+    //             }
+    //         }
+    //     }
+    // }
 
     const [anamnese, setAnamnese] = useState(`Queixa Principal: 
 Tempo de Evolução:
@@ -79,6 +76,7 @@ Medicações em uso:
 Queixa Principal: 
     `)
     const anmneseJson = JSON.stringify(anamnese);
+
     const [idAtendimento, setAtendimento] = useState('')
 
 
@@ -90,7 +88,7 @@ Queixa Principal:
                 <form onSubmit={handlePacienteAname}>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input autoFocus onBlur={buscaSame} onChange={e => setAtendimento(e.target.value)} value={idAtendimento} type="text" className="form-control w-100" id="idAtendimento" autoComplete='off' placeholder="Example input" />
+                            <input autoFocus onChange={e => setAtendimento(e.target.value)} value={idAtendimento} type="text" className="form-control w-100" id="idAtendimento" autoComplete='off' placeholder="Example input" />
                             <label htmlFor="floatingInput">Atendimento      <ManageSearchRoundedIcon /></label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">

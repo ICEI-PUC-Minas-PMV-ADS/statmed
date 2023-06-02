@@ -21,6 +21,14 @@ namespace Statmed.Controllers
         {
             _statmedDbContext = context;
         }
+
+        [HttpGet("Consultar")]
+        public async Task<IActionResult> BuscaAtendimento()
+        {
+            var atendimentos = await _statmedDbContext.Atendimento.ToListAsync();
+            return Ok(atendimentos);
+        }
+
         [HttpPost("Cadastrar")]
         public async Task<ActionResult<Atendimento>> CadastrarAtendimento([FromServices] StatmedDbContext _statmedDbContext, [FromBody] Atendimento body)
         {
@@ -47,7 +55,7 @@ namespace Statmed.Controllers
             await _statmedDbContext.SaveChangesAsync();
             return body;
         }
-        [HttpGet("BuscaIdAtenimento")]
+        [HttpGet("BuscaIdAtendimento")]
         public async Task<ActionResult<Atendimento>> BuscaIdAtendimento(int IdAtendimento)
         {
             Atendimento IdPaciente = await _statmedDbContext.Atendimento.Select(s => new Atendimento
@@ -60,20 +68,17 @@ namespace Statmed.Controllers
                 Anamnese = s.Anamnese,
                 Relatorio = s.Relatorio,
                 Encaminhamento = s.Encaminhamento,
-
-
+                PacienteIdSame = s.PacienteIdSame,
+                Paciente = s.Paciente
             }).FirstOrDefaultAsync(s => s.IdAtendimento == IdAtendimento);
             if (IdPaciente == null)
             {
                 return NotFound();
-
             }
             else
             {
-
                 return IdPaciente;
             }
-
         }
         [HttpPut("AtualizarAtendimento")]
         public async Task<HttpStatusCode> RegistrarAnamnese(Atendimento Atendimento)
