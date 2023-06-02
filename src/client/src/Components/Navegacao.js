@@ -85,7 +85,7 @@ export default function Navegacao() {
             <SubMenu icon={<TableChartRoundedIcon/>} label="Administrativo">
               <MenuItem icon={<AddchartRoundedIcon/>}>Relatórios</MenuItem>
               <MenuItem icon={<InsightsRoundedIcon/>}>Estatísticas</MenuItem>
-              <MenuItem icon={<Inventory2RoundedIcon/>}>Arquivo SAME</MenuItem>
+              <MenuItem icon={<Inventory2RoundedIcon/>} component={<Link to="/statmed/arqsame"/>}>Arquivo SAME</MenuItem>
             </SubMenu>
             <Divider/>
             <MenuItem icon={<HealthAndSafetyRoundedIcon/>} onClick={openModal}>Busca CID</MenuItem>

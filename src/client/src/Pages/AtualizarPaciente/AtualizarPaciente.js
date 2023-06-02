@@ -152,7 +152,7 @@ export default function AttPaciente() {
 
 
     return (
-        <div className="container-fluid ms-3">
+        <div className="container-fluid ms-3 me-3">
             <h3 className="text-uppercase fw-normal  mt-3 mb-3">Atualizar Cadastro</h3>
             <div className="">
                 <form>

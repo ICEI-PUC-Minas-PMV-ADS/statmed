@@ -24,7 +24,7 @@ export default function ModalCid(props) {
   }, []);
 
     return (
-        <div className="container-fluid p-0">
+        <div className="container-fluid p-0 fundo-cid">
             <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                 <div className="d-flex justify-content-end flex-fill">
                     <h3 className="text-uppercase fw-normal mt-2">Busca CID</h3>
@@ -45,7 +45,7 @@ export default function ModalCid(props) {
                         type="text" className="form-control w-100" id="cid10" autoComplete='off' placeholder="Example input" />
                         <label htmlFor="floatingInput">CID ou Descrição      <ManageSearchRoundedIcon /></label>
                     </div>
-                    <div className="form-floating me-3 mt-3 w-100">
+                    <div className="form-floating me-3 mt-3 mb-3 w-100">
                         <div>
 
                         <DataTable 

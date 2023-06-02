@@ -32,29 +32,20 @@ namespace Statmed.Controllers
         [HttpPost("Cadastrar")]
         public async Task<ActionResult<Atendimento>> CadastrarAtendimento([FromServices] StatmedDbContext _statmedDbContext, [FromBody] Atendimento body)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
             var atendimento = new Atendimento()
             {
                 Usuario_idFunc = body.Usuario_idFunc,
                 PacienteIdSame = body.PacienteIdSame,
-                Usuario_crm = body.Usuario_crm,
                 Data = body.Data,
                 Epidemia = body.Epidemia,
-                Cid = body.Cid,
-                Atestado = body.Atestado,
-                Anamnese = body.Anamnese,
-                Relatorio = body.Relatorio,
-                Encaminhamento = body.Encaminhamento
             };
 
             _statmedDbContext.Atendimento.Add(atendimento);
             await _statmedDbContext.SaveChangesAsync();
-            return body;
+            return atendimento;
         }
+
         [HttpGet("BuscaIdAtendimento")]
         public async Task<ActionResult<Atendimento>> BuscaIdAtendimento(int IdAtendimento)
         {

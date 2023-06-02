@@ -136,6 +136,7 @@ export default function CadPaciente() {
         const bairroPega = bairroRef.current.value;
         const cidadePega = cidadeRef.current.value;
         const ufPega = ufRef.current.value;
+        const prateleiraDefault = "Sem Arquivo";
         try {
             const postaxios = await Axios.post(process.env.REACT_APP_API_CADPAC,
                 JSON.stringify({
@@ -152,18 +153,13 @@ export default function CadPaciente() {
                     complemento: data.complemento,
                     bairro: bairroPega,
                     cidade: cidadePega,
-                    uf: ufPega
+                    uf: ufPega,
+                    prateleira: prateleiraDefault
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
                 }
             );
-            Swal.fire({
-                icon: 'success',
-                title: 'Paciente Cadastrado',
-                showConfirmButton: false,
-                timer: 2500
-            });
             // Outra gambiarra...
             setData({
                 nome: "",
@@ -180,7 +176,13 @@ export default function CadPaciente() {
             e.target.reset();
             let nomeCriado = (postaxios.data.nome)
             let idSameCriado = (postaxios.data.idSame)
-            setSucessoMsg("Paciente " + nomeCriado + " foi criado com sucesso! Seu ID Same é " + idSameCriado);
+            setSucessoMsg("Paciente " + nomeCriado + " foi salvo com sucesso! Seu ID Same é " + idSameCriado);
+            Swal.fire({
+                icon: 'success',
+                title: 'Paciente Cadastrado',
+                showConfirmButton: true,
+                text: 'Paciente ' + nomeCriado + ' registrado com SAME ' + idSameCriado
+            });
         } catch (err) {
             if (!err?.response) {
                 Swal.fire({

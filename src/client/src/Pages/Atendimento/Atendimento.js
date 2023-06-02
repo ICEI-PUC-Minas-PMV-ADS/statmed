@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { useState } from 'react';
 
 
 
@@ -15,7 +16,7 @@ export default function Atendimento() {
     let currentDay= String(date.getDate()).padStart(2, '0');
     let currentMonth = String(date.getMonth()+1).padStart(2,"0");
     let currentYear = date.getFullYear();
-    let currentDate = `${currentDay}-${currentMonth}-${currentYear}`;
+    let currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
 
     // Pega os dados do paciente pelo idSame
     function buscaSame() {
@@ -67,7 +68,17 @@ export default function Atendimento() {
         return age;
     }
 
+    // Variáveis para mostrar o idAtendimento do paciente que foi criado
+    const sucessoRef = useRef();
+    const [sucessoMsg, setSucessoMsg] = useState('');
+    //Checkbox
+    const [isChecked, setIsChecked] = useState(false);
+    const handleCheckbox = event => {
+        setIsChecked(event.target.checked);
+    }
+
     // Gambiarra
+    const nomeRef = useRef(undefined);
     const idSameRef = useRef(undefined);
     const atendenteRef = useRef(undefined);
     const dataRef = useRef(undefined);
@@ -78,11 +89,11 @@ export default function Atendimento() {
         e.preventDefault();
         // Continuação da gambiarra
         const idSamePega = idSameRef.current.value;
-        const atendentePega = atendenteRef.current.value;
+        const atendentePega = 5 
         const dataPega = dataRef.current.value;
         const epidemiaPega = epidemiaRef.current.value;
         try {
-            await axios.post(url,
+            const postaxios = await axios.post(url,
                 JSON.stringify({
                     usuario_idFunc: atendentePega,
                     data: dataPega,
@@ -93,13 +104,18 @@ export default function Atendimento() {
                     headers: { 'Content-Type': 'application/json' },
                 }
             );
+            console.log(postaxios);
+            let nomeCriado = nomeRef.current.value;
+            e.target.reset();
+            setIsChecked(false);
+            let idAtendimentoCriado = (postaxios.data.idAtendimento)
+            setSucessoMsg("Consulta do paciente " + nomeCriado + " foi salvo com sucesso! Seu nº de Atendimento é " + idAtendimentoCriado);
             Swal.fire({
                 icon: 'success',
                 title: 'Paciente Cadastrado',
-                showConfirmButton: false,
-                timer: 2500
+                showConfirmButton: true,
+                text: 'Consulta de ' + nomeCriado + ' registrada no Atendimento ' + idAtendimentoCriado
             });
-            e.target.reset();
         } catch (err) {
             if (!err?.response) {
                 Swal.fire({
@@ -155,7 +171,8 @@ export default function Atendimento() {
                             <label htmlFor="floatingInput">Data Atendimento</label>
                         </div>
                         <div className="form-check mb-3">
-                            <input ref={epidemiaRef} className="form-check-input" type="checkbox" value="epidemia" id="epidemia" />
+                            <input ref={epidemiaRef} className="form-check-input" type="checkbox" onChange={handleCheckbox}
+        checked={isChecked} value={isChecked ? "Sim" : "Não"} id="epidemia" />
                             <label className="form-check-label" htmlFor="epidemia">
                                 Epidemia?
                             </label>
@@ -165,7 +182,7 @@ export default function Atendimento() {
 
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 flex-fill">
-                            <input type="text" className="form-control w-100" id="nome" autoComplete='off' placeholder="Example input" disabled />
+                            <input ref={nomeRef} type="text" className="form-control w-100" id="nome" autoComplete='off' placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">Nome</label>
                         </div>
 
@@ -205,6 +222,9 @@ export default function Atendimento() {
                     </div>
                     <button className="btn btn-bscpac btn-lg btn-primary btn-padrao text-uppercase mb-2">Criar Atendimento</button>
                 </form>
+                <div className="w-100 d-inline-flex flex-row justify-content-center align-items-center">
+                    <span className={sucessoMsg ? "mensagem-sucesso text-uppercase" : ""} aria-live="assertive" ref={sucessoRef}>{sucessoMsg}</span>
+                </div>            
             </div>
         </div>
     )
