@@ -22,3 +22,5 @@
 
 ### CT-01
 
+![Imagem do WhatsApp de 2023-06-03 à(s) 17 19 36](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/75f99b3e-267f-4845-bbdb-1cbe8411538b)
+
