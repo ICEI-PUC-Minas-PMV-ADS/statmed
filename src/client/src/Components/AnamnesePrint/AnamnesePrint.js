@@ -4,19 +4,20 @@ import { ReactComponent as HospitalLogo } from '../../Assets/img/svg/hospital_ex
 
 export default class AnamnesePrint extends Component {
     render() { 
-        
     // Variaveis de valor
     const idAtendimento = this.props.atendimentoPrint;
-    const pacienteIdSame = 80;
-    const pacienteIdade = 49;
-    const pacienteGenero = "Masculino";
-    const pacienteCPF = "798.597.597-89";
-    const medico = "Dr. João D'Artagnan";
-    const crm = "213123/CRMSP";
-    const data = "08/10/2023";
-    const pacienteRecepcionista = this.props.recepcionistaPrint;
-    const pacienteNome = "João das Dores";
-    const anamnese = JSON.parse(this.props.anamnesePrint);
+    const pacienteIdSame = this.props.idSame.current.value;
+    const pacienteIdade = this.props.idade.current.value;
+    const pacienteGenero = this.props.genero.current.value;
+    const pacienteCPF = this.props.cpf.current.value;
+    const medico = this.props.medico.current.value;
+    const crm = this.props.crm.current.value;
+    const nomeSocial = this.props.nomeSocial.current.value;
+    const data = this.props.data.current.value;
+    const pacienteRecepcionista = this.props.recepcionista.current.value;
+    const pacienteNome = this.props.nome.current.value;
+    const cid = this.props.cid;
+    const anamnese = JSON.parse(this.props.anmneseJson);
     
     return (
     <div className="container-deus">
@@ -50,6 +51,14 @@ export default class AnamnesePrint extends Component {
                 <div className="w-100 d-inline-flex justify-content-start align-items-start border-1 borda-preta">
                     <div className="p-1 w-50 borda-right">
                         <p className="ft-arial">Nome: {pacienteNome} </p>
+                    </div>
+                    <div className="p-1 w-50 ">
+                        <p className="ft-arial">Nome Social: {nomeSocial} </p>
+                    </div>
+                </div>
+                <div className="w-100 d-inline-flex justify-content-start align-items-start border-1 borda-preta">
+                    <div className="p-1 w-50 borda-right">
+                        <p className="ft-arial">CID: {cid} </p>
                     </div>
                     <div className="p-1 w-50 ">
                         <p className="ft-arial">Idade: {pacienteIdade} anos </p>

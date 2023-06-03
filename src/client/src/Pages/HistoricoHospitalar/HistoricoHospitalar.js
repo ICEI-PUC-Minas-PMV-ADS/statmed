@@ -20,6 +20,7 @@ export default function HistoricoHospitalar() {
     (async () => {
       const result = await axios(process.env.REACT_APP_API_CONATD);
       setData(result.data);
+      console.log(data);
     })();
   }, []);
 
@@ -43,14 +44,14 @@ export default function HistoricoHospitalar() {
           paginator
           rows={5}
         >
-          <Column field="pacienteIdSame" header="SAME" sortable />
-          <Column field="idAtendimento" header="Atendimento" sortable />
-          <Column field="paciente.nome" header="Nome" sortable />
-          <Column field="paciente.dataNasc" header="Data Nasc." sortable />
-          <Column field="paciente.cpf" header="CPF" sortable />
-          <Column field="data" header="Passagem" sortable />
-          <Column field="cid" header="CID" sortable />
-          <Column field="epidemia" header="Epidemia" sortable />
+          <Column field="result.pacienteIdSame" header="SAME" sortable />
+          <Column field="result.idAtendimento" header="Atendimento" sortable />
+          <Column field="result.paciente.nome" header="Nome" sortable />
+          <Column field="result.paciente.dataNasc" header="Data Nasc." sortable />
+          <Column field="result.paciente.cpf" header="CPF" sortable />
+          <Column field="result.data" header="Passagem" sortable />
+          <Column field="result.cid" header="CID" sortable />
+          <Column field="result.epidemia" header="Epidemia" sortable />
 
         </DataTable>
       </div>

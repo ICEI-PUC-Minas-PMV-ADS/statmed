@@ -4,6 +4,7 @@ import LocalPrintshopRoundedIcon from '@mui/icons-material/LocalPrintshopRounded
 import Modal from "react-modal";
 import AnamnesePrint from "../../Components/AnamnesePrint/AnamnesePrint";
 import Swal from 'sweetalert2';
+import axios, { Axios } from "axios";
 
 export default function Anamnese() {
 
@@ -13,17 +14,11 @@ export default function Anamnese() {
 
     // Modal
     const [modalIsOpen, setIsOpen] = useState(false);
-
-   
-
-    const handlePacienteAname = (e) => {
-        e.preventDefault();
-    }
-
+    // Abre Janela de Impressão
     function modalPrint() {
         window.print();
     }
-
+    // Busca Atendimento
     function buscaAtendimento() {
         let idAtendimento = document.getElementById('idAtendimento').value;
         if (idAtendimento !== "") {
@@ -45,7 +40,6 @@ export default function Anamnese() {
                     document.getElementById('cpf').value = puxapaciente.paciente.cpf;
                     document.getElementById('data').value = puxapaciente.data;
                     document.getElementById('recepcionista').value = puxapaciente.usuario_idFunc;
-                    console.log(req.response);
                 }
                 else if (req.status === 404) {
                     Swal.fire({
@@ -73,16 +67,20 @@ Medicações em uso:
 Queixa Principal: 
     `)
     const anmneseJson = JSON.stringify(anamnese);
+    const [idAtendimento, setAtendimento] = useState('');
+    const [cid, setCid] = useState('');
+    // Gambiarra
+    const recepcionistaRef = useRef('');
+    const nomeRef = useRef('');
+    const medicoRef = useRef('');
+    const dataRef = useRef('');
+    const idadeRef = useRef('');
+    const idSameRef = useRef('');
+    const generoRef = useRef('');
+    const crmRef = useRef('');
+    const cpfRef = useRef('');
+    const nomeSocialRef = useRef('');
 
-    const [idAtendimento, setAtendimento] = useState('')
-    const [idade, setIdade] = useState('')
-    const [nome, setNome] = useState('')
-    const [cpf, setCpf] = useState('')
-    const [data, setData] = useState('')
-    const [crm, setCrm] = useState('')
-    const [medico, setMedico] = useState('')
-    const recepcionistaRef = useRef(undefined)
-    const [genero, setGenero] = useState('')
     function openModal() {
         setIsOpen(true);
     }
@@ -92,7 +90,63 @@ Queixa Principal:
     }
 
 
-  
+    const handlePacienteAname = async (e) => {
+        e.preventDefault();
+        try {
+            const postaxios = await axios.put(process.env.REACT_APP_API_ATTATD,
+                JSON.stringify({
+                    idAtendimento: idAtendimento,
+                    cid: cid,
+                    anamnese: anamnese
+                }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                }
+            );
+            let nomeAviso = nomeRef.current.value;
+            let atendimentoAviso = idAtendimento;
+            Swal.fire({
+                icon: 'success',
+                title: 'Paciente Cadastrado',
+                showConfirmButton: true,
+                text: 'Anamnese de ' + nomeAviso + ' no atendimento ' + atendimentoAviso
+            });
+            console.log(postaxios);
+        } catch (err) {
+            if (!err?.response) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de comunicação com servidor, Contate seu Administrator.'
+                })
+            } else if (err.response?.status === 401) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de permissão.'
+                })
+            } else if (err.response?.status === 404) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de comunicação com servidor, Contate seu Administrator.'
+                })
+            } else if (err.response?.status === 500) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'CPF já cadastrado, confirme no busca cadastro os dados!'
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Falha de comunicação com servidor, Contate seu Administrator.'
+                })
+            }
+        }
+    }
+
     return (
         <div className="container-fluid ms-3">
             <h3 className="text-uppercase fw-normal mt-3 mb-3">Anamnese</h3>
@@ -101,14 +155,14 @@ Queixa Principal:
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
                             <input autoFocus onChange={e => setAtendimento(e.target.value)} onBlur={buscaAtendimento} value={idAtendimento} type="text" className="form-control w-100" id="idAtendimento" autoComplete='off' placeholder="Example input" />
-                            <label htmlFor="floatingInput">Atendimento      <ManageSearchRoundedIcon /></label>
+                            <label htmlFor="floatingInput">Atendimento <ManageSearchRoundedIcon /></label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input type="text" className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text" ref={idSameRef} className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">ID Same</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input type="text" className="form-control w-100" id="dataNasc" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text" ref={idadeRef} className="form-control w-100" id="dataNasc" autoComplete='off' placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">Idade</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
@@ -116,7 +170,7 @@ Queixa Principal:
                             <label htmlFor="floatingInput">Epidemia?</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input type="text" className="form-control w-100" id="genero" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text"  ref={generoRef}  className="form-control w-100" id="genero" autoComplete='off' placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">Genêro</label>
                         </div>
                         <div className="d-flex justify-content-end mb-3 flex-fill">
@@ -129,8 +183,18 @@ Queixa Principal:
                                 overlayClassName="modal-overlay"
                                 className="modal-content-print">
                                 <AnamnesePrint 
-                                recepcionistaPrint={recepcionistaRef}
-                                anamnesePrint={anmneseJson}
+                                data={dataRef}
+                                genero={generoRef}
+                                nomeSocial={nomeSocialRef}
+                                idade={idadeRef}
+                                medico={medicoRef}
+                                cpf={cpfRef}
+                                cid={cid}
+                                idSame={idSameRef}
+                                crm={crmRef}
+                                recepcionista={recepcionistaRef}
+                                nome={nomeRef}
+                                anmneseJson={anmneseJson}
                                 atendimentoPrint={idAtendimento}
                                 />
                             </Modal>
@@ -138,42 +202,42 @@ Queixa Principal:
                     </div>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text" readOnly value={recepcionistaRef} className="form-control w-100" id="recepcionista" autoComplete='off' placeholder="Example input"/>
+                        <input readOnly ref={recepcionistaRef} type="text" className="form-control" id="recepcionista" placeholder="Example input" required />
                             <label htmlFor="floatingInput">Recepcionista</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text" defaultValue={"Dr. Igor Pereira"} className="form-control w-100" id="nomeMedico" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text" ref={medicoRef} defaultValue={"Dr. Igor Pereira"} className="form-control w-100" id="nomeMedico" autoComplete='off' placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">Médico</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text" defaultValue={"2123123/SP"} className="form-control w-100" id="crm" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text"  ref={crmRef}  defaultValue={"222314/SP"} className="form-control w-100" id="crm" autoComplete='off' placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">CRM</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text" className="form-control w-100" id="cid" autoComplete='off' placeholder="Example input"/>
+                            <input onChange={e => setCid(e.target.value)} value={cid} type="text" className="form-control w-100" id="cid" autoComplete='off' placeholder="Example input"/>
                             <label htmlFor="floatingInput">CID</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text" className="form-control w-100" id="cpf" autoComplete='off' placeholder="Example input" disabled />
-                            <label htmlFor="floatingInput">Cpf</label>
+                            <input type="text" ref={cpfRef} className="form-control w-100" id="cpf" autoComplete='off' placeholder="Example input" disabled />
+                            <label htmlFor="floatingInput">CPF</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text" className="form-control w-100" id="data" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text" ref={dataRef} className="form-control w-100" id="data" autoComplete='off' placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">Data</label>
                         </div>
                     </div>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-50 flex-fill">
-                            <input type="text" className="form-control w-100" id="nome" autoComplete='off' placeholder="Example input" disabled />
+                            <input readOnly ref={nomeRef} type="text" className="form-control w-100" id="nome" autoComplete='off' placeholder="Example input"/>
                             <label htmlFor="floatingInput">Nome</label>
                         </div>
                         <div className="form-floating mb-3 w-50 flex-fill">
-                            <input type="text" className="form-control w-100" id="nomeSocial" placeholder="Example input" disabled />
+                            <input type="text" ref={nomeSocialRef} className="form-control w-100" id="nomeSocial" placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">Nome Social</label>
                         </div>
                     </div>
                     <div className="form-floating mb-3">
-                        <textarea value={anamnese}  onChange={e => setAnamnese(e.target.value)} className="form-control anamnese-texto-area" minLength={20} id="desc" rows="20" cols="10" required/>
+                        <textarea value={anamnese} onChange={e => setAnamnese(e.target.value)} className="form-control anamnese-texto-area" minLength={20} id="desc" rows="20" cols="10" required/>
                         <label htmlFor="mensagem">Anamnese</label>
                     </div>
                     <button className="btn btn-bscpac btn-lg btn-primary btn-padrao text-uppercase mb-2">Criar Atendimento</button>
