@@ -18,7 +18,7 @@
 | CT - 13| Gerar relatórios | Sucesso Parcial|
 | CT - 014| Ajuda | Sucesso Parcial|
 
-##Teste
+## Teste
 
 ![](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/88c5db83-271d-4635-8f23-07432bd478e1)
 
