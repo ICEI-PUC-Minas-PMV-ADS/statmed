@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Statmed.Models;
 using System.Text.Json;
 using System.Web;
-using System.Text.Json.Serialization;
 
 namespace Statmed.Controllers
 {
@@ -27,13 +26,7 @@ namespace Statmed.Controllers
         public async Task<IActionResult> BuscaAtendimento()
         {
             var atendimentos = await _statmedDbContext.Atendimento.ToListAsync();
-
-            var options = new JsonSerializerOptions
-            {
-                ReferenceHandler = ReferenceHandler.Preserve
-            };            
-
-            return Ok(JsonSerializer.Serialize(atendimentos, options));
+            return Ok(atendimentos);
         }
 
         [HttpPost("Cadastrar")]
@@ -59,6 +52,7 @@ namespace Statmed.Controllers
             Atendimento IdPaciente = await _statmedDbContext.Atendimento.Select(s => new Atendimento
             {
                 IdAtendimento = s.IdAtendimento,
+                Usuario_idFunc = s.Usuario_idFunc,
                 Data = s.Data,
                 Cid = s.Cid,
                 Epidemia = s.Epidemia,

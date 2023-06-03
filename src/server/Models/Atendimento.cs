@@ -19,6 +19,6 @@ namespace Statmed.Models
 
         [ForeignKey("idSame")]
         public int PacienteIdSame { get; set; }
-        public virtual Paciente Paciente { get; set; }
+        public Paciente Paciente { get; set; }
     }
 }
