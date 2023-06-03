@@ -3,7 +3,7 @@
 
 | Caso de teste | Descrição | Resultado| Avaliação |
 | ------------ | ------------- | ------------ | ----------- |
-| CT - 01| O Sistema deverá permitir que o usuário cadastre pacientes | Sucesso Parcial| Durante os testes a funcionalidade não apresentou nenhum erro de execução, porém é necesário que a funcionalidade de login de usuários esteja em funcionamento, pois só um usuário poderá cadastrar novos pacientes, a equipe irá focar em desenvolver e aperfeiçoar a funcionalidade de login nos próximos sprints.
+| CT - 01| O Sistema deverá permitir que o usuário cadastre pacientes | Sucesso| Durante os testes a funcionalidade não apresentou nenhum erro
 | CT 02 | Busca do historico de passagens do paciente no local. | Sucesso |
 | CT - 03| Geração de gráficos e estatísticas | Sucesso Parcial|
 | CT - 04| Pesquisa de CID | Sucesso Parcial|
@@ -18,10 +18,7 @@
 | CT - 13| Gerar relatórios | Sucesso Parcial|
 | CT - 014| Ajuda | Sucesso Parcial|
 
-## Teste
+##Teste
 
 ### CT-01
-
-![](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/88c5db83-271d-4635-8f23-07432bd478e1)
-
 
