@@ -32,4 +32,6 @@
 
 ### CT-14
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/f2591e4f-ef5e-4d53-9430-afadf2a7d15f)
+
 
