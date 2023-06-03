@@ -15,7 +15,7 @@
 | CT - 13| Gerar relatórios | Sucesso Parcial|
 | CT - 014| Ajuda | Sucesso| Sem erros registrados durante os testes|
 
-## Teste
+## Retornos obtidos em testes
 
 ### CT-01
 
