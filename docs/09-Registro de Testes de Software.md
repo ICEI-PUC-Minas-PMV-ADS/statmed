@@ -1,7 +1,7 @@
 | Caso de teste | Descrição | Resultado| Avaliação |
 | ------------ | ------------- | ------------ | ----------- |
 | CT - 01| O Sistema deverá permitir que o usuário cadastre pacientes | Sucesso| Sem erros registrados durante os testes|
-| CT 02 | Busca do historico de passagens do paciente no local. | Sucesso |
+| CT - 02 | Busca do historico de passagens do paciente no local. | Sucesso |
 | CT - 03| Geração de gráficos e estatísticas | Sucesso Parcial|
 | CT - 04| Pesquisa de CID | Sucesso Parcial|
 | CT - 05| Impressão de ficha do paciente | Sucesso| Sem erros registrados durante os testes|
