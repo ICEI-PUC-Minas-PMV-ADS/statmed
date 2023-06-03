@@ -52,6 +52,7 @@ namespace Statmed.Controllers
             Atendimento IdPaciente = await _statmedDbContext.Atendimento.Select(s => new Atendimento
             {
                 IdAtendimento = s.IdAtendimento,
+                Usuario_idFunc = s.Usuario_idFunc,
                 Data = s.Data,
                 Cid = s.Cid,
                 Epidemia = s.Epidemia,

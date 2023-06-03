@@ -14,7 +14,7 @@ export default class AnamnesePrint extends Component {
     const medico = "Dr. João D'Artagnan";
     const crm = "213123/CRMSP";
     const data = "08/10/2023";
-    const pacienteRecepcionista = "André Gonçalves";
+    const pacienteRecepcionista = this.props.recepcionistaPrint;
     const pacienteNome = "João das Dores";
     const anamnese = JSON.parse(this.props.anamnesePrint);
     

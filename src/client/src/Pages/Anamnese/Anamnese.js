@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
 import LocalPrintshopRoundedIcon from '@mui/icons-material/LocalPrintshopRounded';
 import Modal from "react-modal";
@@ -14,13 +14,7 @@ export default function Anamnese() {
     // Modal
     const [modalIsOpen, setIsOpen] = useState(false);
 
-    function openModal() {
-        setIsOpen(true);
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
+   
 
     const handlePacienteAname = (e) => {
         e.preventDefault();
@@ -48,6 +42,10 @@ export default function Anamnese() {
                     document.getElementById('dataNasc').value = puxapaciente.paciente.dataNasc;
                     document.getElementById('genero').value = puxapaciente.paciente.genero;
                     document.getElementById('epidemia').value = puxapaciente.epidemia;
+                    document.getElementById('cpf').value = puxapaciente.paciente.cpf;
+                    document.getElementById('data').value = puxapaciente.data;
+                    document.getElementById('recepcionista').value = puxapaciente.usuario_idFunc;
+                    console.log(req.response);
                 }
                 else if (req.status === 404) {
                     Swal.fire({
@@ -77,6 +75,21 @@ Queixa Principal:
     const anmneseJson = JSON.stringify(anamnese);
 
     const [idAtendimento, setAtendimento] = useState('')
+    const [idade, setIdade] = useState('')
+    const [nome, setNome] = useState('')
+    const [cpf, setCpf] = useState('')
+    const [data, setData] = useState('')
+    const [crm, setCrm] = useState('')
+    const [medico, setMedico] = useState('')
+    const recepcionistaRef = useRef(undefined)
+    const [genero, setGenero] = useState('')
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
 
 
   
@@ -116,6 +129,7 @@ Queixa Principal:
                                 overlayClassName="modal-overlay"
                                 className="modal-content-print">
                                 <AnamnesePrint 
+                                recepcionistaPrint={recepcionistaRef}
                                 anamnesePrint={anmneseJson}
                                 atendimentoPrint={idAtendimento}
                                 />
@@ -123,7 +137,11 @@ Queixa Principal:
                         </div>
                     </div>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
-                    <div className="form-floating mb-3 me-3 w-10">
+                        <div className="form-floating mb-3 me-3 w-10">
+                            <input type="text" readOnly value={recepcionistaRef} className="form-control w-100" id="recepcionista" autoComplete='off' placeholder="Example input"/>
+                            <label htmlFor="floatingInput">Recepcionista</label>
+                        </div>
+                        <div className="form-floating mb-3 me-3 w-10">
                             <input type="text" defaultValue={"Dr. Igor Pereira"} className="form-control w-100" id="nomeMedico" autoComplete='off' placeholder="Example input" disabled />
                             <label htmlFor="floatingInput">Médico</label>
                         </div>
@@ -134,6 +152,14 @@ Queixa Principal:
                         <div className="form-floating mb-3 me-3 w-10">
                             <input type="text" className="form-control w-100" id="cid" autoComplete='off' placeholder="Example input"/>
                             <label htmlFor="floatingInput">CID</label>
+                        </div>
+                        <div className="form-floating mb-3 me-3 w-10">
+                            <input type="text" className="form-control w-100" id="cpf" autoComplete='off' placeholder="Example input" disabled />
+                            <label htmlFor="floatingInput">Cpf</label>
+                        </div>
+                        <div className="form-floating mb-3 me-3 w-10">
+                            <input type="text" className="form-control w-100" id="data" autoComplete='off' placeholder="Example input" disabled />
+                            <label htmlFor="floatingInput">Data</label>
                         </div>
                     </div>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">

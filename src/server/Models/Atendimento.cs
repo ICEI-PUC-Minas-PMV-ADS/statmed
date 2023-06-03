@@ -7,7 +7,7 @@ namespace Statmed.Models
     {
         [Key]
         public int IdAtendimento { get; set; }
-        public int Usuario_idFunc { get; set; }
+        public string Usuario_idFunc { get; set; }
         public string Usuario_crm { get; set; }
         public DateOnly Data { get; set; }
         public string Cid { get; set; }
