@@ -20,6 +20,8 @@
 
 ## Teste
 
+### CT-01
+
 ![](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/88c5db83-271d-4635-8f23-07432bd478e1)
 
 
