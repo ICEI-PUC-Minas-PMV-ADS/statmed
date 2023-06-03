@@ -34,6 +34,9 @@ Eles terão as seguintes tarefas:
 |  T008 | Solicitar ajuda na tela de login|
 |  T009 | Gerar Atestado|
 |  T010 | Gerar Receituario|
+|  T011 | Gerar formulario de referência e contrarreferência|
+|  T012 | Visualizar o historico de passagens|
+|  T013 | Imprimir Ficha|
 
 
 
