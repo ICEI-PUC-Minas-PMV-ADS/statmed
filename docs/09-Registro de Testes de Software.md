@@ -5,9 +5,9 @@
 | CT - 03| Geração de gráficos e estatísticas | Sucesso Parcial|
 | CT - 04| Pesquisa de CID | Sucesso Parcial|
 | CT - 05| Impressão de ficha do paciente | Sucesso| Sem erros registrados durante os testes|
-| CT - 06| Criação de anamnese | Sucesso Parcial|
+| CT - 06| Criação de anamnese | Sucesso | Sem erros registrados durante os testes|
 | CT - 07| Localizar Paciente | Sucesso Parcial|
-| CT - 08|  Localizar onde o prontuário físico do paciente está | Sucesso Parcial|
+| CT - 08|  Localizar onde o prontuário físico do paciente está | Sucesso | Sem erros registrados durante os testes|
 | CT - 09| Gerar atestado médico | Sucesso Parcial|
 | CT - 10| Gerar receituário médico | Sucesso Parcial|
 | CT - 11| Gerar relatorio de referência e contrarreferência | Sucesso Parcial|
