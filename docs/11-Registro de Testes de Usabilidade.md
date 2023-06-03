@@ -115,4 +115,4 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 |  P007 | Você encontrou algum erro inesperado em suas tarefas? |
 |**Resposta**| **Felizmente não**
 |  P008 | Em sua opinião, o sistema facilitaria alguma atividade na sua rotina de trabalho? |
-|**Resposta**| **Sim, muito melhor do que usarmos papel e caneta por questões até mesmo de legibilidade ** |
+|**Resposta**| **Sim, muito melhor do que usarmos papel e caneta por questões até mesmo de legibilidade** |
