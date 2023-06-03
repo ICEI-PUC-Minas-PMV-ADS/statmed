@@ -9,7 +9,8 @@ namespace Statmed.Data
 {
     public class StatmedDbContext : DbContext
     {
-        public StatmedDbContext(DbContextOptions<StatmedDbContext> options) : base(options) {
+        public StatmedDbContext(DbContextOptions<StatmedDbContext> options) : base(options)
+        {
 
         }
 
@@ -20,6 +21,12 @@ namespace Statmed.Data
         public DbSet<Enfermagem> Enfermagem { get; set; }
         public DbSet<Recepcionista> Recepcionista { get; set; }
         public DbSet<SupervisoraAdm> SupervisoraAdm { get; set; }
-         public DbSet<Atendimento> Atendimento { get; set; }
+        public DbSet<Atendimento> Atendimento { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Atendimento>().HasOne(s => s.Paciente).WithMany(x => x.Atendimento).HasForeignKey(x => x.PacienteIdSame).IsRequired();
+            
+        }
     }
 }
