@@ -27,16 +27,21 @@ Eles terão as seguintes tarefas:
 |  T001 | Registrar um novo paciente  |
 |  T002 | Acessar o prontuário de um paciente específico  |
 |  T003 | Visualizar as informações médicas de um paciente  |
-|  T004 |  Gerar um relatório de atendimentos por dia/semana/mês |
+|  T004 |  Gerar um relatório de atendimentos |
 |  T005 | Adicionar uma nova informação médica ao prontuário  |
 |  T006 | Atualizar as informações de um atendimento existente  |
 |  T007 | Criar uma Anamnese  |
+|  T008 | Solicitar ajuda na tela de login|
+|  T009 | Gerar Atestado|
+|  T010 | Gerar Receituario|
+
+
 
 Em seguida irão responder as seguintes questões:
 
 |  Pergunta  | Descrição  |
 | ------------ | ------------ |
-|  P001 | Qual foi o tempo de resposta do sistema ápos clicar para registrar o paciente? |
+|  P001 | Qual foi o tempo de resposta do sistema ápos clicar efetuar o processo solicitado? |
 |  P002 | Em sua opinião, os passos para realizar esse processo foi intuitivo? |
 |  P003 | O sistema foi responsivo em seu dispostivo? |
 |  P004 | De um modo geral, cite um ponto positivo e negativo do software utilizado |
