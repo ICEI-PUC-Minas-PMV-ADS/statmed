@@ -105,7 +105,7 @@ export default function Encaminhamento() {
             let atendimentoAviso = idAtendimento;
             Swal.fire({
                 icon: 'success',
-                title: 'Paciente Cadastrado',
+                title: 'Encaminhamento Criado!',
                 showConfirmButton: true,
                 text: 'Encaminhamento de ' + nomeAviso + ' salvo no atendimento ' + atendimentoAviso
             });

@@ -108,7 +108,7 @@ Queixa Principal:
             let atendimentoAviso = idAtendimento;
             Swal.fire({
                 icon: 'success',
-                title: 'Paciente Cadastrado',
+                title: 'Relatório Registrado!',
                 showConfirmButton: true,
                 text: 'Relatorio de ' + nomeAviso + ' salvo no atendimento ' + atendimentoAviso
             });

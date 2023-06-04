@@ -114,7 +114,7 @@ export default function Atendimento() {
             setSucessoMsg("Consulta do paciente " + nomeCriado + " foi salvo com sucesso! Seu nº de Atendimento é " + idAtendimentoCriado);
             Swal.fire({
                 icon: 'success',
-                title: 'Paciente Cadastrado',
+                title: 'Consulta Registrada!',
                 showConfirmButton: true,
                 text: 'Consulta de ' + nomeCriado + ' registrada no Atendimento ' + idAtendimentoCriado
             });

@@ -105,7 +105,7 @@ export default function Atestado() {
             let atendimentoAviso = idAtendimento;
             Swal.fire({
                 icon: 'success',
-                title: 'Paciente Cadastrado',
+                title: 'Atestado Criado!',
                 showConfirmButton: true,
                 text: 'Atestado de ' + nomeAviso + ' salvo no atendimento ' + atendimentoAviso
             });

@@ -111,7 +111,7 @@ Medicações em uso:
             let atendimentoAviso = idAtendimento;
             Swal.fire({
                 icon: 'success',
-                title: 'Paciente Cadastrado',
+                title: 'Anamnese Salva!',
                 showConfirmButton: true,
                 text: 'Anamnese de ' + nomeAviso + ' salva no atendimento ' + atendimentoAviso
             });
@@ -162,19 +162,19 @@ Medicações em uso:
                             <label htmlFor="floatingInput">Atendimento <ManageSearchRoundedIcon /></label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input type="text" ref={idSameRef} className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text" ref={idSameRef} className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">ID Same</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input type="text" ref={idadeRef} className="form-control w-100" id="dataNasc" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text" ref={idadeRef} className="form-control w-100" id="dataNasc" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Idade</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input type="text" className="form-control w-100" id="epidemia" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text" className="form-control w-100" id="epidemia" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Epidemia?</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input type="text"  ref={generoRef}  className="form-control w-100" id="genero" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text"  ref={generoRef}  className="form-control w-100" id="genero" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Genêro</label>
                         </div>
                         <div className="d-flex justify-content-end mb-3 flex-fill">
@@ -210,11 +210,11 @@ Medicações em uso:
                             <label htmlFor="floatingInput">Recepcionista</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text" ref={medicoRef} defaultValue={"Dr. Igor Pereira"} className="form-control w-100" id="nomeMedico" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text" ref={medicoRef} defaultValue={"Dr. Igor Pereira"} className="form-control w-100" id="nomeMedico" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Médico</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text"  ref={crmRef}  defaultValue={"222314/SP"} className="form-control w-100" id="crm" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text"  ref={crmRef}  defaultValue={"222314/SP"} className="form-control w-100" id="crm" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">CRM</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
@@ -222,11 +222,11 @@ Medicações em uso:
                             <label htmlFor="floatingInput">CID</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text" ref={cpfRef} className="form-control w-100" id="cpf" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text" ref={cpfRef} className="form-control w-100" id="cpf" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">CPF</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text" ref={dataRef} className="form-control w-100" id="data" autoComplete='off' placeholder="Example input" disabled />
+                            <input type="text" ref={dataRef} className="form-control w-100" id="data" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Data</label>
                         </div>
                     </div>
@@ -236,7 +236,7 @@ Medicações em uso:
                             <label htmlFor="floatingInput">Nome</label>
                         </div>
                         <div className="form-floating mb-3 w-50 flex-fill">
-                            <input type="text" ref={nomeSocialRef} className="form-control w-100" id="nomeSocial" placeholder="Example input" disabled />
+                            <input type="text" ref={nomeSocialRef} className="form-control w-100" id="nomeSocial" placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Nome Social</label>
                         </div>
                     </div>
