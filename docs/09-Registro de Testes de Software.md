@@ -48,10 +48,6 @@
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/234005a9-9da9-427b-b83c-a66fb35602f5)
 
-### CT-12
-
-
-
 ### CT-13
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/08ce4a2e-287f-4ea1-9870-08785845d097)
