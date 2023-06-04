@@ -2,14 +2,14 @@ import React, { useEffect, useState, useRef } from "react";
 import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
 import LocalPrintshopRoundedIcon from '@mui/icons-material/LocalPrintshopRounded';
 import Modal from "react-modal";
-import AnamnesePrint from "../../Components/PrintModal/AnamnesePrint";
 import Swal from 'sweetalert2';
 import axios from "axios";
+import EncaminhamentoPrint from "../../Components/PrintModal/EncaminhamentoPrint";
 
-export default function Anamnese() {
+export default function Encaminhamento() {
 
     useEffect(() => {
-        document.title = 'Statmed - Anamnese';
+        document.title = 'Statmed - Encaminhamento';
     }, []);
 
     // Modal
@@ -18,7 +18,7 @@ export default function Anamnese() {
     function modalPrint() {
         window.print();
     }
-    // Transforma Ano em Idade
+    //
     const idade = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
     // Busca Atendimento
     function buscaAtendimento() {
@@ -42,6 +42,7 @@ export default function Anamnese() {
                     document.getElementById('cpf').value = puxapaciente.paciente.cpf;
                     document.getElementById('data').value = puxapaciente.data;
                     document.getElementById('recepcionista').value = puxapaciente.usuario_idFunc;
+                    document.getElementById('cid').value = puxapaciente.cid;
                 }
                 else if (req.status === 404) {
                     Swal.fire({
@@ -61,15 +62,9 @@ export default function Anamnese() {
         }
     }
 
-    const [anamnese, setAnamnese] = useState(`Queixa Principal: 
-Tempo de Evolução:
-Antecedentes:
-É A primeira vez?: 
-Medicações em uso:  
-    `)
-    const anmneseJson = JSON.stringify(anamnese);
+    const [encaminhamento, setEncaminhamento] = useState(``)
+    const encaminhamentoJson = JSON.stringify(encaminhamento);
     const [idAtendimento, setAtendimento] = useState('');
-    const [cid, setCid] = useState('');
     // Gambiarra
     const recepcionistaRef = useRef('');
     const nomeRef = useRef('');
@@ -79,11 +74,13 @@ Medicações em uso:
     const idSameRef = useRef('');
     const generoRef = useRef('');
     const crmRef = useRef('');
+    const cidRef = useRef('');
     const cpfRef = useRef('');
     const nomeSocialRef = useRef('');
     // Variáveis para mostrar sucesso
     const sucessoRef = useRef();
     const [sucessoMsg, setSucessoMsg] = useState('');
+
     function openModal() {
         setIsOpen(true);
     }
@@ -95,13 +92,10 @@ Medicações em uso:
     const handlePacienteAname = async (e) => {
         e.preventDefault();
         try {
-            const crmPega = crmRef.current.value;
-            await axios.put(process.env.REACT_APP_API_SALANAM,
+            await axios.put(process.env.REACT_APP_API_SALENCA,
                 JSON.stringify({
                     idAtendimento: idAtendimento,
-                    cid: cid,
-                    anamnese: anamnese,
-                    usuario_crm: crmPega
+                    encaminhamento: encaminhamento
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -111,11 +105,11 @@ Medicações em uso:
             let atendimentoAviso = idAtendimento;
             Swal.fire({
                 icon: 'success',
-                title: 'Anamnese Salva!',
+                title: 'Encaminhamento Criado!',
                 showConfirmButton: true,
-                text: 'Anamnese de ' + nomeAviso + ' salva no atendimento ' + atendimentoAviso
+                text: 'Encaminhamento de ' + nomeAviso + ' salvo no atendimento ' + atendimentoAviso
             });
-            setSucessoMsg("Paciente " + nomeAviso + " teve sua anamnese salva no atendimento " + atendimentoAviso);
+            setSucessoMsg("Encaminhamento de " + nomeAviso + " salvo no atendimento " + atendimentoAviso);
         } catch (err) {
             if (!err?.response) {
                 Swal.fire({
@@ -153,12 +147,12 @@ Medicações em uso:
 
     return (
         <div className="container-fluid ms-3">
-            <h3 className="text-uppercase fw-normal mt-3 mb-3">Anamnese</h3>
+            <h3 className="text-uppercase fw-normal mt-3 mb-3">Encaminhamento</h3>
             <div className="">
                 <form onSubmit={handlePacienteAname}>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input autoFocus onChange={e => setAtendimento(e.target.value)} onBlur={buscaAtendimento} value={idAtendimento} type="text" className="form-control w-100" id="idAtendimento" autoComplete='off' placeholder="Example input" />
+                            <input autoFocus onChange={e => setAtendimento(e.target.value)} onBlur={buscaAtendimento} value={idAtendimento} type="text" className="form-control w-100" id="idAtendimento" autoComplete='off' placeholder="Example input" required/>
                             <label htmlFor="floatingInput">Atendimento <ManageSearchRoundedIcon /></label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10 flex-fill">
@@ -186,19 +180,19 @@ Medicações em uso:
                                 contentLabel="Imprimir"
                                 overlayClassName="modal-overlay"
                                 className="modal-content-print">
-                                <AnamnesePrint 
+                                <EncaminhamentoPrint
                                 data={dataRef}
                                 genero={generoRef}
                                 nomeSocial={nomeSocialRef}
                                 idade={idadeRef}
                                 medico={medicoRef}
                                 cpf={cpfRef}
-                                cid={cid}
+                                cid={cidRef}
                                 idSame={idSameRef}
                                 crm={crmRef}
                                 recepcionista={recepcionistaRef}
                                 nome={nomeRef}
-                                anmneseJson={anmneseJson}
+                                encaminhamentoJson={encaminhamentoJson}
                                 atendimentoPrint={idAtendimento}
                                 />
                             </Modal>
@@ -206,7 +200,7 @@ Medicações em uso:
                     </div>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-10">
-                        <input readOnly ref={recepcionistaRef} type="text" className="form-control" id="recepcionista" placeholder="Example input" required />
+                        <input readOnly ref={recepcionistaRef} type="text" className="form-control" id="recepcionista" placeholder="Example input" />
                             <label htmlFor="floatingInput">Recepcionista</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
@@ -218,7 +212,7 @@ Medicações em uso:
                             <label htmlFor="floatingInput">CRM</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input onChange={e => setCid(e.target.value)} value={cid} type="text" className="form-control w-100" id="cid" autoComplete='off' placeholder="Example input"/>
+                            <input  type="text" ref={cidRef} className="form-control w-100" id="cid" autoComplete='off' placeholder="Example input" readOnly required/>
                             <label htmlFor="floatingInput">CID</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
@@ -230,9 +224,9 @@ Medicações em uso:
                             <label htmlFor="floatingInput">Data</label>
                         </div>
                     </div>
-                    <div className="w-100 d-inline-flex f   lex-row justify-content-start align-items-start">
+                    <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-50 flex-fill">
-                            <input readOnly ref={nomeRef} type="text" className="form-control w-100" id="nome" autoComplete='off' placeholder="Example input"/>
+                            <input readOnly ref={nomeRef} type="text" className="form-control w-100" id="nome" autoComplete='off' placeholder="Example input" required/>
                             <label htmlFor="floatingInput">Nome</label>
                         </div>
                         <div className="form-floating mb-3 w-50 flex-fill">
@@ -241,10 +235,10 @@ Medicações em uso:
                         </div>
                     </div>
                     <div className="form-floating mb-3">
-                        <textarea value={anamnese} onChange={e => setAnamnese(e.target.value)} className="form-control anamnese-texto-area" minLength={20} id="desc" rows="20" cols="10" required/>
-                        <label htmlFor="mensagem">Anamnese</label>
+                        <textarea value={encaminhamento} onChange={e => setEncaminhamento(e.target.value)} className="form-control anamnese-texto-area" minLength={20} id="desc" rows="20" cols="10" required/>
+                        <label htmlFor="mensagem">Encaminhamento</label>
                     </div>
-                    <button className="btn btn-bscpac btn-lg btn-primary btn-padrao text-uppercase mb-2">Registrar Anamnese</button>
+                    <button className="btn btn-bscpac btn-lg btn-primary btn-padrao text-uppercase mb-2">Criar Encaminhamento</button>
                 </form>
                 <div className="w-100 d-inline-flex flex-row justify-content-center align-items-center">
                 <span className={sucessoMsg ? "mensagem-sucesso text-uppercase" : ""} aria-live="assertive" ref={sucessoRef}>{sucessoMsg}</span>

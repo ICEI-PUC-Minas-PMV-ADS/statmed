@@ -42,13 +42,11 @@ namespace Statmed.Controllers
                 Complemento = body.Complemento,
                 Uf = body.Uf
             };
-                        string json = System.Text.Json.JsonSerializer.Serialize(paciente);
 
             _statmedDbContext.Paciente.Add(paciente);
             await _statmedDbContext.SaveChangesAsync();
 
-
-            return body;
+            return paciente;
         }
 
         // Consulta

@@ -1,5 +1,6 @@
-import Axios from 'axios';
-import React, { useRef, useState, useEffect } from 'react';
+// import Axios from 'axios';
+import React, { useEffect } from 'react';
+// import React, { useRef, useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
 
@@ -149,10 +150,8 @@ export default function AttPaciente() {
         }
     }
 
-
-
     return (
-        <div className="container-fluid ms-3">
+        <div className="container-fluid ms-3 me-3">
             <h3 className="text-uppercase fw-normal  mt-3 mb-3">Atualizar Cadastro</h3>
             <div className="">
                 <form>

@@ -101,7 +101,6 @@ export default function CadPaciente() {
             }
         }
     }
-
     // Começo do POST
     const [data, setData] = useState({
         nome: "",
@@ -115,19 +114,21 @@ export default function CadPaciente() {
         numero: "",
         complemento: ""
     })
-
     // Gambiarra pro useState do setData não ficar limpando o return da funcao de buscaCEP
     const ruaRef = useRef(undefined);
     const bairroRef = useRef(undefined);
     const cidadeRef = useRef(undefined);
     const ufRef = useRef(undefined);
-
+    // Pega o valor digitado no input de alguns fields 
     const handle = e => {
         const newData = { ...data }
         newData[e.target.id] = e.target.value
         setData(newData)
     }
-
+    // Variáveis para mostrar o idSame do paciente que foi criado
+    const sucessoRef = useRef();
+    const [sucessoMsg, setSucessoMsg] = useState('');
+    // Função de post
     const submit = async (e) => {
         e.preventDefault();
         // Continuação da gambiarra
@@ -135,8 +136,9 @@ export default function CadPaciente() {
         const bairroPega = bairroRef.current.value;
         const cidadePega = cidadeRef.current.value;
         const ufPega = ufRef.current.value;
+        const prateleiraDefault = "Sem Arquivo";
         try {
-            await Axios.post(process.env.REACT_APP_API_CADPAC,
+            const postaxios = await Axios.post(process.env.REACT_APP_API_CADPAC,
                 JSON.stringify({
                     nome: data.nome,
                     nomeSocial: data.nomeSocial,
@@ -151,18 +153,13 @@ export default function CadPaciente() {
                     complemento: data.complemento,
                     bairro: bairroPega,
                     cidade: cidadePega,
-                    uf: ufPega
+                    uf: ufPega,
+                    prateleira: prateleiraDefault
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
                 }
             );
-            Swal.fire({
-                icon: 'success',
-                title: 'Paciente Cadastrado',
-                showConfirmButton: false,
-                timer: 2500
-            });
             // Outra gambiarra...
             setData({
                 nome: "",
@@ -177,6 +174,15 @@ export default function CadPaciente() {
                 complemento: ""
             });
             e.target.reset();
+            let nomeCriado = (postaxios.data.nome)
+            let idSameCriado = (postaxios.data.idSame)
+            setSucessoMsg("Paciente " + nomeCriado + " foi salvo com sucesso! Seu ID Same é " + idSameCriado);
+            Swal.fire({
+                icon: 'success',
+                title: 'Paciente Cadastrado',
+                showConfirmButton: true,
+                text: 'Paciente ' + nomeCriado + ' registrado com SAME ' + idSameCriado
+            });
         } catch (err) {
             if (!err?.response) {
                 Swal.fire({
@@ -211,6 +217,7 @@ export default function CadPaciente() {
             }
         }
     }
+
     return (
         <div className="container-fluid ms-3">
             <h3 className="text-uppercase fw-normal  mt-3 mb-3">Cadastro de Paciente</h3>
@@ -294,7 +301,11 @@ export default function CadPaciente() {
                         </div>
                     </div>
                     <button className="btn btn-bscpac btn-lg btn-primary btn-padrao text-uppercase mb-2">Cadastrar</button>
+
                 </form>
+                <div className="w-100 d-inline-flex flex-row justify-content-center align-items-center">
+                <span className={sucessoMsg ? "mensagem-sucesso text-uppercase" : ""} aria-live="assertive" ref={sucessoRef}>{sucessoMsg}</span>
+                </div>
             </div>
         </div>
     )

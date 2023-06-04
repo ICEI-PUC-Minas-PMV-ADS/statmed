@@ -5,13 +5,22 @@
     /* principal - cor de relevo do nosso logo, hover - cor utiliza para elementos com hover effect */
     --principal: #00C975;
     --principal-hover: #00DE81;
-    /* Cores darkmode */
-    --darkmode1: #23272A;
-    --darkmode2: #2c2f33;
+    --darkmode1: #2c2f33;
+    --darkmode2: #23272A;
     /* Cores lightmode */
     --lightmode1: #DCDCDC;
     --lightmode2: #fff;
 }
+
+/*:root {
+    --principal: #00C975;
+    --principal-hover: #00DE81;
+    --darkmode1: #2c2f33;
+    --darkmode2: #23272A;
+    --lightmode1: #DCDCDC;
+    --lightmode2: #fff;
+}*/
+
 
 body {
     background-color: var(--darkmode1) !important;
@@ -22,6 +31,7 @@ body {
 
 * {
     font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: red !important; 
 }
 
 .main-conteudo {
@@ -37,6 +47,7 @@ body {
     padding: 0.75rem 1rem !important;
     background-color: var(--principal) !important;
     border-color: var(--principal) !important;
+    pointer-events: auto !important;
 }
 
 .btn-login:hover {
@@ -56,7 +67,7 @@ body {
 }
 
 .form-check-label {
-    color: white !important;
+    color: var(--lightmode2) !important;
 }
 
 .form-control {
@@ -84,7 +95,7 @@ body {
 
 .swal2-title,
 .swal2-html-container {
-    color: white !important;
+    color: var(--lightmode2) !important;
 }
 
 /**/
@@ -116,6 +127,14 @@ body {
     width: 40%;
 }
 
+.w-30 {
+    width: 30%;
+}
+
+.w-35 {
+    width: 35%;
+}
+
 .w-5 {
     width: 5%;
 }
@@ -138,6 +157,11 @@ body {
 /* Anamnese */
 .anamnese-texto-area {
     height: 50vh !important;
+    resize: none;
+}
+
+.texto-area-consulta {
+    height: 200px !important;
     resize: none;
 }
 
@@ -195,7 +219,7 @@ body {
 .modal-content {
     width: 100%;
     max-width: 1000px;
-    background-color: var(--darkmode1);
+    background-color: var(--darkmode2);
     padding: 10px;
     border-radius: 10px;
 }
@@ -206,3 +230,153 @@ body {
     background-color: var(--darkmode1);
     padding: 0px;
 }
+/* Navbar fechar */
+.bt-main {
+    display: inline-block !important;
+    position: absolute !important;
+    top: 10px !important;
+    left: 0;
+    margin-left: 295px !important;
+    z-index: 99999998;
+    background-repeat: no-repeat;
+    border: none !important;
+    color: var(--darkmode1) !important;
+    transform: rotate(-180deg);
+    transition: 500ms ease-in-out;
+}
+
+.seta-menu:hover {
+    color: var(--lightmode2) !important;
+    transition: 500ms;
+}
+
+.bt-main-hide {
+    display: inline-block !important;
+    position: absolute !important;
+    top: 10px !important;
+    left: 0;
+    margin-left: 13px !important;
+    z-index: 99999998;
+    background-color: var(--principal) !important;
+    background-repeat: no-repeat;
+    border: none !important;
+    color: var(--darkmode1) !important;
+    transform: rotate(360deg);
+    transition: 500ms ease-in-out;
+}
+/* Esconder elementos */
+.sumir {
+    visibility: hidden;
+}
+/* Tabelas */
+.p-datatable{
+    background: var(--darkmode2) !important;
+}
+
+.p-paginator {
+    background: var(--darkmode2) !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: var(--principal) !important;
+    border-color: var(--principal-hover) !important;
+    color: var(--darkmode1) !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+    border-color: var(--principal-hover) !important;
+}
+
+.p-paginator {
+    color: var(--principal) !important;
+    border-color: var(--principal-hover) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+    border-color: var(--darkmode1) !important;
+    background: var(--darkmode2) !important;
+}
+
+.p-paginator .p-paginator-first, .p-paginator .p-paginator-prev, .p-paginator .p-paginator-next, .p-paginator .p-paginator-last {
+    border-color: var(--principal-hover) !important;
+}
+
+.p-paginator-page, .p-paginator-element {
+    color: var(--principal-hover) !important;
+}
+
+.p-paginator-first {
+    border-radius: 20% 0 0 20% !important;
+}
+
+.p-paginator-last {
+    border-radius: 0 20% 20% 0 !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+    border-top: none !important;
+    border-color: var(--principal-hover) !important;
+    border-radius: 5px 5px 0px 0px !important;
+    background: var(--darkmode2) !important;
+}
+
+.p-datatable .p-sortable-column.p-highlight:not(.p-sortable-disabled):hover {
+    color: var(--principal-hover) !important;
+}
+
+.p-datatable .p-sortable-column.p-highlight:not(.p-sortable-disabled) {
+    color: var(--principal-hover) !important;
+}
+
+.p-sortable-column p-highlight {
+    border-color: none;
+}
+
+.p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
+    color: var(--principal-hover) !important;
+}
+
+.p-datatable {
+    border: 1px solid var(--darkmode2) !important;
+    border-radius: 5px !important;
+}
+
+.p-datatable .p-paginator-bottom {
+    border-radius: 0 0 5px 5px !important;
+}
+.p-datatable .p-sortable-column:focus {
+    box-shadow: none !important;
+}
+/* Esconders as setas dos inputs */
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+::-moz-selection {
+    color: var(--darkmode1) !important;
+    background: var(--principal) !important;
+}
+  
+  ::selection {
+    color: var(--darkmode1) !important;
+    background: var(--principal) !important;
+}
+  .form-control-plaintext:focus {
+    color: var(--darkmode1) !important;
+    background: var(--principal) !important;
+}
+
+/* Mensagem de sucesso ápos criar atendimento/same */
+.mensagem-sucesso {
+    color: var(--lightmode2) !important;
+    font-size: 1rem;
+}
+

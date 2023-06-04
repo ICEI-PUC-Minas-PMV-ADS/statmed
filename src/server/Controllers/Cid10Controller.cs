@@ -16,7 +16,7 @@ namespace Statmed.Controllers
         }
 
         [HttpGet("Consultar")]
-        public async Task<IActionResult> PegaCid102()
+        public async Task<IActionResult> PegaCid10()
         {
             var cid10 = await _statmedDbContext.CID10.ToListAsync();
             return Ok(cid10);

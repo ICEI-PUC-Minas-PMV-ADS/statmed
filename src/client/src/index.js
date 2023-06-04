@@ -8,7 +8,7 @@ import { ProSidebarProvider } from "react-pro-sidebar";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <AuthProvider>
         <div>
           <ProSidebarProvider>

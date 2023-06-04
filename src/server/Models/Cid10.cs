@@ -7,6 +7,6 @@ namespace Statmed.Models
     {
         [Key]
         public string IdCid { get; set; }
-        public string Desc { get; set; }
+        public string Descr { get; set; }
     }
 }
