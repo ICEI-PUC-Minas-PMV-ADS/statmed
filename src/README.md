@@ -1,10 +1,15 @@
 # Instruções de utilização
 
 ## Instalação do Site
+Utilizamos o ReactJS como frontend, para utiliza-lo localmente é necessário as bibliotecas NPM e React-scripts. 
+No backend utilizamos o .net 7, para utiliza-lo localmente é necessário as bibliotecas entity framework.
+Assim que abrir a pasta do backend (src/server) em um IDE como o Visual Studio Code, o mesmo alertará em um pop-up para instalar frameworks restantes.
 
-O site em HTML/CSS/JS é um projeto estático, logo pode ser utilizado com a extensão Live Server do VsCode para visualizar as páginas de front end;
-
-Para ativar as funcionalidades do backend é necessário instalar a framework .net mais atualizada, entrar no diretorio server e usar o comando "dotnet watch run" para testes.
+Feito toda essa configuração, no root do front end digite no terminal:
+**npm start**
+e em seguida no root do back end digite no terminal:
+**dotnet watch run **
+Pronto, a aplicação interativa já pode ser testada localmente! caso seu localhost do .net tenha a porta diferente do padrão, é só editar no arquivo .env do frontend ReactJs.
 
 ## Histórico de versões
 
@@ -17,3 +22,22 @@ Para ativar as funcionalidades do backend é necessário instalar a framework .n
 - Página de busca e listagem de CID
 - Página de arquivo para o SAME (Listar Conteúdos de prateleira) - Necessita atualização das tables no front end
 - Página de cadastro de paciente com campos auto-regulatórios
+
+### [1.0.0] - 04/06/2023
+#### Adicionado
+- Recriado todo front end em reactJS
+- Criado APIS de cadastro, edição e busca por Id de Atendimento e Paciente
+- Criado página de ajuda no front do login
+- Criado as páginas :
+> Início
+Consulta
+Anamnese
+Relatório Médico
+Encaminhamento
+Atestado
+Consulta de Atendimento
+Arquivo médico
+Componente para criar dados em uma ficha de impressão
+Refeito o busca CID como modal
+- Revisão geral das webAPIs.
+
