@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef } from "react";
 import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
 import LocalPrintshopRoundedIcon from '@mui/icons-material/LocalPrintshopRounded';
 import Modal from "react-modal";
-import RelatorioPrint from "../../Components/PrintModal/RelatorioPrint";
 import Swal from 'sweetalert2';
 import axios from "axios";
+import Imprimir from "../../Components/PrintModal/Imprimir";
 
 export default function RelatoriosMedicos() {
 
@@ -66,7 +66,8 @@ export default function RelatoriosMedicos() {
 CID:
 Queixa Principal:
     `)
-    const relatorioJson = JSON.stringify(relatorio);
+    const conteudo = JSON.stringify(relatorio);
+    const titulo = "Relatório";
     const [idAtendimento, setAtendimento] = useState('');
     // Gambiarra
     const recepcionistaRef = useRef('');
@@ -183,7 +184,7 @@ Queixa Principal:
                                 contentLabel="Imprimir"
                                 overlayClassName="modal-overlay"
                                 className="modal-content-print">
-                                <RelatorioPrint 
+                                <Imprimir 
                                 data={dataRef}
                                 genero={generoRef}
                                 nomeSocial={nomeSocialRef}
@@ -195,7 +196,8 @@ Queixa Principal:
                                 crm={crmRef}
                                 recepcionista={recepcionistaRef}
                                 nome={nomeRef}
-                                relatorioJson={relatorioJson}
+                                conteudo={conteudo}
+                                titulo={titulo}
                                 atendimentoPrint={idAtendimento}
                                 />
                             </Modal>

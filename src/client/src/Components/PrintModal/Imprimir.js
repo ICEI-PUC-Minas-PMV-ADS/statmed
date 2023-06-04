@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './PrintModal.css'
+import './Imprimir.css'
 import { ReactComponent as HospitalLogo } from '../../Assets/img/svg/hospital_exemplo_anm.svg';
 
-export default class AnamnesePrint extends Component {
+export default class Imprimir extends Component {
     render() { 
     // Variaveis de valor
     const idAtendimento = this.props.atendimentoPrint;
@@ -16,9 +16,10 @@ export default class AnamnesePrint extends Component {
     const data = this.props.data.current.value;
     const pacienteRecepcionista = this.props.recepcionista.current.value;
     const pacienteNome = this.props.nome.current.value;
-    const cid = this.props.cid;
-    const anamnese = JSON.parse(this.props.anmneseJson);
-    
+    const cid = this.props.cid.current.value;
+    const conteudo = JSON.parse(this.props.conteudo);
+    const titulo = this.props.titulo;
+
     return (
     <div className="container-deus">
       <div className="d-flex flex-column container-mae">
@@ -92,16 +93,16 @@ export default class AnamnesePrint extends Component {
         </div>
 
         <div className="d-flex justify-content-center align-items-center border-1 borda-preta">
-            <h6 className="text-uppercase m-1">Anamnese</h6>
+            <h6 className="text-uppercase m-1 fw-bold">{titulo}</h6>
         </div>
 
         <div className="anamnese-container">
             <div className="m-1 ms-3">
-            <p>{anamnese}</p>
+            <p>{conteudo}</p>
             </div>
         </div>
         <div className="mt-auto d-flex justify-content-center align-items-center border-1 borda-top">
-            <p className="text-uppercase m-1 ">{medico} {crm} - {data}</p>
+            <p className="text-uppercase m-1 fw-bold">{medico} {crm} - {data}</p>
         </div>
         <div className="mt-bottom d-flex justify-content-center align-items-center border-1 borda-top">
             <p className="text-uppercase m-1 fs-rodape">Conforme estabelecido pela Lei Geral de Proteção de Dados (LGPD), informamos que as informações pessoais fornecidas nesta ficha serão utilizadas apenas para fins de atendimento médico, administração hospitalar e cumprimento de obrigações legais. Proibida distribuição e cópia sem consentimento do paciente ou sem intimação judicial.</p>

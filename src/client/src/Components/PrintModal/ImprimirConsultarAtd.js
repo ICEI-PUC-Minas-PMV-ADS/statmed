@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './PrintModal.css'
+import './Imprimir.css'
 import { ReactComponent as HospitalLogo } from '../../Assets/img/svg/hospital_exemplo_anm.svg';
 
-export default class EncaminhamentoPrint extends Component {
+export default class ImprimirAtd extends Component {
     render() { 
     // Variaveis de valor
     const idAtendimento = this.props.atendimentoPrint;
@@ -17,8 +17,9 @@ export default class EncaminhamentoPrint extends Component {
     const pacienteRecepcionista = this.props.recepcionista.current.value;
     const pacienteNome = this.props.nome.current.value;
     const cid = this.props.cid.current.value;
-    const encaminhamento = JSON.parse(this.props.encaminhamentoJson);
-    
+    const conteudo = this.props.conteudo.current.value;
+    const titulo = this.props.titulo;
+
     return (
     <div className="container-deus">
       <div className="d-flex flex-column container-mae">
@@ -92,16 +93,16 @@ export default class EncaminhamentoPrint extends Component {
         </div>
 
         <div className="d-flex justify-content-center align-items-center border-1 borda-preta">
-            <h6 className="text-uppercase m-1">Encaminhamento</h6>
+            <h6 className="text-uppercase m-1 fw-bold">{titulo}</h6>
         </div>
 
         <div className="anamnese-container">
             <div className="m-1 ms-3">
-            <p>{encaminhamento}</p>
+            <p>{conteudo}</p>
             </div>
         </div>
         <div className="mt-auto d-flex justify-content-center align-items-center border-1 borda-top">
-            <p className="text-uppercase m-1 ">{medico} {crm} - {data}</p>
+            <p className="text-uppercase m-1 fw-bold">{medico} {crm} - {data}</p>
         </div>
         <div className="mt-bottom d-flex justify-content-center align-items-center border-1 borda-top">
             <p className="text-uppercase m-1 fs-rodape">Conforme estabelecido pela Lei Geral de Proteção de Dados (LGPD), informamos que as informações pessoais fornecidas nesta ficha serão utilizadas apenas para fins de atendimento médico, administração hospitalar e cumprimento de obrigações legais. Proibida distribuição e cópia sem consentimento do paciente ou sem intimação judicial.</p>
