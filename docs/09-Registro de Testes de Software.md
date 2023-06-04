@@ -1,12 +1,12 @@
 | Caso de teste | Descrição | Resultado| Avaliação |
 | ------------ | ------------- | ------------ | ----------- |
 | CT - 01| O Sistema deverá permitir que o usuário cadastre pacientes | Sucesso| Sem erros registrados durante os testes|
-| CT - 02 | Busca do historico de passagens do paciente no local. | Sucesso |
-| CT - 03| Geração de gráficos e estatísticas | Sucesso Parcial|
-| CT - 04| Pesquisa de CID | Sucesso Parcial|
+| CT - 02 | Busca do historico de passagens do paciente no local. | sucesso parcial| Em desenvolvimento
+| CT - 03| Geração de gráficos e estatísticas | Sucesso Parcial| Em desenvolvimento
+| CT - 04| Pesquisa de CID | Sucesso| Sem erros registrados durante os testes|
 | CT - 05| Impressão de ficha do paciente | Sucesso| Sem erros registrados durante os testes|
 | CT - 06| Criação de anamnese | Sucesso | Sem erros registrados durante os testes|
-| CT - 07| Localizar Paciente | Sucesso Parcial|
+| CT - 07| Localizar Paciente | Sucesso Parcial| Em desenvolvimento|
 | CT - 08|  Localizar onde o prontuário físico do paciente está | Sucesso | Sem erros registrados durante os testes|
 | CT - 09| Gerar atestado médico | Sucesso| Sem erros registrados durante os testes|
 | CT - 10| Gerar receituário médico | Sucesso| Sem erros registrados durante os testes|
