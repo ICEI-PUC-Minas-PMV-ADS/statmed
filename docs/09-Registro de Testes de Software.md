@@ -11,9 +11,8 @@
 | CT - 09| Gerar atestado médico | Sucesso| Sem erros registrados durante os testes|
 | CT - 10| Gerar receituário médico | Sucesso| Sem erros registrados durante os testes|
 | CT - 11| Gerar relatorio de referência e contrarreferência | Sucesso| Sem erros registrados durante os testes|
-| CT - 12| Gerar atestado/ comprovante de consulta | Sucesso| Sem erros registrados durante os testes|
-| CT - 13| Gerar relatórios | Sucesso| Sem erros registrados durante os testes|
-| CT - 014| Ajuda | Sucesso| Sem erros registrados durante os testes|
+| CT - 12| Gerar relatórios | Sucesso| Sem erros registrados durante os testes|
+| CT - 13| Ajuda | Sucesso| Sem erros registrados durante os testes|
 
 ## Retornos obtidos em testes
 
@@ -48,12 +47,12 @@
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/234005a9-9da9-427b-b83c-a66fb35602f5)
 
-### CT-13
+### CT-12
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/08ce4a2e-287f-4ea1-9870-08785845d097)
 
 
-### CT-14
+### CT-13
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/f2591e4f-ef5e-4d53-9430-afadf2a7d15f)
 
