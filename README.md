@@ -6,7 +6,7 @@
 
 `2º SEMESTRE`
 
-![image](https://user-images.githubusercontent.com/98277143/223217475-ddcd36fb-2cbc-404c-adb5-0759ac28750b.png)
+![Logo](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/98277143/23ed1c05-2e0e-4f67-9fb1-c57dca86cb1c)
 
 Statmed é uma solução desenvolvida para atender às necessidades do Serviço de Arquivo Médico e Estatística (SAME) oferecendo recursos para registro de pacientes e atendimentos desde a recepção até o médico, prontuário e prescrição médica além de  ferramentas de estatística e arquivamento.
 
