@@ -4,7 +4,7 @@ import LocalPrintshopRoundedIcon from '@mui/icons-material/LocalPrintshopRounded
 import Modal from "react-modal";
 import Swal from 'sweetalert2';
 import axios from "axios";
-import AtestadoPrint from "../../Components/PrintModal/AtestadoPrint";
+import Imprimir from "../../Components/PrintModal/Imprimir";
 
 export default function Atestado() {
 
@@ -63,8 +63,9 @@ export default function Atestado() {
     }
 
     const [atestado, setAtestado] = useState(``)
-    const atestadoJson = JSON.stringify(atestado);
+    const conteudo = JSON.stringify(atestado);
     const [idAtendimento, setAtendimento] = useState('');
+    const titulo = "Atestado";
     // Gambiarra
     const recepcionistaRef = useRef('');
     const nomeRef = useRef('');
@@ -80,7 +81,7 @@ export default function Atestado() {
     // Variáveis para mostrar sucesso
     const sucessoRef = useRef();
     const [sucessoMsg, setSucessoMsg] = useState('');
-
+    
     function openModal() {
         setIsOpen(true);
     }
@@ -180,7 +181,7 @@ export default function Atestado() {
                                 contentLabel="Imprimir"
                                 overlayClassName="modal-overlay"
                                 className="modal-content-print">
-                                <AtestadoPrint
+                                <Imprimir
                                 data={dataRef}
                                 genero={generoRef}
                                 nomeSocial={nomeSocialRef}
@@ -192,8 +193,9 @@ export default function Atestado() {
                                 crm={crmRef}
                                 recepcionista={recepcionistaRef}
                                 nome={nomeRef}
-                                encaminhamentoJson={atestadoJson}
+                                conteudo={conteudo}
                                 atendimentoPrint={idAtendimento}
+                                titulo={titulo}
                                 />
                             </Modal>
                         </div>

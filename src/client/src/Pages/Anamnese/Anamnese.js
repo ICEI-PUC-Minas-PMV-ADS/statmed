@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef } from "react";
 import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
 import LocalPrintshopRoundedIcon from '@mui/icons-material/LocalPrintshopRounded';
 import Modal from "react-modal";
-import AnamnesePrint from "../../Components/PrintModal/AnamnesePrint";
 import Swal from 'sweetalert2';
 import axios from "axios";
+import Imprimir from "../../Components/PrintModal/Imprimir";
 
 export default function Anamnese() {
 
@@ -67,7 +67,8 @@ Antecedentes:
 É A primeira vez?: 
 Medicações em uso:  
     `)
-    const anmneseJson = JSON.stringify(anamnese);
+    const conteudo = JSON.stringify(anamnese);
+    const titulo = "Anamnese";
     const [idAtendimento, setAtendimento] = useState('');
     const [cid, setCid] = useState('');
     // Gambiarra
@@ -79,6 +80,7 @@ Medicações em uso:
     const idSameRef = useRef('');
     const generoRef = useRef('');
     const crmRef = useRef('');
+    const cidRef = useRef('');
     const cpfRef = useRef('');
     const nomeSocialRef = useRef('');
     // Variáveis para mostrar sucesso
@@ -186,19 +188,20 @@ Medicações em uso:
                                 contentLabel="Imprimir"
                                 overlayClassName="modal-overlay"
                                 className="modal-content-print">
-                                <AnamnesePrint 
+                                <Imprimir 
                                 data={dataRef}
                                 genero={generoRef}
                                 nomeSocial={nomeSocialRef}
                                 idade={idadeRef}
                                 medico={medicoRef}
                                 cpf={cpfRef}
-                                cid={cid}
+                                cid={cidRef}
                                 idSame={idSameRef}
                                 crm={crmRef}
                                 recepcionista={recepcionistaRef}
                                 nome={nomeRef}
-                                anmneseJson={anmneseJson}
+                                conteudo={conteudo}
+                                titulo={titulo}
                                 atendimentoPrint={idAtendimento}
                                 />
                             </Modal>
@@ -218,7 +221,7 @@ Medicações em uso:
                             <label htmlFor="floatingInput">CRM</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input onChange={e => setCid(e.target.value)} value={cid} type="text" className="form-control w-100" id="cid" autoComplete='off' placeholder="Example input"/>
+                            <input onChange={e => setCid(e.target.value)} value={cid} ref={cidRef} type="text" className="form-control w-100" id="cid" autoComplete='off' placeholder="Example input"/>
                             <label htmlFor="floatingInput">CID</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">

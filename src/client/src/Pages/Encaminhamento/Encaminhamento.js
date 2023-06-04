@@ -4,7 +4,7 @@ import LocalPrintshopRoundedIcon from '@mui/icons-material/LocalPrintshopRounded
 import Modal from "react-modal";
 import Swal from 'sweetalert2';
 import axios from "axios";
-import EncaminhamentoPrint from "../../Components/PrintModal/EncaminhamentoPrint";
+import Imprimir from "../../Components/PrintModal/Imprimir";
 
 export default function Encaminhamento() {
 
@@ -63,7 +63,8 @@ export default function Encaminhamento() {
     }
 
     const [encaminhamento, setEncaminhamento] = useState(``)
-    const encaminhamentoJson = JSON.stringify(encaminhamento);
+    const conteudo = JSON.stringify(encaminhamento);
+    const titulo = "Encaminhamento";
     const [idAtendimento, setAtendimento] = useState('');
     // Gambiarra
     const recepcionistaRef = useRef('');
@@ -180,7 +181,7 @@ export default function Encaminhamento() {
                                 contentLabel="Imprimir"
                                 overlayClassName="modal-overlay"
                                 className="modal-content-print">
-                                <EncaminhamentoPrint
+                                <Imprimir
                                 data={dataRef}
                                 genero={generoRef}
                                 nomeSocial={nomeSocialRef}
@@ -192,7 +193,8 @@ export default function Encaminhamento() {
                                 crm={crmRef}
                                 recepcionista={recepcionistaRef}
                                 nome={nomeRef}
-                                encaminhamentoJson={encaminhamentoJson}
+                                titulo={titulo}
+                                conteudo={conteudo}
                                 atendimentoPrint={idAtendimento}
                                 />
                             </Modal>
