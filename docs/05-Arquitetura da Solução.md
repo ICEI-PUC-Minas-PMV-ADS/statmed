@@ -15,7 +15,7 @@ O diagrama de classes ilustra graficamente como será a estrutura do software, e
 
 ## Modelo ER (Projeto Conceitual)
 
-![image](https://user-images.githubusercontent.com/98277143/230527029-7f20e933-b713-4e17-8c37-9cd559938a4b.png)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/98277143/755a2b4d-8e15-4770-97eb-3dc9648fceb7)
 
 ## Projeto da Base de Dados
 
@@ -31,7 +31,7 @@ A base de dados foi feita utilizando MySQL.
 
 ## Tecnologias Utilizadas
 
-Decidimos por utilizar a .NET e MySQL com Entity Framework. Para serviço web o Heroku e Visual Studio Code como IDE devido ao seu suporte junto ao GitHub.
+Decidimos por utilizar o .NET 7 com Entity Framework e MySql para o backend e ReactJS para o frontend. Utilizamos o Visual Studio Code como IDE devido a sua integração com o GitHub.
 
 ## Hospedagem
 
