@@ -89,22 +89,24 @@ export default function Atendimento() {
         e.preventDefault();
         // Continuação da gambiarra
         const idSamePega = idSameRef.current.value;
-        const atendentePega = 5 
+        const atendentePega = "André Fernandes";
         const dataPega = dataRef.current.value;
         const epidemiaPega = epidemiaRef.current.value;
+        const anamneseDefault = `Queixa Principal: \r\n    Tempo de Evolu\u00E7\u00E3o:\r\n    Antecedentes:\r\n    \u00C9 A primeira vez?: \r\n    Medica\u00E7\u00F5es em uso: \r\n    Queixa Principal: `;
         try {
             const postaxios = await axios.post(url,
                 JSON.stringify({
                     usuario_idFunc: atendentePega,
                     data: dataPega,
                     epidemia: epidemiaPega,
-                    pacienteidSame: idSamePega
+                    pacienteidSame: idSamePega,
+                    anamnese: anamneseDefault
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
                 }
             );
-            console.log(postaxios);
+            console.log(postaxios.data.anamnese)
             let nomeCriado = nomeRef.current.value;
             e.target.reset();
             setIsChecked(false);

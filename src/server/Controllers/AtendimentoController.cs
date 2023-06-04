@@ -55,6 +55,7 @@ namespace Statmed.Controllers
                 Usuario_idFunc = s.Usuario_idFunc,
                 Data = s.Data,
                 Cid = s.Cid,
+                Usuario_crm = s.Usuario_crm,
                 Epidemia = s.Epidemia,
                 Atestado = s.Atestado,
                 Anamnese = s.Anamnese,
@@ -72,7 +73,7 @@ namespace Statmed.Controllers
                 return IdPaciente;
             }
         }
-        [HttpPut("AtualizarAtendimento")]
+        [HttpPut("AtendimentoAnamnese")]
         public async Task<HttpStatusCode> RegistrarAnamnese(Atendimento Atendimento)
         {
             var attPac = await _statmedDbContext.Atendimento.FirstOrDefaultAsync(s => s.IdAtendimento == Atendimento.IdAtendimento);
@@ -80,16 +81,52 @@ namespace Statmed.Controllers
             // Escapar os caracteres inválidos no campo Anamnese
             string anamneseEscaped = RemoveInvalidCharacters(Atendimento.Anamnese);
 
+            attPac.Usuario_crm = Atendimento.Usuario_crm;
             attPac.Cid = Atendimento.Cid;
-            attPac.Atestado = Atendimento.Atestado;
             attPac.Anamnese = anamneseEscaped; // Usar a string escapada
-            attPac.Relatorio = Atendimento.Relatorio;
-            attPac.Encaminhamento = Atendimento.Encaminhamento;
 
             await _statmedDbContext.SaveChangesAsync();
             return HttpStatusCode.OK;
         }
+        [HttpPut("AtendimentoRelatorio")]
+        public async Task<HttpStatusCode> RegistrarRelatorio(Atendimento Atendimento)
+        {
+            var attPac = await _statmedDbContext.Atendimento.FirstOrDefaultAsync(s => s.IdAtendimento == Atendimento.IdAtendimento);
 
+            // Escapar os caracteres inválidos no campo Anamnese
+            string relatorioEscaped = RemoveInvalidCharacters(Atendimento.Relatorio);
+
+            attPac.Relatorio = relatorioEscaped; // Usar a string escapada
+
+            await _statmedDbContext.SaveChangesAsync();
+            return HttpStatusCode.OK;
+        }
+        [HttpPut("AtendimentoEncaminhamento")]
+        public async Task<HttpStatusCode> RegistrarEncaminhamento(Atendimento Atendimento)
+        {
+            var attPac = await _statmedDbContext.Atendimento.FirstOrDefaultAsync(s => s.IdAtendimento == Atendimento.IdAtendimento);
+
+            // Escapar os caracteres inválidos no campo Anamnese
+            string encaminhamentoEscaped = RemoveInvalidCharacters(Atendimento.Encaminhamento);
+
+            attPac.Encaminhamento = encaminhamentoEscaped; // Usar a string escapada
+
+            await _statmedDbContext.SaveChangesAsync();
+            return HttpStatusCode.OK;
+        }
+        [HttpPut("AtendimentoAtestado")]
+        public async Task<HttpStatusCode> RegistrarAtestado(Atendimento Atendimento)
+        {
+            var attPac = await _statmedDbContext.Atendimento.FirstOrDefaultAsync(s => s.IdAtendimento == Atendimento.IdAtendimento);
+
+            // Escapar os caracteres inválidos no campo Anamnese
+            string atestadoEscaped = RemoveInvalidCharacters(Atendimento.Atestado);
+
+            attPac.Atestado = atestadoEscaped; // Usar a string escapada
+
+            await _statmedDbContext.SaveChangesAsync();
+            return HttpStatusCode.OK;
+        }
         private string RemoveInvalidCharacters(string input)
         {
             // Expressão regular para remover caracteres inválidos (\x00-\x08, \x0B-\x0C, \x0E-\x1F)

@@ -24,7 +24,8 @@ import Inventory2RoundedIcon from '@mui/icons-material/Inventory2Rounded';
 import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded';
 import SpaceDashboardRoundedIcon from '@mui/icons-material/SpaceDashboardRounded';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-
+import AddToQueueRoundedIcon from '@mui/icons-material/AddToQueueRounded';
+import MedicalServicesRoundedIcon from '@mui/icons-material/MedicalServicesRounded';
 Modal.setAppElement("#root")
 
 export default function Navegacao() {
@@ -76,13 +77,14 @@ export default function Navegacao() {
             <Divider/>
             <SubMenu icon={<PortraitRoundedIcon/>} label="Atendimento">
               <MenuItem icon={<QueueRoundedIcon/>} component={<Link to="/statmed/atend" />} >Nova Consulta</MenuItem>
-              <MenuItem icon={<QueueRoundedIcon/>} component={<Link to="/statmed/anamnese" />} >Registrar Anamnese</MenuItem>
-              <MenuItem icon={<DescriptionRoundedIcon/>}>Relatório Médico</MenuItem>
-              <MenuItem icon={<SwapHorizontalCircleRoundedIcon/>}>Encaminhamento</MenuItem>
-              <MenuItem icon={<SummarizeRoundedIcon/>}>Atestado</MenuItem>
+              <MenuItem icon={<MedicalServicesRoundedIcon/>} component={<Link to="/statmed/anamnese" />} >Registrar Anamnese</MenuItem>
+              <MenuItem icon={<DescriptionRoundedIcon/>} component={<Link to="/statmed/relatorioMedico" />} >Relatório Médico</MenuItem>
+              <MenuItem icon={<SwapHorizontalCircleRoundedIcon/>} component={<Link to="/statmed/encaminhamento" />}>Encaminhamento</MenuItem>
+              <MenuItem icon={<SummarizeRoundedIcon/>}  component={<Link to="/statmed/atestado" />}>Atestado</MenuItem>
+              <MenuItem icon={<AddToQueueRoundedIcon/>} component={<Link to="/statmed/consultaAtd" />}>Consultar Atendimento</MenuItem>
             </SubMenu>
             <Divider/>
-            <SubMenu icon={<TableChartRoundedIcon/>} label="Administrativo">
+            <SubMenu icon={<TableChartRoundedIcon/> } label="Administrativo">
               <MenuItem icon={<AddchartRoundedIcon/>}>Relatórios</MenuItem>
               <MenuItem icon={<InsightsRoundedIcon/>}>Estatísticas</MenuItem>
               <MenuItem icon={<Inventory2RoundedIcon/>} component={<Link to="/statmed/arqsame"/>}>Arquivo SAME</MenuItem>

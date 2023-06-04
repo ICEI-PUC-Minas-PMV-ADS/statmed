@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './AnamnesePrint.css'
+import './PrintModal.css'
 import { ReactComponent as HospitalLogo } from '../../Assets/img/svg/hospital_exemplo_anm.svg';
 
 export default class AnamnesePrint extends Component {

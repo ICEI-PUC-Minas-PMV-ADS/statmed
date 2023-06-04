@@ -47,6 +47,7 @@ body {
     padding: 0.75rem 1rem !important;
     background-color: var(--principal) !important;
     border-color: var(--principal) !important;
+    pointer-events: auto !important;
 }
 
 .btn-login:hover {
@@ -126,6 +127,14 @@ body {
     width: 40%;
 }
 
+.w-30 {
+    width: 30%;
+}
+
+.w-35 {
+    width: 35%;
+}
+
 .w-5 {
     width: 5%;
 }
@@ -148,6 +157,11 @@ body {
 /* Anamnese */
 .anamnese-texto-area {
     height: 50vh !important;
+    resize: none;
+}
+
+.texto-area-consulta {
+    height: 200px !important;
     resize: none;
 }
 

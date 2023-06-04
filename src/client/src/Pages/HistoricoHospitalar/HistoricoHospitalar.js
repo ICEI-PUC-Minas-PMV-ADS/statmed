@@ -20,7 +20,6 @@ export default function HistoricoHospitalar() {
     (async () => {
       const result = await axios(process.env.REACT_APP_API_CONATD);
       setData(result.data);
-      console.log(data);
     })();
   }, []);
 

@@ -1,5 +1,6 @@
-import Axios from 'axios';
-import React, { useRef, useState, useEffect } from 'react';
+// import Axios from 'axios';
+import React, { useEffect } from 'react';
+// import React, { useRef, useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
 
@@ -148,8 +149,6 @@ export default function AttPaciente() {
             }
         }
     }
-
-
 
     return (
         <div className="container-fluid ms-3 me-3">
