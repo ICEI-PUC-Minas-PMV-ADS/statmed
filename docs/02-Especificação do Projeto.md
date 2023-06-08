@@ -70,7 +70,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |  RF-010 | O Sistema deverá permitir gerar receituário médico | MÉDIA  |
 |  RF-011 | O Sistema deverá permitir  gerar formulário de referência e contrarreferência  | MÉDIA  |
 |  RF-012 |  O Sistema deverá gerar gráficos das estatísticas de atendimento e doenças | BAIXA  |
-|  RF-013 | O Sistema deverá permitir a impressão da ficha e histórico do paciente  |  MÉDIA |
+|  RF-013 | O Sistema deverá permitir a impressão da ficha |  MÉDIA |
 |  RF-014 | O Sistema deverá auxiliar o usuário contatar o responsável pelo sistema em caso de erro de login  |  BAIXA |
 
 

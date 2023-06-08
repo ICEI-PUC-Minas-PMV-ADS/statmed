@@ -58,7 +58,7 @@
 |Critério de Êxito | -É retornado em uma nova tela o atestado gerado. |
 ||
 |**Caso de Teste**| **CT-10 – Gerar receituário médico**|
-|Requisito Associado | RF-004	- O Sistema deverá permitir gerar receituário médico. |
+|Requisito Associado | RF-0010	- O Sistema deverá permitir gerar receituário médico. |
 | Objetivo do Teste 	| Verificar se o usuario obterá êxito em gerar receituário médico. |
 | Passos 	| - Acessar o sistema <br> - Introduzir o usuário e senha<br> - Clicar no botão "Entrar" <br> Clicar em "Historico Hospitalar”<br> - Clicar em "Receituário Médico" <br> - Clicar em "Gerar"  <br>   |
 |Critério de Êxito | -É retornado em uma nova tela o receituário médico gerado. |
@@ -67,5 +67,23 @@
 |Requisito Associado | RF-0011	- O Sistema deverá permitir  gerar formulário de referência e contrarreferência. |
 | Objetivo do Teste 	| Verificar se o usuario obterá êxito em gerar relatorio de referência e contrarreferência. |
 | Passos 	| - Acessar o sistema <br> - Introduzir o usuário e senha<br> - Clicar no botão "Entrar" <br> Clicar em "Historico Hospitalar”<br> - Clicar em "Formulário" <br> - Clicar em "Referência ou Contrarreferência" <br> - Clicar em "Gerar" <br>   |
+|Critério de Êxito | -É retornado na mesma tela o formulário solicitado. |
+||
+|**Caso de Teste**| **CT-12 – Gerar atestado/ comprovante de consulta**|
+|Requisito Associado | RF-0006	-O Sistema deverá gerar atestado (comprovante de consulta). |
+| Objetivo do Teste 	| Verificar se o usuario obterá êxito em gerar atestado ou o comprovante de consulta. |
+| Passos 	| - Acessar o sistema <br> - Introduzir o usuário e senha<br> - Clicar no botão "Entrar" <br> Clicar em "Atendimento”<br> - Clicar em "atestado" <br> - Clicar em "Referência ou Contrarreferência" <br> - Clicar em "Gerar" <br>   |
+|Critério de Êxito | -É retornado na mesma tela o formulário solicitado. |
+||
+|**Caso de Teste**| **CT-13 – Gerar relatórios**|
+|Requisito Associado | RF-0009	-O Sistema deverá gerar atestado (comprovante de consulta). |
+| Objetivo do Teste 	| Verificar se o usuario obterá êxito em gerar os relatórios. |
+| Passos 	| - Acessar o sistema <br> - Introduzir o usuário e senha<br> - Clicar no botão "Entrar" <br> Clicar em "gerar relatórios<br>Clicar em"Gerar"<br>  |
+|Critério de Êxito | -É retornado na mesma tela o formulário solicitado. |
+||
+|**Caso de Teste**| **CT-14 – Ajuda**|
+|Requisito Associado | RF0014 O Sistema deverá auxiliar o usuário contatar o responsável pelo sistema em caso de erro de login|
+| Objetivo do Teste 	| Verificar se o usuario obterá êxito em solicitar ajuda em caso de não sucesso no login. |
+| Passos 	| - Acessar o sistema <br>Clicar em "Ajuda"<br>  |
 |Critério de Êxito | -É retornado na mesma tela o formulário solicitado. |
 
