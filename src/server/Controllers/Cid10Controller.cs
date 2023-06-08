@@ -1,6 +1,5 @@
 
 using Microsoft.AspNetCore.Mvc;
-using Statmed.Models;
 
 namespace Statmed.Controllers
 {

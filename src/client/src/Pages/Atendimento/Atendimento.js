@@ -9,12 +9,12 @@ import { useState } from 'react';
 export default function Atendimento() {
     useEffect(() => {
         document.title = 'Statmed - Registrar Paciente';
-      }, []);
+    }, []);
 
     // Data Atual no Input
     const date = new Date();
-    let currentDay= String(date.getDate()).padStart(2, '0');
-    let currentMonth = String(date.getMonth()+1).padStart(2,"0");
+    let currentDay = String(date.getDate()).padStart(2, '0');
+    let currentMonth = String(date.getMonth() + 1).padStart(2, "0");
     let currentYear = date.getFullYear();
     let currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
 
@@ -156,69 +156,69 @@ export default function Atendimento() {
     return (
         <div className="container-fluid ms-3">
             <h3 className="text-uppercase fw-normal mt-3 mb-3">Criar Atendimento</h3>
-            <div className="">
+            <div className="me-3">
                 <form onSubmit={submit}>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-10">
                             <input autoFocus onBlur={buscaSame} ref={idSameRef} type="number" className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" />
-                            <label htmlFor="floatingInput">ID Same       <ManageSearchRoundedIcon/></label>
+                            <label htmlFor="floatingInput">ID Same       <ManageSearchRoundedIcon /></label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-25">
-                            <input ref={atendenteRef} type="name" value={"André Fernandes"} className="form-control w-100" id="idFunc_Usuario" placeholder="Example input" disabled />
+                            <input ref={atendenteRef} type="name" value={"André Fernandes"} className="form-control w-100" id="idFunc_Usuario" placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Atendente</label>
                         </div>
 
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input ref={dataRef} value={currentDate} type="normal" className="form-control w-100" id="dataAtend" placeholder="Example input" disabled/>
+                            <input ref={dataRef} value={currentDate} type="normal" className="form-control w-100" id="dataAtend" placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Data Atendimento</label>
                         </div>
                         <div className="form-check mb-3">
                             <input ref={epidemiaRef} className="form-check-input" type="checkbox" onChange={handleCheckbox}
-        checked={isChecked} value={isChecked ? "Sim" : "Não"} id="epidemia" />
+                                checked={isChecked} value={isChecked ? "Sim" : "Não"} id="epidemia" />
                             <label className="form-check-label" htmlFor="epidemia">
                                 Epidemia?
                             </label>
                         </div>
-                        
+
                     </div>
 
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 flex-fill">
-                            <input ref={nomeRef} type="text" className="form-control w-100" id="nome" autoComplete='off' placeholder="Example input" disabled />
+                            <input ref={nomeRef} type="text" className="form-control w-100" id="nome" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Nome</label>
                         </div>
 
                     </div>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
-                    <div className="form-floating mb-3 flex-fill">
-                            <input type="text" className="form-control w-100" id="nomeSocial" placeholder="Example input" disabled />
+                        <div className="form-floating mb-3 flex-fill">
+                            <input type="text" className="form-control w-100" id="nomeSocial" placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Nome Social</label>
                         </div>
                     </div>
 
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-50">
-                            <input type="text" className="form-control" id="genero" placeholder="Example input" disabled />
+                            <input type="text" className="form-control" id="genero" placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Genêro</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-25">
-                            <input onChange={pegaIdade} type="text" className="form-control" id="dataNasc" placeholder="Example input" disabled />
+                            <input onChange={pegaIdade} type="text" className="form-control" id="dataNasc" placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Idade</label>
                         </div>
                         <div className="form-floating mb-3 w-25">
-                            <input maxLength="14" type="text" className="form-control" id="cpf" placeholder="Example input" disabled />
+                            <input maxLength="14" type="text" className="form-control" id="cpf" placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">CPF</label>
                         </div>
                     </div>
 
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-50">
-                            <input type="email" className="form-control" id="email" placeholder="Example input" disabled />
+                            <input type="email" className="form-control" id="email" placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">E-mail</label>
                         </div>
 
                         <div className="form-floating mb-3 w-50">
-                            <input type="tel" maxLength="15" className="form-control" id="telefone" placeholder="Example input" disabled />
+                            <input type="tel" maxLength="15" className="form-control" id="telefone" placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Telefone</label>
                         </div>
                     </div>
@@ -226,7 +226,7 @@ export default function Atendimento() {
                 </form>
                 <div className="w-100 d-inline-flex flex-row justify-content-center align-items-center">
                     <span className={sucessoMsg ? "mensagem-sucesso text-uppercase" : ""} aria-live="assertive" ref={sucessoRef}>{sucessoMsg}</span>
-                </div>            
+                </div>
             </div>
         </div>
     )

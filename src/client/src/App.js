@@ -14,24 +14,30 @@ import RelatoriosMedicos from './Pages/RelatoriosMedicos/RelatoriosMedicos';
 import ConsultaAtendimento from './Pages/ConsultarAtendimento/ConsultarAtendimento';
 import Encaminhamento from './Pages/Encaminhamento/Encaminhamento';
 import Atestado from './Pages/Atestado/Atestado';
+import RelatorioAdm from './Pages/RelatorioAdm/RelatorioAdm';
+import Receita from './Pages/Receita/Receita';
+import Estatisticas from './Pages/Estatisticas/Estatisticas';
 
 function App() {
   return (
     <Routes>
-      <Route path="/statmed/" element={<Layout />}>
-        <Route path="/statmed/inicio" element={<Dashboard />}/>
-        <Route path="/statmed/cad" element={<CadPaciente />}/>
-        <Route path="/statmed/historicoPac" element={<HistoricoHospitalar />}/>
-        <Route path="/statmed/atend" element={<Atendimento />} />
-        <Route path="/statmed/atpac" element={<AttPaciente />} />
-        <Route path="/statmed/anamnese" element={<Anamnese />} />
-        <Route path="/statmed/arqsame" element={<ArquivoSame />} />
-        <Route path="/statmed/relatorioMedico" element={<RelatoriosMedicos />} />
-        <Route path="/statmed/consultaAtd" element={<ConsultaAtendimento />} />
-        <Route path="/statmed/encaminhamento" element={<Encaminhamento />} />
-        <Route path="/statmed/atestado" element={<Atestado />} />
+      <Route path="/" element={<Layout />}>
+        <Route path="/inicio" element={<Dashboard />}/>
+        <Route path="/cad" element={<CadPaciente />}/>
+        <Route path="/historicoPac" element={<HistoricoHospitalar />}/>
+        <Route path="/atend" element={<Atendimento />} />
+        <Route path="/atpac" element={<AttPaciente />} />
+        <Route path="/anamnese" element={<Anamnese />} />
+        <Route path="/arqsame" element={<ArquivoSame />} />
+        <Route path="/relatorioMedico" element={<RelatoriosMedicos />} />
+        <Route path="/consultaAtd" element={<ConsultaAtendimento />} />
+        <Route path="/encaminhamento" element={<Encaminhamento />} />
+        <Route path="/atestado" element={<Atestado />} />
+        <Route path="/relatorioAdm" element={<RelatorioAdm />} />
+        <Route path="/receita" element={<Receita />} />
+        <Route path="/estatisticas" element={<Estatisticas />} />
       </Route>
-      <Route path="/statmed/login" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage />} />
     </Routes>
   );
 }

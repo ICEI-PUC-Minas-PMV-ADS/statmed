@@ -44,6 +44,7 @@ export default function ConsultaAtendimento() {
                     document.getElementById('relatorio').value = puxapaciente.relatorio;
                     document.getElementById('encaminhamento').value = puxapaciente.encaminhamento;
                     document.getElementById('atestado').value = puxapaciente.atestado;
+                    document.getElementById('receita').value = puxapaciente.receita;
                     document.getElementById('prateleira').value = puxapaciente.paciente.prateleira;
                 }
                 else if (req.status === 404) {
@@ -71,6 +72,7 @@ export default function ConsultaAtendimento() {
         const anamneseRef = useRef('')
         const relatorioRef = useRef('')
         const encaminhamentoRef = useRef('')
+        const receitaRef = useRef('')
         const atestadoRef = useRef('')
         const recepcionistaRef = useRef('');
         const nomeRef = useRef('');
@@ -125,14 +127,14 @@ export default function ConsultaAtendimento() {
     return (
         <div className="container-fluid ms-3 me-3">
             <h3 className="text-uppercase fw-normal mt-3">Consultar Atendimento</h3>
-            <div className="mt-3">
-                <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start mb-3">
+            <div className="mt-3 ">
+                <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                     <div className="form-floating w-100 me-3">
-                        <input autoFocus type="text" onChange={e => setAtendimento(e.target.value)} onBlur={buscaAtendimento}   value={idAtendimento} className="form-control w-40" id="idAtendimento" autoComplete='off' placeholder="Example input" />
+                        <input autoFocus type="text" onChange={e => setAtendimento(e.target.value)} onBlur={buscaAtendimento}   value={idAtendimento} className="form-control w-100" id="idAtendimento" autoComplete='off' placeholder="Example input" />
                         <label htmlFor="floatingInput">ID do atendimento <ManageSearchRoundedIcon /></label>
                     </div>
-                    <div className="form-floating w-100">
-                        <button onClick={openAnamnese} className="btn btn-padrao btn-pequeno text-uppercase me-3" title="Imprimir Anamnese">Anamnese</button>
+                    <div className="d-flex justify-content-end flex-fill">
+                        <button onClick={openAnamnese} className="btn btn-padrao btn-pequeno text-uppercase mb-3 me-3" title="Imprimir Anamnese">Anamnese</button>
                         <Modal
                                 onAfterOpen={modalPrint}
                                 isOpen={anamneseIsOpen}
@@ -157,7 +159,7 @@ export default function ConsultaAtendimento() {
                                 titulo={AnamneseTitulo}
                                 />
                             </Modal>
-                        <button onClick={openRelatorio} className="btn btn-padrao btn-pequeno text-uppercase me-3" title="Imprimir Relatório">Relatório</button>
+                        <button onClick={openRelatorio} className="btn btn-padrao btn-pequeno text-uppercase mb-3 me-3" title="Imprimir Relatório">Relatório</button>
                         <Modal
                                 onAfterOpen={modalPrint}
                                 isOpen={relatorioIsOpen}
@@ -182,7 +184,7 @@ export default function ConsultaAtendimento() {
                                 titulo={RelatorioTitulo}
                                 />
                             </Modal>
-                        <button onClick={openEncaminhamento} className="btn btn-padrao btn-pequeno text-uppercase me-3" title="Imprimir Encaminhamento">Encaminhamento</button>
+                        <button onClick={openEncaminhamento} className="btn btn-padrao mb-3 btn-pequeno text-uppercase me-3" title="Imprimir Encaminhamento">Encaminhamento</button>
                         <Modal
                                 onAfterOpen={modalPrint}
                                 isOpen={encaminhamentoIsOpen}
@@ -207,7 +209,7 @@ export default function ConsultaAtendimento() {
                                 titulo={EncaminhamentoTitulo}
                                 />
                             </Modal>
-                        <button onClick={openAtestado} className="btn btn-padrao btn-pequeno text-uppercase" title="Imprimir Atestado">Atestado</button>
+                        <button onClick={openAtestado} className="btn btn-padrao btn-pequeno mb-3 text-uppercase" title="Imprimir Atestado">Atestado</button>
                         <Modal
                                 onAfterOpen={modalPrint}
                                 isOpen={atestadoIsOpen}
@@ -247,13 +249,13 @@ export default function ConsultaAtendimento() {
                 <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                     <div className="form-floating mb-3 me-3 w-10">
                         <input readOnly type="text" ref={idSameRef} className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" />
-                        <label htmlFor="floatingInput">ID Same</label>
+                        <label htmlFor="floatingInput">SAME</label>
                     </div>
-                    <div className="form-floating mb-3 me-3 w-20 ">
+                    <div className="form-floating mb-3 me-3 w-10">
                         <input readOnly type="text" ref={idadeRef} className="form-control w-100" id="dataNasc" autoComplete='off' placeholder="Example input" />
                         <label htmlFor="floatingInput">Idade</label>
                     </div>
-                    <div className="form-floating mb-3 me-3 w-10">
+                    <div className="form-floating mb-3 me-3 w-15">
                         <input readOnly type="text" className="form-control w-100" id="epidemia" autoComplete='off' placeholder="Example input" />
                         <label htmlFor="floatingInput">Epidemia?</label>
                     </div>
@@ -265,11 +267,11 @@ export default function ConsultaAtendimento() {
                         <input readOnly type="text" ref={cpfRef} className="form-control w-100" id="cpf" autoComplete='off' placeholder="Example input" />
                         <label htmlFor="floatingInput">CPF</label>
                     </div>
-                    <div className="form-floating mb-3 me-3 w-10 ">
+                    <div className="form-floating mb-3 me-3 w-20">
                         <input readOnly type="text" ref={dataRef} className="form-control w-100" id="data" autoComplete='off' placeholder="Example input"  />
                         <label htmlFor="floatingInput">Data</label>
                     </div>
-                    <div className="form-floating mb-3 w-10">
+                    <div className="form-floating mb-3 w-10 flex-fill">
                         <input readOnly type="text" className="form-control w-100" id="prateleira" autoComplete='off' placeholder="Example input"  />
                         <label htmlFor="floatingInput">Prateleira</label>
                     </div>
@@ -307,6 +309,10 @@ export default function ConsultaAtendimento() {
                 <div className="form-floating mb-3">
                         <textarea readOnly ref={atestadoRef} className="form-control texto-area-consulta" id="atestado" rows="20" cols="10"/>
                         <label htmlFor="mensagem">Atestado</label>
+                </div>
+                <div className="form-floating mb-3">
+                        <textarea readOnly ref={receitaRef} className="form-control texto-area-consulta" id="receita" rows="20" cols="10"/>
+                        <label htmlFor="mensagem">Receita</label>
                 </div>
             </div>
         </div>

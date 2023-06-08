@@ -41,17 +41,16 @@ export default function HistoricoHospitalar() {
           stripedRows
           filters={filters}
           paginator
-          rows={5}
+          rows={15}
         >
-          <Column field="result.pacienteIdSame" header="SAME" sortable />
-          <Column field="result.idAtendimento" header="Atendimento" sortable />
-          <Column field="result.paciente.nome" header="Nome" sortable />
-          <Column field="result.paciente.dataNasc" header="Data Nasc." sortable />
-          <Column field="result.paciente.cpf" header="CPF" sortable />
-          <Column field="result.data" header="Passagem" sortable />
-          <Column field="result.cid" header="CID" sortable />
-          <Column field="result.epidemia" header="Epidemia" sortable />
-
+          <Column field="pacienteIdSame" header="SAME" sortable />
+          <Column field="idAtendimento" header="Atendimento" sortable />
+          <Column field="paciente.nome" header="Nome" sortable />
+          <Column field="paciente.dataNasc" header="Data Nasc." sortable />
+          <Column field="paciente.cpf" header="CPF" sortable />
+          <Column field="data" header="Passagem" sortable />
+          <Column field="cid" header="CID" sortable />
+          <Column field="epidemia" header="Epidemia" sortable />
         </DataTable>
       </div>
     </div>

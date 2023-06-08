@@ -1,8 +1,8 @@
 {
   "name": "statmed",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "private": false,
-  "homepage": "https://icei-puc-minas-pmv-ads.github.io/statmed/",
+  "homepage": "http://statmed-001-site1.atempurl.com/",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.11.0",

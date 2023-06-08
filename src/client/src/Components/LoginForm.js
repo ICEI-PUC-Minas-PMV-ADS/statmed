@@ -31,7 +31,7 @@ function LoginForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/statmed/inicio');
+        navigate('/inicio');
       };
     // const handleSubmit = async (e) => {
     //     e.preventDefault();

@@ -20,6 +20,6 @@ namespace Statmed.Data
         public DbSet<Enfermagem> Enfermagem { get; set; }
         public DbSet<Recepcionista> Recepcionista { get; set; }
         public DbSet<SupervisoraAdm> SupervisoraAdm { get; set; }
-         public DbSet<Atendimento> Atendimento { get; set; }
+        public DbSet<Atendimento> Atendimento { get; set; }
     }
 }

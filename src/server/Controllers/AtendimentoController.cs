@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Statmed.Models;
-using System.Text.Json;
-using System.Web;
+
 
 namespace Statmed.Controllers
 {
@@ -16,17 +13,24 @@ namespace Statmed.Controllers
     public class AtendimentoController : Controller
     {
         private readonly StatmedDbContext _statmedDbContext;
-
         public AtendimentoController(StatmedDbContext context)
         {
             _statmedDbContext = context;
         }
 
+
         [HttpGet("Consultar")]
         public async Task<IActionResult> BuscaAtendimento()
         {
-            var atendimentos = await _statmedDbContext.Atendimento.ToListAsync();
-            return Ok(atendimentos);
+            var options = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.IgnoreCycles,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                WriteIndented = true
+            };
+            var atendimentos = await _statmedDbContext.Atendimento.Include(a => a.Paciente).ToListAsync();
+            var jsonString = JsonSerializer.Serialize(atendimentos, options);
+            return Ok(jsonString);
         }
 
         [HttpPost("Cadastrar")]
@@ -61,6 +65,7 @@ namespace Statmed.Controllers
                 Anamnese = s.Anamnese,
                 Relatorio = s.Relatorio,
                 Encaminhamento = s.Encaminhamento,
+                Receita = s.Receita,
                 PacienteIdSame = s.PacienteIdSame,
                 Paciente = s.Paciente
             }).FirstOrDefaultAsync(s => s.IdAtendimento == IdAtendimento);
@@ -73,6 +78,7 @@ namespace Statmed.Controllers
                 return IdPaciente;
             }
         }
+
         [HttpPut("AtendimentoAnamnese")]
         public async Task<HttpStatusCode> RegistrarAnamnese(Atendimento Atendimento)
         {
@@ -88,12 +94,12 @@ namespace Statmed.Controllers
             await _statmedDbContext.SaveChangesAsync();
             return HttpStatusCode.OK;
         }
+
         [HttpPut("AtendimentoRelatorio")]
         public async Task<HttpStatusCode> RegistrarRelatorio(Atendimento Atendimento)
         {
             var attPac = await _statmedDbContext.Atendimento.FirstOrDefaultAsync(s => s.IdAtendimento == Atendimento.IdAtendimento);
 
-            // Escapar os caracteres inválidos no campo Anamnese
             string relatorioEscaped = RemoveInvalidCharacters(Atendimento.Relatorio);
 
             attPac.Relatorio = relatorioEscaped; // Usar a string escapada
@@ -101,12 +107,12 @@ namespace Statmed.Controllers
             await _statmedDbContext.SaveChangesAsync();
             return HttpStatusCode.OK;
         }
+
         [HttpPut("AtendimentoEncaminhamento")]
         public async Task<HttpStatusCode> RegistrarEncaminhamento(Atendimento Atendimento)
         {
             var attPac = await _statmedDbContext.Atendimento.FirstOrDefaultAsync(s => s.IdAtendimento == Atendimento.IdAtendimento);
 
-            // Escapar os caracteres inválidos no campo Anamnese
             string encaminhamentoEscaped = RemoveInvalidCharacters(Atendimento.Encaminhamento);
 
             attPac.Encaminhamento = encaminhamentoEscaped; // Usar a string escapada
@@ -114,15 +120,28 @@ namespace Statmed.Controllers
             await _statmedDbContext.SaveChangesAsync();
             return HttpStatusCode.OK;
         }
+
         [HttpPut("AtendimentoAtestado")]
         public async Task<HttpStatusCode> RegistrarAtestado(Atendimento Atendimento)
         {
             var attPac = await _statmedDbContext.Atendimento.FirstOrDefaultAsync(s => s.IdAtendimento == Atendimento.IdAtendimento);
 
-            // Escapar os caracteres inválidos no campo Anamnese
             string atestadoEscaped = RemoveInvalidCharacters(Atendimento.Atestado);
 
             attPac.Atestado = atestadoEscaped; // Usar a string escapada
+
+            await _statmedDbContext.SaveChangesAsync();
+            return HttpStatusCode.OK;
+        }
+
+        [HttpPut("AtendimentoReceita")]
+        public async Task<HttpStatusCode> RegistrarReceita(Atendimento Atendimento)
+        {
+            var attPac = await _statmedDbContext.Atendimento.FirstOrDefaultAsync(s => s.IdAtendimento == Atendimento.IdAtendimento);
+
+            string receitaEscaped = RemoveInvalidCharacters(Atendimento.Receita);
+
+            attPac.Receita = receitaEscaped; // Usar a string escapada
 
             await _statmedDbContext.SaveChangesAsync();
             return HttpStatusCode.OK;

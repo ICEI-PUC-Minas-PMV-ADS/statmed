@@ -108,7 +108,9 @@ namespace Statmed.Controllers
             attPac.Numero = Paciente.Numero;
             attPac.Bairro = Paciente.Bairro;
             attPac.Cidade = Paciente.Cidade;
+            attPac.Complemento = Paciente.Complemento;
             attPac.Uf = Paciente.Uf;
+            attPac.Prateleira = Paciente.Prateleira;
 
             await _statmedDbContext.SaveChangesAsync();
             return HttpStatusCode.OK;
