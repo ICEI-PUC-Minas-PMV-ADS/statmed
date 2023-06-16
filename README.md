@@ -25,13 +25,10 @@ Statmed é uma solução desenvolvida para atender às necessidades do Serviço 
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+É Necessário a instalação do gerenciador de pacotes NPM para a auto instalação dos pacotes necessário para o front end e de no minímo .NET 7 para o desenvovlimento do back end em conjunto do Visual Studio.
+Àpos isso, configurar as váriaveis das APIS em src/client/env.development para desenvolvimento local e .env.production para as váriveis de produção. Em src/server/Program.cs é necessário habilitar o endereço que irá consumir as APIS e em src/server/appsettings.json o endereço do banco de dados. No seu banco de dados, execute o arquivo src/Statmeddb.sql para a criação das tabelas adequadas para nossas APIS.
 
-Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
-
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
-
-O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
+Endereço para visualização on-line do nosso projeto: http://statmedc-001-site1.itempurl.com/#/inicio 
 
 # Documentação
 
