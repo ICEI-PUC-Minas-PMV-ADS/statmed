@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import CadPaciente from './Pages/CadastrarPaciente/CadPaciente';
 import LoginPage from './Pages/Login/Login';
 import Layout from './Layout';
@@ -22,9 +22,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="/inicio" element={<Dashboard />}/>
-        <Route path="/cad" element={<CadPaciente />}/>
-        <Route path="/historicoPac" element={<HistoricoHospitalar />}/>
+        <Route path="/" element={<Navigate to={"/inicio"} replace />} />
+        <Route path="/inicio" element={<Dashboard />} />
+        <Route path="/cad" element={<CadPaciente />} />
+        <Route path="/historicoPac" element={<HistoricoHospitalar />} />
         <Route path="/atend" element={<Atendimento />} />
         <Route path="/atpac" element={<AttPaciente />} />
         <Route path="/anamnese" element={<Anamnese />} />

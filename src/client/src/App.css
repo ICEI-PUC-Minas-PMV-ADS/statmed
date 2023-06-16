@@ -31,7 +31,7 @@ body {
 
 * {
     font-family: 'Inter', sans-serif;
-    -webkit-tap-highlight-color: red !important; 
+    -webkit-tap-highlight-color: red !important;
 }
 
 .main-conteudo {
@@ -234,6 +234,7 @@ body {
     background-color: var(--darkmode1);
     padding: 0px;
 }
+
 /* Navbar fechar */
 .bt-main {
     display: inline-block !important;
@@ -268,12 +269,14 @@ body {
     transform: rotate(360deg);
     transition: 500ms ease-in-out;
 }
+
 /* Esconder elementos */
 .sumir {
     visibility: hidden;
 }
+
 /* Tabelas */
-.p-datatable{
+.p-datatable {
     background: var(--darkmode2) !important;
 }
 
@@ -296,16 +299,20 @@ body {
     border-color: var(--principal-hover) !important;
 }
 
-.p-datatable .p-datatable-tbody > tr > td {
+.p-datatable .p-datatable-tbody>tr>td {
     border-color: var(--darkmode1) !important;
     background: var(--darkmode2) !important;
 }
 
-.p-paginator .p-paginator-first, .p-paginator .p-paginator-prev, .p-paginator .p-paginator-next, .p-paginator .p-paginator-last {
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
     border-color: var(--principal-hover) !important;
 }
 
-.p-paginator-page, .p-paginator-element {
+.p-paginator-page,
+.p-paginator-element {
     color: var(--principal-hover) !important;
 }
 
@@ -317,7 +324,7 @@ body {
     border-radius: 0 20% 20% 0 !important;
 }
 
-.p-datatable .p-datatable-thead > tr > th {
+.p-datatable .p-datatable-thead>tr>th {
     border-top: none !important;
     border-color: var(--principal-hover) !important;
     border-radius: 5px 5px 0px 0px !important;
@@ -348,32 +355,35 @@ body {
 .p-datatable .p-paginator-bottom {
     border-radius: 0 0 5px 5px !important;
 }
+
 .p-datatable .p-sortable-column:focus {
     box-shadow: none !important;
 }
+
 /* Esconders as setas dos inputs */
-input[type=number] { 
+input[type=number] {
     -moz-appearance: textfield;
     appearance: textfield;
-    margin: 0; 
+    margin: 0;
 }
 
 input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
-      margin: 0; 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 ::-moz-selection {
     color: var(--darkmode1) !important;
     background: var(--principal) !important;
 }
-  
-  ::selection {
+
+::selection {
     color: var(--darkmode1) !important;
     background: var(--principal) !important;
 }
-  .form-control-plaintext:focus {
+
+.form-control-plaintext:focus {
     color: var(--darkmode1) !important;
     background: var(--principal) !important;
 }
@@ -383,4 +393,3 @@ input[type=number]::-webkit-outer-spin-button {
     color: var(--lightmode2) !important;
     font-size: 1rem;
 }
-

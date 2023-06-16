@@ -8,7 +8,7 @@
 }
 
 .imagem-bg-esquerda {
-    background-image: url('./../../Assets/img/login_imgesq.png');
+    background-image: url('login_imgesq.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -17,7 +17,7 @@
 }
 
 .imagem-bg-esquerda-ajuda {
-    background-image: url('./../../Assets/img/login_ajuda.jpg');
+    background-image: url('login_ajuda.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

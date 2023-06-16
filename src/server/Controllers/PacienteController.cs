@@ -8,7 +8,6 @@ namespace Statmed.Controllers
     [Route("api/[controller]")]
     public class PacienteController : ControllerBase
     {
-        // Evitar Sql Injection
         private readonly StatmedDbContext _statmedDbContext;
 
         public PacienteController(StatmedDbContext context)
@@ -77,7 +76,7 @@ namespace Statmed.Controllers
                 Bairro = s.Bairro,
                 Complemento = s.Complemento,
                 Cidade = s.Cidade,
-                Uf = s.Uf,  
+                Uf = s.Uf,
                 Prateleira = s.Prateleira
             }).FirstOrDefaultAsync(s => s.IdSame == IdSame);
             if (IdPaciente == null)

@@ -27,7 +27,7 @@ export default class Imprimir extends Component {
             <h6 className="ft-arial text-uppercase m-1 fw-bold">{process.env.REACT_APP_NOMEHOSPITAL}</h6>
         </div> 
         <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start borda-preta">
-            <div className="h-100 borda-right flex-row justify-content-center align-items-center">
+            <div className="h-100p borda-right flex-row justify-content-center align-items-center">
                 <HospitalLogo className="logo-anamnese" />
             </div>
             <div className="w-100"> 

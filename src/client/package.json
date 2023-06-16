@@ -1,8 +1,8 @@
 {
   "name": "statmed",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "private": false,
-  "homepage": "http://statmed-001-site1.atempurl.com/",
+  "homepage": ".",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.11.0",
@@ -10,7 +10,6 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.2",
     "@popperjs/core": "^2.11.7",
-    "@react-spring/web": "^9.7.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -20,11 +19,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
-    "react-new-window": "^1.0.1",
     "react-pro-sidebar": "^1.1.0-alpha.1",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
-    "react-table": "^7.8.0",
     "sweetalert2": "^11.7.5",
     "sweetalert2-react-content": "^5.0.7",
     "web-vitals": "^2.1.4"
