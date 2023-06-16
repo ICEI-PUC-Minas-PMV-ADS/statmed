@@ -35,4 +35,4 @@ Decidimos por utilizar o .NET 7 com Entity Framework e MySql para o backend e Re
 
 ## Hospedagem
 
-Devido a seu suporte para nossas tecnologias optamos em utilizar o Heroku App como hospedagem junto ao AWS como banco de dados.
+Utilizamos a hospedagem gratuita fornecida pela SmarterASP.net para o front e back end & AWS Cloud para o banco de dados.
