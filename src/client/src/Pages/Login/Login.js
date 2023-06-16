@@ -3,6 +3,7 @@ import './Login.css';
 import { ReactComponent as StatmedLogo } from '../../Assets/img/svg/logo.svg';
 import LoginForm from '../../Components/LoginForm';
 import AjudaForm from '../../Components/AjudaForm';
+import { Link } from 'react-router-dom';
 
 
 // Função de login
@@ -42,11 +43,11 @@ export default function LoginPage() {
                       )}
                       {showLoginForm ? (
                         <div className="text-center">
-                          <a className="small ajuda text-uppercase" href="#Acesso" onClick={handleButtonClick}>Ajuda</a>
+                          <Link className="small ajuda text-uppercase" to="#Acesso" component={AjudaForm} onClick={handleButtonClick} >Ajuda</Link>
                         </div>
                       ) : (
                         <div className="text-center">
-                          <a className="small ajuda text-uppercase" href="#Ajuda" onClick={handleBackButtonClick}>Voltar</a>
+                          <Link className="small ajuda text-uppercase" to="#Ajuda" component={AjudaForm} onClick={handleBackButtonClick}>Voltar</Link>
                         </div>
                       )}
                     </div>

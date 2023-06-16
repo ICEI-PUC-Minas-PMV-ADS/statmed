@@ -16,6 +16,8 @@ namespace Statmed.Models
         public string Anamnese { get; set; }
         public string Relatorio { get; set; }
         public string Encaminhamento { get; set; }
+        public string Receita { get; set; }
+        
 
         [ForeignKey("idSame")]
         public int PacienteIdSame { get; set; }

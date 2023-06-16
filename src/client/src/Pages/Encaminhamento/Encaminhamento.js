@@ -62,7 +62,10 @@ export default function Encaminhamento() {
         }
     }
 
-    const [encaminhamento, setEncaminhamento] = useState(``)
+    const [encaminhamento, setEncaminhamento] = useState(`Encaminho o paciente:
+De serviço:
+Ao:
+`)
     const conteudo = JSON.stringify(encaminhamento);
     const titulo = "Encaminhamento";
     const [idAtendimento, setAtendimento] = useState('');
@@ -149,27 +152,27 @@ export default function Encaminhamento() {
     return (
         <div className="container-fluid ms-3">
             <h3 className="text-uppercase fw-normal mt-3 mb-3">Encaminhamento</h3>
-            <div className="">
+            <div className="me-3">
                 <form onSubmit={handlePacienteAname}>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
-                        <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input autoFocus onChange={e => setAtendimento(e.target.value)} onBlur={buscaAtendimento} value={idAtendimento} type="text" className="form-control w-100" id="idAtendimento" autoComplete='off' placeholder="Example input" required/>
+                        <div className="form-floating mb-3 me-3 flex-fill">
+                            <input autoFocus onChange={e => setAtendimento(e.target.value)} onBlur={buscaAtendimento} value={idAtendimento} type="text" className="form-control w-100" id="idAtendimento" autoComplete='off' placeholder="Example input" />
                             <label htmlFor="floatingInput">Atendimento <ManageSearchRoundedIcon /></label>
                         </div>
-                        <div className="form-floating mb-3 me-3 w-10 flex-fill">
+                        <div className="form-floating mb-3 me-3 =flex-fill">
                             <input type="text" ref={idSameRef} className="form-control w-100" id="idSame" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">ID Same</label>
                         </div>
-                        <div className="form-floating mb-3 me-3 w-10 flex-fill">
+                        <div className="form-floating mb-3 me-3 w-15 flex-fill">
                             <input type="text" ref={idadeRef} className="form-control w-100" id="dataNasc" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Idade</label>
                         </div>
-                        <div className="form-floating mb-3 me-3 w-10 flex-fill">
+                        <div className="form-floating mb-3 me-3 w-15 flex-fill">
                             <input type="text" className="form-control w-100" id="epidemia" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Epidemia?</label>
                         </div>
-                        <div className="form-floating mb-3 me-3 w-10 flex-fill">
-                            <input type="text"  ref={generoRef}  className="form-control w-100" id="genero" autoComplete='off' placeholder="Example input" readOnly />
+                        <div className="form-floating mb-3 me-3 w-15 flex-fill">
+                            <input type="text" ref={generoRef} className="form-control w-100" id="genero" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Genêro</label>
                         </div>
                         <div className="d-flex justify-content-end mb-3 flex-fill">
@@ -182,53 +185,53 @@ export default function Encaminhamento() {
                                 overlayClassName="modal-overlay"
                                 className="modal-content-print">
                                 <Imprimir
-                                data={dataRef}
-                                genero={generoRef}
-                                nomeSocial={nomeSocialRef}
-                                idade={idadeRef}
-                                medico={medicoRef}
-                                cpf={cpfRef}
-                                cid={cidRef}
-                                idSame={idSameRef}
-                                crm={crmRef}
-                                recepcionista={recepcionistaRef}
-                                nome={nomeRef}
-                                titulo={titulo}
-                                conteudo={conteudo}
-                                atendimentoPrint={idAtendimento}
+                                    data={dataRef}
+                                    genero={generoRef}
+                                    nomeSocial={nomeSocialRef}
+                                    idade={idadeRef}
+                                    medico={medicoRef}
+                                    cpf={cpfRef}
+                                    cid={cidRef}
+                                    idSame={idSameRef}
+                                    crm={crmRef}
+                                    recepcionista={recepcionistaRef}
+                                    nome={nomeRef}
+                                    conteudo={conteudo}
+                                    titulo={titulo}
+                                    atendimentoPrint={idAtendimento}
                                 />
                             </Modal>
                         </div>
                     </div>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
-                        <div className="form-floating mb-3 me-3 w-10">
-                        <input readOnly ref={recepcionistaRef} type="text" className="form-control" id="recepcionista" placeholder="Example input" />
+                        <div className="form-floating mb-3 me-3 w-20">
+                            <input readOnly ref={recepcionistaRef} type="text" className="form-control" id="recepcionista" placeholder="Example input" required />
                             <label htmlFor="floatingInput">Recepcionista</label>
                         </div>
-                        <div className="form-floating mb-3 me-3 w-10">
+                        <div className="form-floating mb-3 me-3 w-20">
                             <input type="text" ref={medicoRef} defaultValue={"Dr. Igor Pereira"} className="form-control w-100" id="nomeMedico" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Médico</label>
                         </div>
-                        <div className="form-floating mb-3 me-3 w-10">
-                            <input type="text"  ref={crmRef}  defaultValue={"222314/SP"} className="form-control w-100" id="crm" autoComplete='off' placeholder="Example input" readOnly />
+                        <div className="form-floating mb-3 me-3 w-15">
+                            <input type="text" ref={crmRef} defaultValue={"222314/SP"} className="form-control w-100" id="crm" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">CRM</label>
                         </div>
                         <div className="form-floating mb-3 me-3 w-10">
-                            <input  type="text" ref={cidRef} className="form-control w-100" id="cid" autoComplete='off' placeholder="Example input" readOnly required/>
+                            <input type="text" ref={cidRef} className="form-control w-100" id="cid" autoComplete='off' placeholder="Example input" readOnly required />
                             <label htmlFor="floatingInput">CID</label>
                         </div>
-                        <div className="form-floating mb-3 me-3 w-10">
+                        <div className="form-floating mb-3 me-3 w-15">
                             <input type="text" ref={cpfRef} className="form-control w-100" id="cpf" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">CPF</label>
                         </div>
-                        <div className="form-floating mb-3 me-3 w-10">
+                        <div className="form-floating mb-3 w-15">
                             <input type="text" ref={dataRef} className="form-control w-100" id="data" autoComplete='off' placeholder="Example input" readOnly />
                             <label htmlFor="floatingInput">Data</label>
                         </div>
                     </div>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
                         <div className="form-floating mb-3 me-3 w-50 flex-fill">
-                            <input readOnly ref={nomeRef} type="text" className="form-control w-100" id="nome" autoComplete='off' placeholder="Example input" required/>
+                            <input readOnly ref={nomeRef} type="text" className="form-control w-100" id="nome" autoComplete='off' placeholder="Example input" required />
                             <label htmlFor="floatingInput">Nome</label>
                         </div>
                         <div className="form-floating mb-3 w-50 flex-fill">
@@ -237,13 +240,13 @@ export default function Encaminhamento() {
                         </div>
                     </div>
                     <div className="form-floating mb-3">
-                        <textarea value={encaminhamento} onChange={e => setEncaminhamento(e.target.value)} className="form-control anamnese-texto-area" minLength={20} id="desc" rows="20" cols="10" required/>
+                        <textarea value={encaminhamento} onChange={e => setEncaminhamento(e.target.value)} className="form-control anamnese-texto-area" minLength={20} id="desc" rows="20" cols="10" required />
                         <label htmlFor="mensagem">Encaminhamento</label>
                     </div>
                     <button className="btn btn-bscpac btn-lg btn-primary btn-padrao text-uppercase mb-2">Criar Encaminhamento</button>
                 </form>
                 <div className="w-100 d-inline-flex flex-row justify-content-center align-items-center">
-                <span className={sucessoMsg ? "mensagem-sucesso text-uppercase" : ""} aria-live="assertive" ref={sucessoRef}>{sucessoMsg}</span>
+                    <span className={sucessoMsg ? "mensagem-sucesso text-uppercase" : ""} aria-live="assertive" ref={sucessoRef}>{sucessoMsg}</span>
                 </div>
             </div>
         </div>

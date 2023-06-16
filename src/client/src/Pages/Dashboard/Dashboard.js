@@ -11,9 +11,6 @@ export default function Dashboard() {
     }, );
     // Placeholder para gerar um nome aleatório para o Usuário
     const usuario = [
-        "Dr. João", 
-        "Dr. Alberto",
-        "Dra. Luciana",
         "Elizabeth Couto",
         "André Fernandes",
         "Dr. Igor Pereira"

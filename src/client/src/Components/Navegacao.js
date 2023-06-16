@@ -26,96 +26,99 @@ import SpaceDashboardRoundedIcon from '@mui/icons-material/SpaceDashboardRounded
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import AddToQueueRoundedIcon from '@mui/icons-material/AddToQueueRounded';
 import MedicalServicesRoundedIcon from '@mui/icons-material/MedicalServicesRounded';
+import ReceiptRoundedIcon from '@mui/icons-material/ReceiptRounded';
+
 Modal.setAppElement("#root")
 
 export default function Navegacao() {
-    const [modalIsOpen, setIsOpen] = useState(false);
-    const [collapsed, setCollapsed] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
-    function openModal() {
-      setIsOpen(true);
-    }
-    
-    function closeModal() {
-      setIsOpen(false);
-    }
-
-    return (
-        <Sidebar
-        collapsed={collapsed}
-        transitionDuration={500}
-        collapsedWidth="75px"
-        backgroundColor="var(--principal)"
-        width="350px"
-          rootStyles={{
-          color: 'var(--darkmode2)',
-          borderColor: 'var(--principal-hover)',
-          background: 'var(--principal)'
-          }}>
-        <IconButton className={collapsed ? 'bt-main-hide' : 'bt-main'} onClick={() => setCollapsed(!collapsed)} aria-label="fingerprint">
-          <MenuRoundedIcon className="seta-menu" fontSize="large"/>
-        </IconButton>
-          <Menu menuItemStyles={{
-              button: {
-                  backgroundColor: 'var(--principal)',
-                  '&:hover': {
-                      backgroundColor: 'var(--principal-hover)',
-                      color: 'var(--light-mode2)'
-                  },
-                  
-              },
-          }}>
-            <HospitalLogo className={collapsed ? 'sumir' : 'mb-3 ms-3 me-3 mt-3'} />
-            <Divider/>
-            <MenuItem icon={<SpaceDashboardRoundedIcon/>} component={<Link to="/statmed/inicio"/>}>Início</MenuItem>
-            <Divider/>
-            <SubMenu icon={<SupervisedUserCircleRoundedIcon/>}  label="Paciente">
-              <MenuItem icon={<PersonAddRoundedIcon/>} component={<Link to="/statmed/cad" />} >Novo Cadastro </MenuItem>
-              <MenuItem icon={<ManageAccountsRoundedIcon/>} component={<Link to="/statmed/atpac"/>} >Atualizar Cadastro</MenuItem>
-              <MenuItem icon={<InventoryRoundedIcon/>} component={<Link to="/statmed/historicoPac"/>} >Histórico Hospitalar</MenuItem>
-            </SubMenu>
-            <Divider/>
-            <SubMenu icon={<PortraitRoundedIcon/>} label="Atendimento">
-              <MenuItem icon={<QueueRoundedIcon/>} component={<Link to="/statmed/atend" />} >Nova Consulta</MenuItem>
-              <MenuItem icon={<MedicalServicesRoundedIcon/>} component={<Link to="/statmed/anamnese" />} >Registrar Anamnese</MenuItem>
-              <MenuItem icon={<DescriptionRoundedIcon/>} component={<Link to="/statmed/relatorioMedico" />} >Relatório Médico</MenuItem>
-              <MenuItem icon={<SwapHorizontalCircleRoundedIcon/>} component={<Link to="/statmed/encaminhamento" />}>Encaminhamento</MenuItem>
-              <MenuItem icon={<SummarizeRoundedIcon/>}  component={<Link to="/statmed/atestado" />}>Atestado</MenuItem>
-              <MenuItem icon={<AddToQueueRoundedIcon/>} component={<Link to="/statmed/consultaAtd" />}>Consultar Atendimento</MenuItem>
-            </SubMenu>
-            <Divider/>
-            <SubMenu icon={<TableChartRoundedIcon/> } label="Administrativo">
-              <MenuItem icon={<AddchartRoundedIcon/>}>Relatórios</MenuItem>
-              <MenuItem icon={<InsightsRoundedIcon/>}>Estatísticas</MenuItem>
-              <MenuItem icon={<Inventory2RoundedIcon/>} component={<Link to="/statmed/arqsame"/>}>Arquivo SAME</MenuItem>
-            </SubMenu>
-            <Divider/>
-            <MenuItem icon={<HealthAndSafetyRoundedIcon/>} onClick={openModal}>Busca CID</MenuItem>
-            <Modal 
-              isOpen={modalIsOpen}
-              onRequestClose={closeModal}
-              contentLabel="Busca Cid"
-              overlayClassName="modal-overlay"
-              className="modal-content">
-                <ModalCid closeModal={closeModal}/>
-              </Modal>
-          </Menu>
-          <Menu>  
-            <div></div>
-          </Menu>
-          <Menu menuItemStyles={{
-              button: {
-                  backgroundColor: 'var(--principal)',
-                  '&:hover': {
-                      backgroundColor: 'var(--principal-hover)',
-                      color: 'var(--light-mode2)'
-                  },
-                  
-              },
-          }}>
-            <Divider/>
-            <MenuItem icon={<LogoutRoundedIcon/>} component={<Link to="/statmed/login" />}>Logout</MenuItem>
-          </Menu>
-        </Sidebar>
-    )
+  function openModal() {
+    setIsOpen(true);
   }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  return (
+    <Sidebar
+      collapsed={collapsed}
+      transitionDuration={500}
+      collapsedWidth="75px"
+      backgroundColor="var(--principal)"
+      width="350px"
+      rootStyles={{
+        color: 'var(--darkmode2)',
+        borderColor: 'var(--principal-hover)',
+        background: 'var(--principal)'
+      }}>
+      <IconButton className={collapsed ? 'bt-main-hide' : 'bt-main'} onClick={() => setCollapsed(!collapsed)} aria-label="fingerprint">
+        <MenuRoundedIcon className="seta-menu" fontSize="large" />
+      </IconButton>
+      <Menu menuItemStyles={{
+        button: {
+          backgroundColor: 'var(--principal)',
+          '&:hover': {
+            backgroundColor: 'var(--principal-hover)',
+            color: 'var(--light-mode2)'
+          },
+
+        },
+      }}>
+        <HospitalLogo className={collapsed ? 'sumir' : 'mb-3 ms-3 me-3 mt-3'} />
+        <Divider />
+        <MenuItem icon={<SpaceDashboardRoundedIcon />} component={<Link to="/inicio" />}>Início</MenuItem>
+        <Divider />
+        <SubMenu icon={<SupervisedUserCircleRoundedIcon />} label="Paciente">
+          <MenuItem icon={<PersonAddRoundedIcon />} component={<Link to="/cad" />} >Novo Cadastro </MenuItem>
+          <MenuItem icon={<ManageAccountsRoundedIcon />} component={<Link to="/atpac" />} >Atualizar Cadastro</MenuItem>
+          <MenuItem icon={<InventoryRoundedIcon />} component={<Link to="/historicoPac" />} >Histórico Hospitalar</MenuItem>
+        </SubMenu>
+        <Divider />
+        <SubMenu icon={<PortraitRoundedIcon />} label="Atendimento">
+          <MenuItem icon={<QueueRoundedIcon />} component={<Link to="/atend" />} >Nova Consulta</MenuItem>
+          <MenuItem icon={<MedicalServicesRoundedIcon />} component={<Link to="/anamnese" />} >Registrar Anamnese</MenuItem>
+          <MenuItem icon={<DescriptionRoundedIcon />} component={<Link to="/relatorioMedico" />} >Relatório Médico</MenuItem>
+          <MenuItem icon={<SummarizeRoundedIcon />} component={<Link to="/atestado" />}>Atestado</MenuItem>
+          <MenuItem icon={<ReceiptRoundedIcon />} component={<Link to="/receita" />}>Receita</MenuItem>
+          <MenuItem icon={<SwapHorizontalCircleRoundedIcon />} component={<Link to="/encaminhamento" />}>Encaminhamento</MenuItem>
+          <MenuItem icon={<AddToQueueRoundedIcon />} component={<Link to="/consultaAtd" />}>Consultar Atendimento</MenuItem>
+        </SubMenu>
+        <Divider />
+        <SubMenu icon={<TableChartRoundedIcon />} label="Administrativo">
+          <MenuItem icon={<AddchartRoundedIcon />} component={<Link to="/relatorioAdm" />}>Relatórios</MenuItem>
+          <MenuItem icon={<InsightsRoundedIcon />} component={<Link to="/estatisticas" />}>Estatísticas</MenuItem>
+          <MenuItem icon={<Inventory2RoundedIcon />} component={<Link to="/arqsame" />}>Arquivo SAME</MenuItem>
+        </SubMenu>
+        <Divider />
+        <MenuItem icon={<HealthAndSafetyRoundedIcon />} onClick={openModal}>Busca CID</MenuItem>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Busca Cid"
+          overlayClassName="modal-overlay"
+          className="modal-content">
+          <ModalCid closeModal={closeModal} />
+        </Modal>
+      </Menu>
+      <Menu>
+        <div></div>
+      </Menu>
+      <Menu menuItemStyles={{
+        button: {
+          backgroundColor: 'var(--principal)',
+          '&:hover': {
+            backgroundColor: 'var(--principal-hover)',
+            color: 'var(--light-mode2)'
+          },
+
+        },
+      }}>
+        <Divider />
+        <MenuItem icon={<LogoutRoundedIcon />} component={<Link to="/login" />}>Logout</MenuItem>
+      </Menu>
+    </Sidebar>
+  )
+}

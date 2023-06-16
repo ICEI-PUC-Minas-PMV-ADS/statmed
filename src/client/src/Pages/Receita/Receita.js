@@ -6,10 +6,10 @@ import Swal from 'sweetalert2';
 import axios from "axios";
 import Imprimir from "../../Components/PrintModal/Imprimir";
 
-export default function RelatoriosMedicos() {
+export default function Receita() {
 
     useEffect(() => {
-        document.title = 'Statmed - Relatório Médico';
+        document.title = 'Statmed - Encaminhamento';
     }, []);
 
     // Modal
@@ -62,12 +62,12 @@ export default function RelatoriosMedicos() {
         }
     }
 
-    const [relatorio, setRelatorio] = useState(`Nome:
-CID:
-Queixa Principal:
-    `)
-    const conteudo = JSON.stringify(relatorio);
-    const titulo = "Relatório";
+    const [receita, setReceita] = useState(`Receita ao Paciente:
+As seguintes medicações:
+
+`)
+    const conteudo = JSON.stringify(receita);
+    const titulo = "Receita Médica";
     const [idAtendimento, setAtendimento] = useState('');
     // Gambiarra
     const recepcionistaRef = useRef('');
@@ -92,14 +92,14 @@ Queixa Principal:
     function closeModal() {
         setIsOpen(false);
     }
-
+    // Necessita habilitar
     const handlePacienteAname = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(process.env.REACT_APP_API_SALRELA,
+            await axios.put(process.env.REACT_APP_API_SALRECE,
                 JSON.stringify({
                     idAtendimento: idAtendimento,
-                    relatorio: relatorio
+                    receita: receita
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -109,11 +109,11 @@ Queixa Principal:
             let atendimentoAviso = idAtendimento;
             Swal.fire({
                 icon: 'success',
-                title: 'Relatório Registrado!',
+                title: 'Receita Gerada!',
                 showConfirmButton: true,
-                text: 'Relatorio de ' + nomeAviso + ' salvo no atendimento ' + atendimentoAviso
+                text: 'Receita de ' + nomeAviso + ' salva no atendimento ' + atendimentoAviso
             });
-            setSucessoMsg("Relatório de " + nomeAviso + " salvo no atendimento " + atendimentoAviso);
+            setSucessoMsg("Receita de " + nomeAviso + " salva no atendimento " + atendimentoAviso);
         } catch (err) {
             if (!err?.response) {
                 Swal.fire({
@@ -151,7 +151,7 @@ Queixa Principal:
 
     return (
         <div className="container-fluid ms-3">
-            <h3 className="text-uppercase fw-normal mt-3 mb-3">Relatório</h3>
+            <h3 className="text-uppercase fw-normal mt-3 mb-3">RECEITA MÉDICA</h3>
             <div className="me-3">
                 <form onSubmit={handlePacienteAname}>
                     <div className="w-100 d-inline-flex flex-row justify-content-start align-items-start">
@@ -240,10 +240,10 @@ Queixa Principal:
                         </div>
                     </div>
                     <div className="form-floating mb-3">
-                        <textarea value={relatorio} onChange={e => setRelatorio(e.target.value)} className="form-control anamnese-texto-area" minLength={20} id="desc" rows="20" cols="10" required />
-                        <label htmlFor="mensagem">Relatório</label>
+                        <textarea value={receita} onChange={e => setReceita(e.target.value)} className="form-control anamnese-texto-area" minLength={20} id="desc" rows="20" cols="10" required />
+                        <label htmlFor="mensagem">Receita</label>
                     </div>
-                    <button className="btn btn-bscpac btn-lg btn-primary btn-padrao text-uppercase mb-2">Registrar Relatório</button>
+                    <button className="btn btn-bscpac btn-lg btn-primary btn-padrao text-uppercase mb-2">Gerar Receita</button>
                 </form>
                 <div className="w-100 d-inline-flex flex-row justify-content-center align-items-center">
                     <span className={sucessoMsg ? "mensagem-sucesso text-uppercase" : ""} aria-live="assertive" ref={sucessoRef}>{sucessoMsg}</span>

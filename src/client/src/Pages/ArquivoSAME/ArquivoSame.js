@@ -41,7 +41,7 @@ export default function ArquivoSame() {
             stripedRows
             filters={filters}
             paginator
-            rows={5}
+            rows={15}
           >
             <Column field="idSame" header="SAME" sortable />
             <Column field="nome" header="Nome" sortable />
