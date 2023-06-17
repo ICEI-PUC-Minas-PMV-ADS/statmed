@@ -27,8 +27,8 @@ Pediatra de 37 anos que trabalha no hospital público, tem uma rotina super corr
 Recepcionista no hospital público e universitário. Possui sua rotina focada no seu trabalho e principalmente na sua faculdade no período noturno, vem sofrendo frequentemente com a dificuldade no atendimento dos pacientes do hospital devido ao método utilizado pelo hospital, gerando assim correrias e muitas vezes tumultos no hospital.
 #
 
-<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/98277143/226174012-236d216e-1a71-4521-a500-9b9b9baef653.png">
 
+<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/98277143/226174080-458dbd32-6f7e-46e0-bca7-ac06b970bfcd.png">
 
 ## Elizabeth Couto
 
@@ -37,18 +37,6 @@ Recepcionista no hospital público e universitário. Possui sua rotina focada no
 Trabalha no hospital público. Seu papel é supervisionar e controlar  todo o setor administrativo. Em sua rotina ela enfrenta um problema em seu trabalho: devido ao fluxo de informações sobre a estatística de relatório de informações do paciente para repassar para a diretoria.
 #
 
-
-
-
-
-<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/98277143/226174080-458dbd32-6f7e-46e0-bca7-ac06b970bfcd.png">
-
-## Rafaella Costa 
-
-##### Profissão: Enfermeira
-##### Idade: 28 anos
-É responsável por cuidar de pacientes em estado grave e monitorar sua saúde em tempo integral. No entanto, ela enfrenta um problema constante em seu trabalho: a falta de recursos e informações precisas sobre os pacientes.
-#
 
 ## Histórias de Usuário
 A partir da compreensão do dia a dia das pessoas identificadas para o projeto, foram registradas as seguintes histórias de usuários.
@@ -62,8 +50,6 @@ A partir da compreensão do dia a dia das pessoas identificadas para o projeto, 
 |  Recepcionista (André) |  Gerar ficha do paciente cadastrado com todos os dados dele | Para fazer a recepção do paciente e a partir dessa etapa encaminhar ele para a especialidade desejada    |
 | Supervisora administrativa (Elizabeth)  | Gerar relatórios de média de atendimentos   |  Controle e manutenção das atividades hospitalares |
 | Supervisora administrativa (Elizabeth)  | Gerar diagramas com a quantidade de casos de doenças epidemiológicas  |  Prestar devida assistência ao ministério da saúde no controle de epidemias |
-| Enfermeira (Rafaella)  | Consultar registros do paciente com suas observações médicas  | Diminuir a possibilidade de erros com medicação e cuidados   |
-| Enfermeira (Rafaella)  |  Consultar local do prontuário físico (Prontuário impresso) | Realizar prova de medicações junto a convênios durante a auditoria  |
 
 ## Requisitos
 
@@ -79,18 +65,21 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |  RF-004 | O Sistema deverá indicar qual (Local ou prateleira) o prontuário físico do paciente está  | BAIXA  |
 |  RF-005 |  O Sistema deverá permitir a pesquisa do histórico de passagens do paciente no local |  ALTA |
 |  RF-006 | O Sistema deverá gerar atestado (comprovante de consulta)  | BAIXA  |
+|  RF-007 | O Sistema deverá mostrar uma tela de boas-vindas ápos o usuário entrar  | BAIXA  |
 |  RF-008 | O Sistema deverá permitir a Pesquisa de CID  |  MÉDIA |
 |  RF-009 | O Sistema deverá permitir gerar relatórios conforme o solicitado | ALTA |
-|  RF-0010 | O Sistema deverá permitir gerar receituário médico | MÉDIA  |
-|  RF-0011 | O Sistema deverá permitir  gerar formulário de referência e contrarreferência  | MÉDIA  |
-|  RF-0012 |  O Sistema deverá gerar gráficos das estatísticas de atendimento e doenças | BAIXA  |
-|  RF-0013 | O Sistema deverá permitir a impressão da ficha e histórico do paciente  |  MÉDIA|
+|  RF-010 | O Sistema deverá permitir gerar receituário médico | MÉDIA  |
+|  RF-011 | O Sistema deverá permitir  gerar formulário de referência e contrarreferência  | MÉDIA  |
+|  RF-012 |  O Sistema deverá gerar gráficos das estatísticas de atendimento e doenças | BAIXA  |
+|  RF-013 | O Sistema deverá permitir a impressão da ficha |  MÉDIA |
+|  RF-014 | O Sistema deverá auxiliar o usuário contatar o responsável pelo sistema em caso de erro de login  |  BAIXA |
+
 
 #### Requisitos Não Funcionais
 
 |  ID | Descrição do Requisito  |  Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
+|RNF-001| O sistema deve ter layout responsivo | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
 |RNF-003| Usuários deverão ter níveis de acessos e permissões diferentes conforme o cargo |  ALTA | 
 |RNF-004| O sistema deve ser seguro, possuindo a guarda do  histórico médico sem acesso por terceiros, segundo a LGPD |  ALTA |

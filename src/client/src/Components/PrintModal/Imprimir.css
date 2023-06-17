@@ -1,0 +1,59 @@
+.container-deus  {
+    height: 100vh;
+}
+
+.container-mae {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid !important;
+    border-color: black !important;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.container-mae p, h6, p2 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 !important;
+
+}
+
+.borda-preta {
+    border-bottom: 1px solid !important;
+    border-color: black !important;
+}
+
+.borda-top {
+    border-top: 1px solid !important;
+    border-color: black !important;
+}
+
+.borda-right {
+    border-right: 1px solid !important;
+    border-color: black !important;
+}
+
+.logo-anamnese {
+    height: 150px;
+    width: 230px;
+}
+
+.h-100p {
+    height: 100%;
+}
+
+.fs-rodape {
+    font-size: 0.5rem !important;
+}
+
+@media print {
+    .ps-sidebar-root {
+        display: none !important;
+    }
+}
+
+.anamnese-container {
+    white-space: pre;
+}

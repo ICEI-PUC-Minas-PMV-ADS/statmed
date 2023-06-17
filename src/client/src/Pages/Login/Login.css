@@ -1,0 +1,53 @@
+.login {
+    min-height: 100vh;
+}
+
+.logo-login {
+    width: 100% !important;
+    margin-bottom: 5rem;
+}
+
+.imagem-bg-esquerda {
+    background-image: url('login_imgesq.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.imagem-bg-esquerda-ajuda {
+    background-image: url('login_ajuda.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.login-heading {
+    font-weight: 300;
+    color: white;
+}
+
+.errmsg {
+    color: red !important;
+    border-color: red !important;
+}
+
+.ajuda {
+    color: white;
+    text-decoration: none !important;
+    font-size: 0.8rem !important;
+}
+
+/*
+.viewpass{
+    float: right;
+    margin-left: -25px;
+    margin-top: -26px;
+    position: relative;
+    font-size: large;
+    z-index: 2;
+}*/
+

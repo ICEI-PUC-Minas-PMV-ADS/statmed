@@ -8,14 +8,15 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
 
-![Diagrama de Classes ATT](https://user-images.githubusercontent.com/70419372/236355313-989495a3-0e84-452c-8f9f-0ece7fd694bd.PNG)
+
+![Capturar](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/70419372/8f8bc2cb-cd6b-462e-a10e-8bbc026a9c83)
 
 
 
 
 ## Modelo ER (Projeto Conceitual)
 
-![image](https://user-images.githubusercontent.com/98277143/230527029-7f20e933-b713-4e17-8c37-9cd559938a4b.png)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/98277143/755a2b4d-8e15-4770-97eb-3dc9648fceb7)
 
 ## Projeto da Base de Dados
 
@@ -23,13 +24,16 @@ O projeto da base de dados corresponde à representação das entidades e relaci
 
 A base de dados foi feita utilizando MySQL.
  
-![image](https://user-images.githubusercontent.com/97044440/230523249-242171ac-d2f6-485b-bf42-1e4e80d3a372.png)
+
+![Captura de tela 2023-05-26 215255](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/70419372/eb5d1187-5f31-4351-af62-1b263f6db236)
+
+
 
 
 ## Tecnologias Utilizadas
 
-Decidimos por utilizar a .NET e MySQL com Entity Framework. Para serviço web o Heroku e Visual Studio Code como IDE devido ao seu suporte junto ao GitHub.
+Decidimos por utilizar o .NET 7 com Entity Framework e MySql para o backend e ReactJS para o frontend. Utilizamos o Visual Studio Code como IDE devido a sua integração com o GitHub.
 
 ## Hospedagem
 
-Devido a seu suporte para nossas tecnologias optamos em utilizar o Heroku App como hospedagem junto ao AWS como banco de dados.
+Utilizamos a hospedagem gratuita fornecida pela SmarterASP.net para o front e back end & AWS Cloud para o banco de dados.

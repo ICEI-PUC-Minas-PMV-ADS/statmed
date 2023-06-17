@@ -1,3 +1,17 @@
-# Apresentação da Solução
+# Etapa 2
 
-Faça uma apresentação de um resumo de todos o processo de desenvolvimento e no final apresente a solução desenvolvida, usando um pequeno vídeo.
+## Prova de Conceito da Arquitetura (POC)
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/blob/main/presentation/apresentacao-poc_boHjO04s.mp4
+
+# Etapa 4
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/blob/main/presentation/etapa4.mp4
+
+# Etapa 5
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/blob/main/presentation/Etapa%205.mp4
+
+Ou para visualização mais rápida no Youtube:
+
+https://www.youtube.com/watch?v=SqIyfxttm5I
