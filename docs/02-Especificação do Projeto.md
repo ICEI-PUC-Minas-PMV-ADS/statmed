@@ -65,6 +65,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |  RF-004 | O Sistema deverá indicar qual (Local ou prateleira) o prontuário físico do paciente está  | BAIXA  |
 |  RF-005 |  O Sistema deverá permitir a pesquisa do histórico de passagens do paciente no local |  ALTA |
 |  RF-006 | O Sistema deverá gerar atestado (comprovante de consulta)  | BAIXA  |
+|  RF-007 | O Sistema deverá mostrar uma tela de boas-vindas ápos o usuário entrar  | BAIXA  |
 |  RF-008 | O Sistema deverá permitir a Pesquisa de CID  |  MÉDIA |
 |  RF-009 | O Sistema deverá permitir gerar relatórios conforme o solicitado | ALTA |
 |  RF-010 | O Sistema deverá permitir gerar receituário médico | MÉDIA  |
