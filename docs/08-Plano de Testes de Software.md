@@ -2,7 +2,7 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
 
-| **Caso de Teste** | **CT-01 – Cadastrar perfil** 	|
+| **Caso de Teste** | **CT-01 – Cadastrar pacientes** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-001 - O Sistema deverá permitir que o usuário cadastre pacientes. |
 | Objetivo do Teste 	| Verificar se o usuário obterá êxito ao cadastrar um paciente novo no sistema. |
