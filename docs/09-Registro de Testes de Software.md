@@ -1,12 +1,12 @@
 | Caso de teste | Descrição | Resultado| Avaliação |
 | ------------ | ------------- | ------------ | ----------- |
 | CT - 01| O Sistema deverá permitir que o usuário cadastre pacientes | Sucesso| Sem erros registrados durante os testes|
-| CT - 02 | Busca do historico de passagens do paciente no local. | sucesso parcial| Em desenvolvimento
-| CT - 03| Geração de gráficos e estatísticas | Sucesso Parcial| Em desenvolvimento
+| CT - 02 | Busca do historico de passagens do paciente no local. | sucesso | Sem erros registrados durante os testes|
+| CT - 03| Geração de gráficos e estatísticas | Sucesso Parcial| Em desenvolvimento|
 | CT - 04| Pesquisa de CID | Sucesso| Sem erros registrados durante os testes|
 | CT - 05| Impressão de ficha do paciente | Sucesso| Sem erros registrados durante os testes|
 | CT - 06| Criação de anamnese | Sucesso | Sem erros registrados durante os testes|
-| CT - 07| Localizar Paciente | Sucesso Parcial| Em desenvolvimento|
+| CT - 07| Localizar Paciente | Sucesso |Sem erros registrados durante os testes|
 | CT - 08|  Localizar onde o prontuário físico do paciente está | Sucesso | Sem erros registrados durante os testes|
 | CT - 09| Gerar atestado médico | Sucesso| Sem erros registrados durante os testes|
 | CT - 10| Gerar receituário médico | Sucesso| Sem erros registrados durante os testes|
@@ -20,6 +20,10 @@
 
 ![Imagem do WhatsApp de 2023-06-03 à(s) 17 19 36](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/75f99b3e-267f-4845-bbdb-1cbe8411538b)
 
+### CT-02
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/6199f4aa-b24a-4c5d-a8e4-fe2fdaee3189)
+
 ### CT-04 
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/f5f43418-cb71-4cf5-b5e4-f227903020ce)
@@ -31,6 +35,11 @@
 ### CT-06
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/27918b44-54d7-42eb-b5ac-fea6c4ece782)
+
+### CT-07
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/102487978/d2f18c69-ff12-4f7e-bd91-b9e765e73f40)
+
 
 ### CT-08
 
