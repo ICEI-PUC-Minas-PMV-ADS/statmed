@@ -1,0 +1,28 @@
+message: Please cite this software using these metadata.
+title: Statmed
+authors:
+  - family-names: Ruan Gomes
+    given-names: Diego
+  - family-names: Massahiro Taguchi Coelho
+    given-names: Felipe 
+  - family-names: Cristiny Gonçalves Andrade
+    given-names: Gabrielly 
+  - family-names: Almeida da Cruz Silva
+    given-names: Guilherme 
+  - family-names: Maldonado da Silva
+    given-names:  Jardel
+  - family-names: Farias Rodrigues
+    given-names: Lizane
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Jeunon de Alencar
+    given-names: Bernardo
+keywords:
+  - Gestão Hospitalar
+  - Prontuários
+  - SAME
+  - Eixo 2
+  - ReactJS
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed
+version: 1.0.0
+date-released: 2023-06-17
